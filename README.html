@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Visualization Curriculum &#8212; Visualization Curriculum</title>
+    <title>&lt;no title&gt; &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -69,75 +69,37 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/altair-hist.png" class="logo" alt="logo">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Visualization Curriculum</h1>
+      <img src="_static/altair.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Introduction
+   Introduction to Altair
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Curriculum
+  Contents
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="altair_introduction.html">
-   1. Introduction to Altair
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_marks_encoding.html">
-   2. Data Types, Graphical Marks, and Visual Encoding Channels
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_data_transformation.html">
-   3. Data Transformation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_scales_axes_legends.html">
-   4. Scales, Axes, and Legends
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_view_composition.html">
-   5. Multi-View Composition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_interaction.html">
-   6. Interaction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_cartographic.html">
-   7. Cartographic Visualization
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Support
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_debugging.html">
-   Altair Debugging Guide
+  <a class="reference internal" href="First-two-examples.html">
+   1. First two examples of Altair Charts
   </a>
  </li>
 </ul>
@@ -197,11 +159,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/uwdata/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/uwdata/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2FREADME.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -225,47 +187,8 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#curriculum">
-   Curriculum
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#table-of-contents">
-     Table of Contents
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#support">
-     Support
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#online">
-     Online
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-installation">
-     Local Installation
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#credits">
-   Credits
-  </a>
- </li>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
 </ul>
 
             </nav>
@@ -277,119 +200,7 @@
         
               <div>
                 
-  <div class="section" id="data-visualization-curriculum">
-<h1>Data Visualization Curriculum<a class="headerlink" href="#data-visualization-curriculum" title="Permalink to this headline">¶</a></h1>
-<p>A data visualization curriculum of interactive notebooks, using <a class="reference external" href="https://vega.github.io/vega-lite/">Vega-Lite</a> and <a class="reference external" href="https://altair-viz.github.io/">Altair</a>. This repository contains a series of <strong>Python</strong>-based Jupyter notebooks. The notebooks are online in a <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">Jupyter book</a>, runnable locally or online on <a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum">Colab</a>, <a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum">Nextjournal</a>, or <a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Deepnote</a>. A corresponding set of <strong>JavaScript</strong> notebooks are available online on <a class="reference external" href="https://observablehq.com/&#64;uwdata/data-visualization-curriculum">Observable</a>.</p>
-<div class="section" id="curriculum">
-<h2>Curriculum<a class="headerlink" href="#curriculum" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="table-of-contents">
-<h3>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p>Introduction to Vega-Lite / Altair<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_introduction.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/introduction-to-vega-lite">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Data Types, Graphical Marks, and Visual Encoding Channels<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_marks_encoding.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_marks_encoding.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_marks_encoding.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_marks_encoding.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/data-types-graphical-marks-and-visual-encoding-channels">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_marks_encoding.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Data Transformation<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_data_transformation.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_data_transformation.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_data_transformation.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_data_transformation.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/data-transformation">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_data_transformation.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Scales, Axes, and Legends<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_scales_axes_legends.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_scales_axes_legends.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_scales_axes_legends.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_scales_axes_legends.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/scales-axes-and-legends">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_scales_axes_legends.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Multi-View Composition<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_view_composition.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_view_composition.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_view_composition.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_view_composition.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/multi-view-composition">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_view_composition.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Interaction<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_interaction.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/interaction">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_interaction.ipynb">Deepnote</a>
-</small></p></li>
-<li><p>Cartographic Visualization<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_cartographic.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_cartographic.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_cartographic.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_cartographic.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://observablehq.com/&#64;uwdata/cartographic-visualization">Observable</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_cartographic.ipynb">Deepnote</a>
-</small></p></li>
-</ol>
-</div>
-<div class="section" id="support">
-<h3>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Altair Debugging Guide<br/>
-<small>
-<a class="reference external" href="https://uwdata.github.io/visualization-curriculum/altair_debugging.html">Jupyter Book</a> |
-<a class="reference external" href="https://github.com/uwdata/visualization-curriculum/blob/master/altair_debugging.ipynb">Jupyter</a> |
-<a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/blob/master/altair_debugging.ipynb">Colab</a> |
-<a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/blob/master/altair_debugging.ipynb">Nextjournal</a> |
-<a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_debugging.ipynb">Deepnote</a>
-</small></p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>The visualization curriculum can be used either online or on your local computer.</p>
-<div class="section" id="online">
-<h3>Online<a class="headerlink" href="#online" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://uwdata.github.io/visualization-curriculum/">Jupyter Book</a> to read Python notebooks online.</p></li>
-<li><p>Run the <strong>Python</strong> notebooks online on <a class="reference external" href="https://colab.research.google.com/github/uwdata/visualization-curriculum/">Colab</a>, <a class="reference external" href="https://github.nextjournal.com/uwdata/visualization-curriculum/">Nextjournal</a>, or <a class="reference external" href="https://deepnote.com/launch?url=https://github.com/uwdata/visualization-curriculum/blob/master/altair_introduction.ipynb">Deepnote</a></p></li>
-<li><p>Run the <strong>JavaScript</strong> notebooks online using <a class="reference external" href="https://observablehq.com/collection/&#64;uwdata/visualization-curriculum">Observable</a></p></li>
-</ul>
-</div>
-<div class="section" id="local-installation">
-<h3>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><a class="reference external" href="https://altair-viz.github.io/getting_started/installation.html">Install Altair and a notebook environment</a>. The most recent versions of these notebooks use <em>Altair version 4</em>.</p></li>
-<li><p>Download the notebooks from the <a class="reference external" href="https://github.com/uwdata/visualization-curriculum/releases">releases page</a>. Typically you will want to use the most recent release.  (If you wish to use notebooks for Altair version 3, download the <a class="reference external" href="https://github.com/uwdata/visualization-curriculum/releases/tag/altair-v3">Altair v3.2 release</a>.)</p></li>
-<li><p>Open the notebooks in your local notebook environment. For example, if you have JupyterLab installed (v1.0 or higher is required), run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> within the directory containing the notebooks.</p></li>
-</ol>
-<p>Depending on your programming environment (and whether or not you have a live internet connection), you may want to specify a particular <a class="reference external" href="https://altair-viz.github.io/user_guide/display_frontends.html">renderer</a> for Altair.</p>
-</div>
-</div>
-<div class="section" id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
-<p>Developed at the University of Washington by Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft. Thanks to the <a class="reference external" href="https://idl.cs.washington.edu/">UW Interactive Data Lab</a> and Arvind Satyanarayan for their valuable input and feedback! Thanks also to the students of <a class="reference external" href="https://courses.cs.washington.edu/courses/cse512/19sp/">UW CSE512 Spring 2019</a>, the first group to use these notebooks within an integrated course curriculum.</p>
-</div>
-</div>
+  <p>Originally duplicated from the University of Washington’s <a class="reference external" href="https://github.com/uwdata/visualization-curriculum">Visualization Curriculum</a></p>
 
     <script type="text/x-thebe-config">
     {
@@ -414,20 +225,24 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
-          By Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft<br/>
+          By Christopher Davis<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; Visualization Curriculum</title>
+    <title>Introduction to Altair &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,7 +42,9 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -51,7 +53,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Introduction to Altair" href="altair_introduction.html" />
+    <link rel="next" title="1. First two examples of Altair Charts" href="First-two-examples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -70,75 +72,37 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/altair-hist.png" class="logo" alt="logo">
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">Visualization Curriculum</h1>
+      <img src="_static/altair.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UC Irvine Math 10</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Introduction
+   Introduction to Altair
   </a>
  </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Curriculum
+  Contents
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="altair_introduction.html">
-   1. Introduction to Altair
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_marks_encoding.html">
-   2. Data Types, Graphical Marks, and Visual Encoding Channels
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_data_transformation.html">
-   3. Data Transformation
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_scales_axes_legends.html">
-   4. Scales, Axes, and Legends
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_view_composition.html">
-   5. Multi-View Composition
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_interaction.html">
-   6. Interaction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_cartographic.html">
-   7. Cartographic Visualization
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Support
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="altair_debugging.html">
-   Altair Debugging Guide
+  <a class="reference internal" href="First-two-examples.html">
+   1. First two examples of Altair Charts
   </a>
  </li>
 </ul>
@@ -198,11 +162,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/uwdata/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/uwdata/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -226,26 +190,22 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#getting-started">
-   Getting Started
+  <a class="reference internal nav-link" href="#original-source">
+   Original source
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#local-installation">
-     Local Installation
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#credits">
-   Credits
+  <a class="reference internal nav-link" href="#samples">
+   Samples
   </a>
-  <ul class="nav section-nav flex-column">
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#where-to-read-more">
+   Where to read more
+  </a>
  </li>
 </ul>
 
@@ -258,34 +218,46 @@
         
               <div>
                 
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>A data visualization curriculum of interactive notebooks, using <a class="reference external" href="https://vega.github.io/vega-lite/">Vega-Lite</a> and <a class="reference external" href="https://altair-viz.github.io/">Altair</a>. This book contains a series of Python-based Jupyter notebooks, a corresponding set of JavaScript notebooks are available online on <a class="reference external" href="https://observablehq.com/&#64;uwdata/data-visualization-curriculum">Observable</a>.</p>
-<div class="section" id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
-<p>The visualization curriculum can be used either online or on your local computer. You can view and interact with the plots directly in this Jupyter Book. If you want to modify the code, you have a few different options:</p>
+  <div class="section" id="introduction-to-altair">
+<h1>Introduction to Altair<a class="headerlink" href="#introduction-to-altair" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="original-source">
+<h2>Original source<a class="headerlink" href="#original-source" title="Permalink to this headline">¶</a></h2>
+<p>Original material: <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">University of Washington Visualization Curriculum</a>.
+I thank the authors for making this material available not just to use, but to edit via their <a class="reference external" href="https://github.com/uwdata/visualization-curriculum">GitHub source code</a>.</p>
+</div>
+<div class="section" id="samples">
+<h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
+<p>Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the <a class="reference internal" href="First-two-examples.html"><span class="doc std std-doc">First two examples notebook</span></a>.</p>
 <ul class="simple">
-<li><p>To read JavaScript notebooks online using <a class="reference external" href="https://observablehq.com/">Observable</a>, navigate to the “Observable” page above and click the corresponding notebook.</p></li>
-<li><p>To read Python notebooks online using <a class="reference external" href="https://colab.research.google.com/">Colab</a>, click the corresponding section in this book, hover over the little rocket ship at the top of the page, and select “Colab” from the menu.</p></li>
-<li><p>To read Python notebooks locally, follow the instructions below.</p></li>
+<li><p><a class="reference internal" href="First-two-examples.html#log-curve"><span class="std std-ref">(Source code)</span></a> Adding a tooltip, so that when the mouse is over a point, more information is displayed:
+<img alt="tooltip" src="_images/tooltip.png" /></p></li>
+<li><p><a class="reference internal" href="First-two-examples.html#spotify-bar"><span class="std std-ref">(Source code)</span></a> A bar chart, with artist names along the <span class="math notranslate nohighlight">\(x\)</span>-axis:
+<img alt="bars" src="_images/bars.png" /></p></li>
+<li><p><a class="reference internal" href="First-two-examples.html#spotify-interactive"><span class="std std-ref">(Source code)</span></a> An interactive chart, where only the points in the selected region have color:
+<img alt="interactive gif" src="_images/altair.gif" /></p></li>
 </ul>
-<div class="section" id="local-installation">
-<h3>Local Installation<a class="headerlink" href="#local-installation" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><a class="reference external" href="https://altair-viz.github.io/getting_started/installation.html">Install Altair and a notebook environment</a>. The most recent versions of these notebooks use <em>Altair version 4</em>.</p></li>
-<li><p>Download the notebooks from the <a class="reference external" href="https://github.com/uwdata/visualization-curriculum/releases">releases page</a>. Typically you will want to use the most recent release.  (If you wish to use notebooks for Altair version 3, download the <a class="reference external" href="https://github.com/uwdata/visualization-curriculum/releases/tag/altair-v3">Altair v3.2 release</a>.)</p></li>
-<li><p>Open the notebooks in your local notebook environment. For example, if you have JupyterLab installed (v1.0 or higher is required), run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code> within the directory containing the notebooks.</p></li>
-</ol>
-<p>Depending on your programming environment (and whether or not you have a live internet connection), you may want to specify a particular <a class="reference external" href="https://altair-viz.github.io/user_guide/display_frontends.html">renderer</a> for Altair.</p>
 </div>
+<div class="section" id="where-to-read-more">
+<h2>Where to read more<a class="headerlink" href="#where-to-read-more" title="Permalink to this headline">¶</a></h2>
+<p>The syntax for Altair can be intimidating the first time you see it (and the fifth time you see it).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">spotify_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Energy&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Loudness&quot;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Energy&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Scale</span><span class="p">(</span><span class="n">scheme</span><span class="o">=</span><span class="s1">&#39;turbo&#39;</span><span class="p">)),</span>
+    <span class="n">tooltip</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Song Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Artist&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="credits">
-<h2>Credits<a class="headerlink" href="#credits" title="Permalink to this headline">¶</a></h2>
-<p>Developed at the University of Washington by Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft. Thanks to the <a class="reference external" href="https://idl.cs.washington.edu/">UW Interactive Data Lab</a> and Arvind Satyanarayan for their valuable input and feedback! Thanks also to the students of <a class="reference external" href="https://courses.cs.washington.edu/courses/cse512/19sp/">UW CSE512 Spring 2019</a>, the first group to use these notebooks within an integrated course curriculum.</p>
+<p>There are endless possibilities for customization.  Here are some places to read about options, but we recommend that you instead begin going through the <a class="reference internal" href="First-two-examples.html"><span class="doc std std-doc">First two examples notebook</span></a>, and return to these links when there is something specific you want to customize.</p>
+<ul class="simple">
+<li><p>Options for what to draw: <a class="reference external" href="https://altair-viz.github.io/user_guide/marks.html">Marks</a></p></li>
+<li><p>Different “channels”, like <code class="docutils literal notranslate"><span class="pre">color</span></code>, <code class="docutils literal notranslate"><span class="pre">opacity</span></code>, and <code class="docutils literal notranslate"><span class="pre">size</span></code>.  You can see a list of channels here: <a class="reference external" href="https://altair-viz.github.io/user_guide/encoding.html#encoding-channels">Documentation</a>.</p></li>
+<li><p>Here is a list of color schemes: <a class="reference external" href="https://vega.github.io/vega/docs/schemes/">Vega color schemes</a> and an <a class="reference external" href="https://altair-viz.github.io/user_guide/customization.html#color-schemes">example</a> of how to use a color scheme in Altair.</p></li>
+<li><p>Sometimes it helps to explicitly tell Altair what type of data it is: <a class="reference external" href="https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types">encoding types</a></p></li>
+<li><p>I often find browsing examples easier than reading documentation.  If you’re the same way, check out the Altair <a class="reference external" href="https://altair-viz.github.io/gallery/index.html">example gallery</a>.</p></li>
+</ul>
+</div>
 <div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -312,21 +284,33 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='right-next' id="next-link" href="altair_introduction.html" title="next page"><span class="section-number">1. </span>Introduction to Altair</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+     <div id="next">
+        <a class="right-next" href="First-two-examples.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">1. </span>First two examples of Altair Charts</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
-          By Jeffrey Heer, Dominik Moritz, Jake VanderPlas, and Brock Craft<br/>
+          By Christopher Davis<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
