@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introduction &#8212; UC Irvine Math 10</title>
+    <title>Introduction to Altair &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -90,7 +90,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1 current">
   <a class="reference internal" href="#">
-   Introduction
+   Introduction to Altair
   </a>
  </li>
 </ul>
@@ -162,11 +162,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/uwdata/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/uwdata/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/ChristopherDavisUCI/visualization-curriculum/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -203,8 +203,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
+  <a class="reference internal nav-link" href="#where-to-read-more">
+   Where to read more
   </a>
  </li>
 </ul>
@@ -218,8 +218,8 @@
         
               <div>
                 
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="introduction-to-altair">
+<h1>Introduction to Altair<a class="headerlink" href="#introduction-to-altair" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="original-source">
 <h2>Original source<a class="headerlink" href="#original-source" title="Permalink to this headline">¶</a></h2>
 <p>Original material: <a class="reference external" href="https://uwdata.github.io/visualization-curriculum/intro.html">University of Washington Visualization Curriculum</a>.
@@ -227,18 +227,18 @@ I thank the authors for making this material available not just to use, but to e
 </div>
 <div class="section" id="samples">
 <h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
-<p>Here are some examples of the types of charts that can be produced using Altair:</p>
+<p>Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the <a class="reference internal" href="First-two-examples.html"><span class="doc std std-doc">First two examples notebook</span></a>.</p>
 <ul class="simple">
-<li><p>Adding a tooltip, so that when the mouse is over a point, more information is displayed:
+<li><p><a class="reference internal" href="First-two-examples.html#log-curve"><span class="std std-ref">(Source code)</span></a> Adding a tooltip, so that when the mouse is over a point, more information is displayed:
 <img alt="tooltip" src="_images/tooltip.png" /></p></li>
-<li><p>A bar chart, with artist names along the <span class="math notranslate nohighlight">\(x\)</span>-axis:
+<li><p><a class="reference internal" href="First-two-examples.html#spotify-bar"><span class="std std-ref">(Source code)</span></a> A bar chart, with artist names along the <span class="math notranslate nohighlight">\(x\)</span>-axis:
 <img alt="bars" src="_images/bars.png" /></p></li>
-<li><p>An interactive chart, where only the points in the selected region have color:
+<li><p><a class="reference internal" href="First-two-examples.html#spotify-interactive"><span class="std std-ref">(Source code)</span></a> An interactive chart, where only the points in the selected region have color:
 <img alt="interactive gif" src="_images/altair.gif" /></p></li>
 </ul>
 </div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="where-to-read-more">
+<h2>Where to read more<a class="headerlink" href="#where-to-read-more" title="Permalink to this headline">¶</a></h2>
 <p>The syntax for Altair can be intimidating the first time you see it (and the fifth time you see it).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">spotify_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
     <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Energy&quot;</span><span class="p">,</span>

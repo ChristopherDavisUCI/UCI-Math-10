@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Altair
 
 ## Original source
 
@@ -7,18 +7,18 @@ I thank the authors for making this material available not just to use, but to e
 
 ## Samples
 
-Here are some examples of the types of charts that can be produced using Altair:
+Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the [First two examples notebook](First-two-examples.ipynb).
 
-* Adding a tooltip, so that when the mouse is over a point, more information is displayed:
+* [(Source code)](log-curve) Adding a tooltip, so that when the mouse is over a point, more information is displayed:
 ![tooltip](images/tooltip.png)
 
-* A bar chart, with artist names along the $x$-axis:
+* [(Source code)](Spotify-bar) A bar chart, with artist names along the $x$-axis:
 ![bars](images/bars.png)
 
-* An interactive chart, where only the points in the selected region have color:
+* [(Source code)](Spotify-interactive) An interactive chart, where only the points in the selected region have color:
 ![interactive gif](images/altair.gif)
 
-## References
+## Where to read more
 
 The syntax for Altair can be intimidating the first time you see it (and the fifth time you see it).
 
