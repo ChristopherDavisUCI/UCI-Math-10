@@ -1,7 +1,12 @@
 format: jb-book
 root: intro
-parts:
-- caption: Contents
-  numbered: true
-  chapters:
-  - file: First-two-examples
+chapters:
+- file: intro-Python
+- file: intro-NumPy
+- file: intro-pandas
+- file: intro-Altair
+  sections:
+  - file: First-Altair-examples
+- file: intro-Streamlit
+  sections:
+  - file: using-Streamlit
