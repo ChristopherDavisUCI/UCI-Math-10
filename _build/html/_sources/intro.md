@@ -11,3 +11,7 @@ I thank the authors for making this material available not just to use, but to e
 * pandas
 * Altair
 * Streamlit
+
+## Current content
+
+As of October 14, 2021, most of the sections are just place-holders, but there is content in the Altair and Streamlit chapters.
