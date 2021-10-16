@@ -1,12 +1,27 @@
 format: jb-book
 root: intro
 chapters:
-- file: intro-Python
-- file: intro-NumPy
-- file: intro-pandas
-- file: intro-Altair
-  sections:
-  - file: First-Altair-examples
-- file: intro-Streamlit
-  sections:
-  - file: using-Streamlit
+  # - file: intro-Python
+  # - file: Week0-Intro
+  #   sections:
+  #     - file: Week0/Week0-Friday
+  #     - file: Week1/Week1-Monday
+  #     - file: Week1/Week1-Wednesday
+  #     - file: Week1/Week1-Friday
+  #     - file: intro-NumPy
+  # - file: Week2-Intro
+  #   sections:
+  #     - file: intro-pandas
+  #     - file: Week2/Week2-Wednesday
+  #     - file: Week2/Week2-Friday
+  - file: Week3-Intro
+    sections:
+      - file: intro-Altair
+      - file: First-Altair-examples
+      - file: Week3-Friday
+    
+  - file: Week4-Intro
+    sections:
+      - file: intro-Streamlit
+      - file: using-Streamlit
+      - file: Homework4

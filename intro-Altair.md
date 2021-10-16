@@ -1,8 +1,8 @@
-# Altair
+# Altair Preview
 
-**Samples**
+## Samples
 
-Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the [First two examples notebook](First-two-examples.ipynb).
+Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the [First two examples notebook](First-Altair-examples.ipynb).
 
 * [(Source code)](log-curve) Adding a tooltip, so that when the mouse is over a point, more information is displayed:
 ![tooltip](images/tooltip.png)
@@ -13,7 +13,7 @@ Here are some examples of the types of charts that can be produced using Altair.
 * [(Source code)](Spotify-interactive) An interactive chart, where only the points in the selected region have color:
 ![interactive gif](images/altair.gif)
 
-**Where to read more**
+## Where to read more
 
 The syntax for Altair can be intimidating the first time you see it (and the fifth time you see it).
 
@@ -26,7 +26,7 @@ alt.Chart(spotify_df).mark_circle().encode(
 )
 ```
 
-There are endless possibilities for customization.  Here are some places to read about options, but we recommend that you instead begin going through the [First two examples notebook](First-two-examples.ipynb), and return to these links when there is something specific you want to customize.
+There are endless possibilities for customization.  Here are some places to read about options, but we recommend that you instead begin going through the [First two examples notebook](First-Altair-examples.ipynb), and return to these links when there is something specific you want to customize.
 * Options for what to draw: [Marks](https://altair-viz.github.io/user_guide/marks.html)
 * Different "channels", like `color`, `opacity`, and `size`.  You can see a list of channels here: [Documentation](https://altair-viz.github.io/user_guide/encoding.html#encoding-channels).
 * Here is a list of color schemes: [Vega color schemes](https://vega.github.io/vega/docs/schemes/) and an [example](https://altair-viz.github.io/user_guide/customization.html#color-schemes) of how to use a color scheme in Altair.

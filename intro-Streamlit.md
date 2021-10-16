@@ -1,8 +1,10 @@
-# Streamlit
+# Introduction to Streamlit
 
 We will use Streamlit to create shareable apps.
 
-**Workflow for Streamlit**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0sxaG5xx3MU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Workflow for Streamlit
 
 Here is the basic process we will follow.
 
@@ -25,13 +27,13 @@ streamlit run myapp.py
 * To stop the server that makes the app visible in your browser, return to the terminal and hit Control+C.
 * When we're finished modifying the app, we can put the code onto GitHub and share the app via Streamlit Cloud.
 
-**Troubleshooting**
+## Troubleshooting
 
 If the above process (everything before the GitHub step) does not work, there are two most likely issues.
 * Do you have Streamlit installed?
 * Are you executing `streamlit run myapp.py` from the correct folder?  You could try using a more precise description of the file location: `streamlit run /Users/christopherdavis/Desktop/Sample\ Folder/myapp.py`
 
-**Where to edit `.py` files**
+## Where to edit `.py` files
 
 This is the first time we will work with `.py` files.  (In a more traditional Python course, you might spend 100% of your time working with these files, and never use Jupyter Notebook.)  These `.py` files should be edited in a text editor, rather than in Jupyter Notebook.
 
@@ -41,6 +43,8 @@ Another (also free) option is to use Visual Studio Code which is also available 
 
 If you have experience with any other text editor for coding, you are very welcome to use that.  Here are some other choices (Links to an external site.) listed by the website Real Python.  That is a very good site, although the article might be a little old (about 5 years).
 
-**Streamlit documentation**
+## Streamlit documentation
 
 You can read more about Streamlit in the [Streamlit documentation](https://docs.streamlit.io/).
+
+If you want details on a specific Streamlit function, try the [Streamlit API reference](https://docs.streamlit.io/library/api-reference).

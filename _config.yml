@@ -4,7 +4,7 @@
 
 title: UC Irvine Math 10
 author: Christopher Davis
-logo: images/digits.png
+logo: images/digitsyellow.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -28,5 +28,5 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button: true
   use_repository_button: true
+  favicon : "images/favicon.ico"
