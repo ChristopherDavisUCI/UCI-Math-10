@@ -1,6 +1,6 @@
 # The building blocks of a Streamlit app
 
-Within NumPy, pandas, and Altair, we usually work with a relatively small number of types of objects.
+With NumPy, pandas, and Altair, we usually work with a relatively small number of types of objects.
 * In NumPy, we usually work with an array, `np.array`.
 * In pandas, we usually work with a DataFrame, `pd.DataFrame`, or Series, `pd.Series`.
 * In Altair, we usually work with a Chart, `alt.Chart`.
