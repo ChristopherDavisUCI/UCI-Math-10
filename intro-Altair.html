@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Altair Preview &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,19 +34,19 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -147,6 +148,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="Homework4.html">
      Worksheet Week 4 &amp; Homework 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="session-state.html">
+     Remembering values in Streamlit
     </a>
    </li>
   </ul>
@@ -256,9 +262,9 @@
         
               <div>
                 
-  <div class="section" id="altair-preview">
+  <section id="altair-preview">
 <h1>Altair Preview<a class="headerlink" href="#altair-preview" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="samples">
+<section id="samples">
 <h2>Samples<a class="headerlink" href="#samples" title="Permalink to this headline">¶</a></h2>
 <p>Here are some examples of the types of charts that can be produced using Altair.  You can see the source code for these in the <a class="reference internal" href="First-Altair-examples.html"><span class="doc std std-doc">First two examples notebook</span></a>.</p>
 <ul class="simple">
@@ -269,8 +275,8 @@
 <li><p><a class="reference internal" href="First-Altair-examples.html#spotify-interactive"><span class="std std-ref">(Source code)</span></a> An interactive chart, where only the points in the selected region have color:
 <img alt="interactive gif" src="_images/altair.gif" /></p></li>
 </ul>
-</div>
-<div class="section" id="where-to-read-more">
+</section>
+<section id="where-to-read-more">
 <h2>Where to read more<a class="headerlink" href="#where-to-read-more" title="Permalink to this headline">¶</a></h2>
 <p>The syntax for Altair can be intimidating the first time you see it (and the fifth time you see it).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">spotify_df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
@@ -289,8 +295,8 @@
 <li><p>Sometimes it helps to explicitly tell Altair what type of data it is: <a class="reference external" href="https://altair-viz.github.io/user_guide/encoding.html#encoding-data-types">encoding types</a></p></li>
 <li><p>I often find browsing examples easier than reading documentation.  If you’re the same way, check out the Altair <a class="reference external" href="https://altair-viz.github.io/gallery/index.html">example gallery</a>.</p></li>
 </ul>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
