@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 5 &#8212; UC Irvine Math 10</title>
+    <title>Introduction to Machine Learning &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,8 +54,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Machine Learning" href="intro-ML.html" />
-    <link rel="prev" title="(Optional) Share a Streamlit App" href="deploy.html" />
+    <link rel="next" title="Introduction to Linear Regression" href="LinearRegression.html" />
+    <link rel="prev" title="Week 5" href="Week5-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -165,7 +167,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Week5-Intro.html">
    Week 5
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -173,9 +175,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="intro-ML.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Introduction to Machine Learning
     </a>
    </li>
@@ -245,7 +247,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Week5-Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/intro-ML.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -283,6 +285,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#supervised-vs-unsupervised-learning">
+   Supervised vs unsupervised learning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#regression-vs-classification">
+   Regression vs classification
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -291,10 +311,24 @@
         
               <div>
                 
-  <div class="section" id="week-5">
-<h1>Week 5<a class="headerlink" href="#week-5" title="Permalink to this headline">¶</a></h1>
-<p>Use the Navigation menu on the left to find the course content.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="introduction-to-machine-learning">
+<h1>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h1>
+<p>We give a brief introduction to machine learning, and to some of the most commonly used terms in the subject.  Much of the material on this page is vague and not precisely defined.  Things will become more precise when we discuss specific examples of machine learning algorithms, like linear regression.</p>
+<p>To define machine learning, we will use this quote from <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</em>, by Aurélien Géron:</p>
+<ul class="simple">
+<li><p><strong>Machine Learning</strong> is the science (and art) of programming computers so they can learn from data.</p></li>
+</ul>
+<p>The reason for the word <em>learning</em> is that, as more data is provided, the algorithm can update (and hopefully become more accurate).  This updating is what is meant by learning.</p>
+<div class="section" id="supervised-vs-unsupervised-learning">
+<h2>Supervised vs unsupervised learning<a class="headerlink" href="#supervised-vs-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>There are two basic categories of machine learning: supervised learning, and unsupervised learning.  In <strong>supervised learning</strong>, there is some specific quantity (or label) that is trying to be assigned, while in <strong>unsupervised learning</strong>, there isn’t.  The reason for the names is that, with supervised learning, the algorithm is trained using labeled data.  The algorithm receives <em>supervision</em> in the form of correct answers for some of the data.  An algorithm for unsupervised learning will also receive data, but it is unlabeled data.</p>
+<p>The most fundamental example of supervised learning is <strong>linear regression</strong>.  With regards to linear regression, we are provided with one or more input variables <span class="math notranslate nohighlight">\(X\)</span>, which are traditionally called <em>predictors</em>, and an output variable <span class="math notranslate nohighlight">\(y\)</span>, called the target, and we try to model the target as a linear (plus a constant) function of the input variables.</p>
+<p>The most famous example of unsupervised learning is <strong>clustering</strong>, where we feed in data and the algorithm is supposed to divide that data into different clusters.  We do not provide any initial labels (for example, we don’t say something like, “these points should be in cluster 1, while these others should be in cluster 2”).  That is the sense in which this would be an unsupervised learning algorithm.</p>
+</div>
+<div class="section" id="regression-vs-classification">
+<h2>Regression vs classification<a class="headerlink" href="#regression-vs-classification" title="Permalink to this headline">¶</a></h2>
+<p>Within the supervised learning category, there is a further important distinction between regression problems and classification problems.  In a <strong>regression</strong> problem, the target is assumed to be some continuous quantitative value.  (Even if the target is something like “number of deaths”, I would still count that as a regression problem.  It might not be continuous in the sense that there can never be a fractional death, but there is still a clear ordering and if our model outputs something like 100.4 deaths, that is natural enough to interpret.)</p>
+<p>In a <strong>classification</strong> problem, the target is assumed to take values in some discrete set of categories.  For example, if we are trying to predict the musical genre of a song, this would be thought of as a classification problem.</p>
 </div>
 </div>
 
@@ -328,19 +362,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="deploy.html" title="previous page">
+        <a class="left-prev" href="Week5-Intro.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">(Optional) Share a Streamlit App</p>
+                <p class="prevnext-title">Week 5</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="intro-ML.html" title="next page">
+        <a class="right-next" href="LinearRegression.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Introduction to Machine Learning</p>
+                <p class="prevnext-title">Introduction to Linear Regression</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 5 &#8212; UC Irvine Math 10</title>
+    <title>Introduction to Linear Regression &#8212; UC Irvine Math 10</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -52,8 +54,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introduction to Machine Learning" href="intro-ML.html" />
-    <link rel="prev" title="(Optional) Share a Streamlit App" href="deploy.html" />
+    <link rel="next" title="Reading for Week 5" href="Week5-reading.html" />
+    <link rel="prev" title="Introduction to Machine Learning" href="intro-ML.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -165,7 +167,7 @@
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="Week5-Intro.html">
    Week 5
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -173,14 +175,14 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="intro-ML.html">
      Introduction to Machine Learning
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="LinearRegression.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Introduction to Linear Regression
     </a>
    </li>
@@ -245,7 +247,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Week5-Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/LinearRegression.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -283,6 +285,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-variable-linear-regression">
+   Single variable linear regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-cost-function-for-single-variable-linear-regression">
+     A cost function for single variable linear regression
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-best-line">
+     The “best” line
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setup-for-multi-variable-linear-regression">
+   Setup for multi-variable linear regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -291,10 +323,56 @@
         
               <div>
                 
-  <div class="section" id="week-5">
-<h1>Week 5<a class="headerlink" href="#week-5" title="Permalink to this headline">¶</a></h1>
-<p>Use the Navigation menu on the left to find the course content.</p>
-<div class="toctree-wrapper compound">
+  <div class="section" id="introduction-to-linear-regression">
+<h1>Introduction to Linear Regression<a class="headerlink" href="#introduction-to-linear-regression" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="single-variable-linear-regression">
+<h2>Single variable linear regression<a class="headerlink" href="#single-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>Consider the following data from our usual Spotify dataset, which shows Acousticness vs Energy.</p>
+<p><img alt="Acousticness vs Energy" src="_images/SpotifyLR.png" /></p>
+<p>Certainly there is no line that perfectly models this data, but it can still be valuable to search for a line that approximates the relationship illustrated by this scatter-plot.  For example, if we can approximate this data using a <span class="math notranslate nohighlight">\(y = mx + b\)</span> line, then if <span class="math notranslate nohighlight">\(m\)</span> is negative, that tells us that in general, as acousticness increases, the energy tends to decrease.</p>
+<p>The question then becomes, how to find a line that does a good job of approximating the data.  Given two lines, how do we decide which of the lines better approximates the data?  We decide this by defining a <strong>cost function</strong> (or <strong>loss function</strong>).  The cost function provides a measure of how well a given line approximates the data.  The smaller the cost function, the better the approximation, with a cost function value of 0 typically representing a perfect fit.</p>
+<div class="section" id="a-cost-function-for-single-variable-linear-regression">
+<h3>A cost function for single variable linear regression<a class="headerlink" href="#a-cost-function-for-single-variable-linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> denote the number of data points, and let <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> denote the <span class="math notranslate nohighlight">\(i\)</span>-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let <span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 x\)</span> denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the <strong>residual sum of squares</strong> cost function by
+$<span class="math notranslate nohighlight">\(
+J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\bigg)^2
+\)</span>$
+This cost function represents the average value of the squares of the vertical distances between the data points and the line.</p>
+<p>If the cost function were to equal zero, that would mean that every data point lies on the line.</p>
+</div>
+<div class="section" id="the-best-line">
+<h3>The “best” line<a class="headerlink" href="#the-best-line" title="Permalink to this headline">¶</a></h3>
+<p>It turns out there is a “best” linear approximation to the data, in the sense that there is a line for which the above cost function is minimized.  (In rare cases there might be more than one best line, where the best lines all produce the same value of <span class="math notranslate nohighlight">\(J\)</span>.)</p>
+<p>We can find the minimum of <span class="math notranslate nohighlight">\(J\)</span> using calculus.  Probably the most important thing to realize is, what are the variables we are allowed to change?  The <span class="math notranslate nohighlight">\(m\)</span> the <span class="math notranslate nohighlight">\(y^{(i)}\)</span> and the <span class="math notranslate nohighlight">\(x^{(i)}\)</span> variables are all determined by the data, so we cannot change those.  It is the coefficients of the line, <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span>, that we have freedom to choose.</p>
+<p>Notice that there are two of these variables, so even though this is what I called single-variable linear regression, we cannot use single-variable calculus to solve it, we need multivariable calculus.</p>
+<p>Instead of giving the solution, we give the solution for the more general case of multi-variable linear regression.</p>
+</div>
+</div>
+<div class="section" id="setup-for-multi-variable-linear-regression">
+<h2>Setup for multi-variable linear regression<a class="headerlink" href="#setup-for-multi-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, m\)</span>, we have an input <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \in \mathbb{R}^{n}\)</span> and an output <span class="math notranslate nohighlight">\(y^{(i)} \in \mathbb{R}\)</span>.</p>
+<p>Given elements <span class="math notranslate nohighlight">\(\theta_0, \theta_1, \ldots, \theta_n \in \mathbb{R}\)</span>, we get a corresponding map <span class="math notranslate nohighlight">\(\mathbb{R}^n \rightarrow \mathbb{R}\)</span> given by</p>
+<div class="math notranslate nohighlight">
+\[
+(x_1, x_2, \ldots, x_n) \mapsto \theta_0 + \theta_1 x_1 + \cdots  + \theta_n x_n.
+\]</div>
+<p>We want to find the values of <span class="math notranslate nohighlight">\(\theta_i\)</span> which best model <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \leadsto y^{(i)}\)</span>.</p>
+<p>By “best”, we mean the residual sum of squares loss function is as small as possible, where the loss function is given by</p>
+<div class="math notranslate nohighlight">
+\[
+J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x_1^{(i)} + \cdots  + \theta_n x_n^{(i)})\bigg)^2.
+\]</div>
+<p>Define an <span class="math notranslate nohighlight">\(m \times (n+1)\)</span> matrix <span class="math notranslate nohighlight">\(X\)</span> whose <span class="math notranslate nohighlight">\(i\)</span>-th row is <span class="math notranslate nohighlight">\((1,  x_1^{(i)}, \ldots,  x_n^{(i)})\)</span>.  Let <span class="math notranslate nohighlight">\(\vec{y}\)</span> denote the <span class="math notranslate nohighlight">\(m \times 1\)</span> column vector <span class="math notranslate nohighlight">\((y^{(1)}, \ldots, y^{(m)})^T\)</span>, and let <span class="math notranslate nohighlight">\(\vec{\theta}\)</span> denote the <span class="math notranslate nohighlight">\((n+1) \times 1\)</span> column vector <span class="math notranslate nohighlight">\((\theta_0, \theta_1, \ldots, \theta_n)^T\)</span>.</p>
+<p>We saw on Friday that any critical point (i.e., point where the gradient is zero) would have to satisfy</p>
+<div class="math notranslate nohighlight">
+\[
+-2\vec{y}^{\,T} X  + 2 \vec{\theta}^{\,T}X^T X = (0,\ldots,0),
+\]</div>
+<p>which after taking transposes would imply</p>
+<div class="math notranslate nohighlight">
+\[
+X^T X \vec{\theta} = X^T \vec{y}.
+\]</div>
 </div>
 </div>
 
@@ -328,19 +406,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="deploy.html" title="previous page">
+        <a class="left-prev" href="intro-ML.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">(Optional) Share a Streamlit App</p>
+                <p class="prevnext-title">Introduction to Machine Learning</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="intro-ML.html" title="next page">
+        <a class="right-next" href="Week5-reading.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Introduction to Machine Learning</p>
+                <p class="prevnext-title">Reading for Week 5</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
