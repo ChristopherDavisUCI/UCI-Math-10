@@ -54,6 +54,8 @@
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Homework 5" href="Homework5.html" />
+    <link rel="prev" title="Reading for Week 5" href="Week5-reading.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +96,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Week3-Intro.html">
    Week 3
@@ -164,19 +166,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Week5-Intro.html">
    Week 5
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Week5-reading.html">
      Reading for Week 5
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Sample code from
+     <em>
+      Hands-On Machine Learning
+     </em>
     </a>
    </li>
    <li class="toctree-l2">
@@ -334,6 +344,7 @@
 <p>This code comes from the book <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</em> by Aurélien Géron.  From the UC Irvine campus (or using VPN), the book can be accessed through <a class="reference external" href="https://www.oreilly.com/library/view/temporary-access/">O’Reilly textbooks</a>.  The code was copied from the corresponding <a class="reference external" href="https://github.com/ageron/handson-ml2">GitHub page</a>.  Some small modifications have been made to incorporate additional Math 10 material.  (Here is the <a class="reference external" href="https://github.com/ageron/handson-ml2/blob/master/LICENSE">License</a>.)</p>
 <div class="section" id="worksheet-assignment">
 <h2>Worksheet assignment<a class="headerlink" href="#worksheet-assignment" title="Permalink to this headline">¶</a></h2>
+<p>You can download this notebook by clicking the link at the top right of the page, and then right-clicking on the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> option.  You need to download this notebook so you can evaluate this code yourself.</p>
 <p>Take notes on one of the notecards distributed in class.  The notes can be anything you think is useful from this code.  The notes could be things like: what are the different modules used for?  What is the syntax for plotting in Seaborn vs Matplotlib?</p>
 <p>The notes should include a description of how to perform linear regression using scikit-learn.</p>
 <p>Write the <strong>names</strong> of everyone in your group at the top of the notecard.</p>
@@ -377,11 +388,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/christopherdavis/Dropbox/Teaching/Textbooks/UCI-Math-10&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -401,23 +407,10 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading oecd_bli_2015.csv
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading gdp_per_capita.csv
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">datapath</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;oecd_bli_2015.csv&#39;, &#39;gdp_per_capita.csv&#39;]
 </pre></div>
 </div>
 </div>
@@ -485,11 +478,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[5.96242338]]
-</pre></div>
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="four-examples-of-plotting-the-data">
@@ -504,57 +492,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<div id="altair-viz-61615ec0b8774a909f8cb8789cb4e2ac"></div>
-<script type="text/javascript">
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-61615ec0b8774a909f8cb8789cb4e2ac") {
-      outputDiv = document.getElementById("altair-viz-61615ec0b8774a909f8cb8789cb4e2ac");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
-    };
-
-    function loadScript(lib) {
-      return new Promise(function(resolve, reject) {
-        var s = document.createElement('script');
-        s.src = paths[lib];
-        s.async = true;
-        s.onload = () => resolve(paths[lib]);
-        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-        document.getElementsByTagName("head")[0].appendChild(s);
-      });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else if (typeof vegaEmbed === "function") {
-      displayChart(vegaEmbed);
-    } else {
-      loadScript("vega")
-        .then(() => loadScript("vega-lite"))
-        .then(() => loadScript("vega-embed"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-b6b133ace65ab52ce7f49025b12940cf"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "GDP per capita"}, "y": {"type": "quantitative", "field": "Life satisfaction"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-b6b133ace65ab52ce7f49025b12940cf": [{"GDP per capita": 9054.914, "Life satisfaction": 6.0}, {"GDP per capita": 9437.372, "Life satisfaction": 5.6}, {"GDP per capita": 12239.894, "Life satisfaction": 4.9}, {"GDP per capita": 12495.334, "Life satisfaction": 5.8}, {"GDP per capita": 15991.736, "Life satisfaction": 6.1}, {"GDP per capita": 17288.083, "Life satisfaction": 5.6}, {"GDP per capita": 18064.288, "Life satisfaction": 4.8}, {"GDP per capita": 19121.592, "Life satisfaction": 5.1}, {"GDP per capita": 20732.482, "Life satisfaction": 5.7}, {"GDP per capita": 25864.721, "Life satisfaction": 6.5}, {"GDP per capita": 27195.197, "Life satisfaction": 5.8}, {"GDP per capita": 29866.581, "Life satisfaction": 6.0}, {"GDP per capita": 32485.545, "Life satisfaction": 5.9}, {"GDP per capita": 35343.336, "Life satisfaction": 7.4}, {"GDP per capita": 37044.891, "Life satisfaction": 7.3}, {"GDP per capita": 37675.006, "Life satisfaction": 6.5}, {"GDP per capita": 40106.632, "Life satisfaction": 6.9}, {"GDP per capita": 40996.511, "Life satisfaction": 7.0}, {"GDP per capita": 41973.988, "Life satisfaction": 7.4}, {"GDP per capita": 43331.961, "Life satisfaction": 7.3}, {"GDP per capita": 43603.115, "Life satisfaction": 7.3}, {"GDP per capita": 43724.031, "Life satisfaction": 6.9}, {"GDP per capita": 43770.688, "Life satisfaction": 6.8}, {"GDP per capita": 49866.266, "Life satisfaction": 7.2}, {"GDP per capita": 50854.583, "Life satisfaction": 7.5}, {"GDP per capita": 50961.865, "Life satisfaction": 7.3}, {"GDP per capita": 51350.744, "Life satisfaction": 7.0}, {"GDP per capita": 52114.165, "Life satisfaction": 7.5}, {"GDP per capita": 55805.204, "Life satisfaction": 7.2}]}}, {"mode": "vega-lite"});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -564,12 +501,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fa793f42880&gt;
-</pre></div>
-</div>
-<img alt="_images/Week5-Monday_20_1.png" src="_images/Week5-Monday_20_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,12 +509,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;GDP per capita&#39;, ylabel=&#39;Life satisfaction&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/Week5-Monday_21_1.png" src="_images/Week5-Monday_21_1.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -591,12 +516,6 @@
 <span class="n">country_stats</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;scatter&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;GDP per capita&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Life satisfaction&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;GDP per capita&#39;, ylabel=&#39;Life satisfaction&#39;&gt;
-</pre></div>
-</div>
-<img alt="_images/Week5-Monday_22_1.png" src="_images/Week5-Monday_22_1.png" />
 </div>
 </div>
 </div>
@@ -631,6 +550,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="Week5-reading.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Reading for Week 5</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Homework5.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Homework 5</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
