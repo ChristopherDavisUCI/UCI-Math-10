@@ -9,8 +9,11 @@ logo: images/digitsyellow.png
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  exclude_patterns:
+    - 'Week5-Monday.ipynb'
+  execute_notebooks: auto
   allow_errors: true
+  
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"

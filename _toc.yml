@@ -1,19 +1,6 @@
 format: jb-book
 root: intro
 chapters:
-  # - file: intro-Python
-  # - file: Week0-Intro
-  #   sections:
-  #     - file: Week0/Week0-Friday
-  #     - file: Week1/Week1-Monday
-  #     - file: Week1/Week1-Wednesday
-  #     - file: Week1/Week1-Friday
-  #     - file: intro-NumPy
-  # - file: Week2-Intro
-  #   sections:
-  #     - file: intro-pandas
-  #     - file: Week2/Week2-Wednesday
-  #     - file: Week2/Week2-Friday
   - file: Week3-Intro
     sections:
       - file: intro-Altair
@@ -25,3 +12,14 @@ chapters:
       - file: intro-Streamlit
       - file: using-Streamlit
       - file: Homework4
+      - file: reruns-Streamlit
+      - file: session-state
+      - file: deploy
+
+  - file: Week5-Intro
+    sections:
+      - file: intro-ML
+      - file: LinearRegression
+      - file: Week5-reading
+      - file: Week5-Monday
+      - file: Homework5
