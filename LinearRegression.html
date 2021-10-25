@@ -333,11 +333,12 @@
 <p>The question then becomes, how to find a line that does a good job of approximating the data.  Given two lines, how do we decide which of the lines better approximates the data?  We decide this by defining a <strong>cost function</strong> (or <strong>loss function</strong>).  The cost function provides a measure of how well a given line approximates the data.  The smaller the cost function, the better the approximation, with a cost function value of 0 typically representing a perfect fit.</p>
 <div class="section" id="a-cost-function-for-single-variable-linear-regression">
 <h3>A cost function for single variable linear regression<a class="headerlink" href="#a-cost-function-for-single-variable-linear-regression" title="Permalink to this headline">¶</a></h3>
-<p>Let <span class="math notranslate nohighlight">\(m\)</span> denote the number of data points, and let <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> denote the <span class="math notranslate nohighlight">\(i\)</span>-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let <span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 x\)</span> denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the <strong>residual sum of squares</strong> cost function by
-$<span class="math notranslate nohighlight">\(
+<p>Let <span class="math notranslate nohighlight">\(m\)</span> denote the number of data points, and let <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> denote the <span class="math notranslate nohighlight">\(i\)</span>-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let <span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 x\)</span> denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the <strong>residual sum of squares</strong> cost function by</p>
+<div class="math notranslate nohighlight">
+\[
 J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\bigg)^2
-\)</span>$
-This cost function represents the average value of the squares of the vertical distances between the data points and the line.</p>
+\]</div>
+<p>This cost function represents the average value of the squares of the vertical distances between the data points and the line.</p>
 <p>If the cost function were to equal zero, that would mean that every data point lies on the line.</p>
 </div>
 <div class="section" id="the-best-line">

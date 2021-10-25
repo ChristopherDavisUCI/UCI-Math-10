@@ -13,9 +13,11 @@ The question then becomes, how to find a line that does a good job of approximat
 ### A cost function for single variable linear regression
 
 Let $m$ denote the number of data points, and let $(x^{(i)}, y^{(i)})$ denote the $i$-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let $y = \theta_0 + \theta_1 x$ denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the **residual sum of squares** cost function by 
+
 $$
 J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\bigg)^2
 $$
+
 This cost function represents the average value of the squares of the vertical distances between the data points and the line.
 
 If the cost function were to equal zero, that would mean that every data point lies on the line.
