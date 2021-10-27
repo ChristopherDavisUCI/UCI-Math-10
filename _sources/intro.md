@@ -4,7 +4,7 @@
 
 Use the Navigation menu on the left to find the course content.  
 
-As of October 17th, 2021, there is only content related to Altair and Streamlit.
+As of October 27th, 2021, the content from Weeks 1 and 2 is disorganized (it's mostly just the notebooks from lecture), but the content from Week 3 and beyond is more readable.
 
 ## Original source
 
