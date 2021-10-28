@@ -329,11 +329,14 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Week6/matplotlib_intro.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+        <a class="dropdown-buttons"
+            href="../_sources/Week6/matplotlib_intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Week6/matplotlib_intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -369,18 +372,13 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10/master?urlpath=tree/Week6/matplotlib_intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/ChristopherDavisUCI/UCI-Math-10/master?urlpath=tree/Week6/matplotlib_intro.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/ChristopherDavisUCI/UCI-Math-10/blob/master/Week6/matplotlib_intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         
     </div>
@@ -444,7 +442,7 @@
 <p>I find matplotlib more confusing than most Python tools, but it is very important to learn, because:</p>
 <ul class="simple">
 <li><p>matplotlib is the most widely used visualization library in Python.  If you are reading someone else’s code, there is a good chance you will understand it better if you are comfortable with matplotlib.  For example, this cool clustering image from the scikit-learn documentation (<a class="reference external" href="https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html">source code</a>) is produced using matplotlib:<br>
-<img src="../images/sklearn_cluster.png" width = 400 /></p></li>
+<img alt="Clustering image" src="../_images/sklearn_cluster.png" /></p></li>
 <li><p>matplotlib is highly customizable.  If you want to have control over every last detail of your figure, matplotlib is a good choice.</p></li>
 <li><p>Some chart types, like pie charts or 3D scatterplots, might not be available in your favorite plotting library, but are available in matplotlib.</p></li>
 <li><p>Some tools which might seem easier than matplotlib, like Seaborn or the plot method of a pandas DataFrame, are using matplotlib in the background.  (Actually, I think pandas can be customized to use something else, but let’s ignore that.)</p></li>
@@ -493,7 +491,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffb838b75b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde135965b0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/matplotlib_intro_3_1.png" src="../_images/matplotlib_intro_3_1.png" />
@@ -681,7 +679,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffb70b64ee0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fde008671f0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/matplotlib_intro_27_1.png" src="../_images/matplotlib_intro_27_1.png" />
@@ -726,7 +724,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_11700</span><span class="o">/</span><span class="mf">3161645228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_14325</span><span class="o">/</span><span class="mf">3161645228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cosine wave&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
@@ -790,14 +788,14 @@
 </section>
 <section id="resources-a-name-resources-a">
 <h2>Resources <a name="resources"></a><a class="headerlink" href="#resources-a-name-resources-a" title="Permalink to this headline">¶</a></h2>
-<p>Here is an idea of some of the aspects of the figures that can be customized:<br>
-<img src="images/mpl-anatomy.webp" width = 500><br>
+<p>Here is an idea of some of the aspects of the figures that can be customized:
+<img alt="" src="../_images/mpl-anatomy.webp" />
 And here are some <a class="reference external" href="https://github.com/matplotlib/cheatsheets">“cheat sheets”</a>:<br>
-<img src="images/mpl-cheatsheets-1.png" width = 1000><br>
-<img src="images/mpl-cheatsheets-2.png" width = 1000><br>
-<img src="images/mpl-handout-beginner.png" width = 1000><br>
-<img src="images/mpl-handout-intermediate.png" width = 1000><br>
-<img src="images/mpl-handout-tips.png" width = 1000><br></p>
+<img alt="cheatsheet-1" src="../_images/mpl-cheatsheets-1.png" />
+<img alt="cheatsheet-2" src="../_images/mpl-cheatsheets-2.png" />
+<img alt="beginner-ref" src="../_images/mpl-handout-beginner.png" />
+<img alt="intermediate-ref" src="../_images/mpl-handout-intermediate.png" />
+<img alt="tips" src="../_images/mpl-handout-tips.png" /></p>
 </section>
 </section>
 

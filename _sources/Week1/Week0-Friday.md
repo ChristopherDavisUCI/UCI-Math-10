@@ -284,6 +284,8 @@ my_range = range(0,100,3)
 my_range
 ```
 
+This element `my_range` is yet another type in Python.
+
 ```{code-cell} ipython3
 type(my_range)
 ```
@@ -345,6 +347,9 @@ list(my_range[-4:])
 ```
 
 ## NumPy arrays
+All of the above data types are part of standard Python.  Often in Math 10 we will be working with types defined in separate Python libraries.  Probably the two most important libraries we will work with are *NumPy* and *pandas*.
+
+Here is the syntax for importing NumPy.  There is a standard abbreviation `np` which should always be used when referring to this library.
 
 ```{code-cell} ipython3
 import numpy as np
