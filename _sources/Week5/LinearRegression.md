@@ -62,3 +62,5 @@ which after taking transposes would imply
 $$
 X^T X \vec{\theta} = X^T \vec{y}.
 $$
+
+When trying to compute gradients of functions defined in terms of matrix multiplication, I found [these notes](https://atmos.washington.edu/~dennis/MatrixCalculus.pdf) titled *Matrix Differentiation* by Randal Barnes to be helpful.

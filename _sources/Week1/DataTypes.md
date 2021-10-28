@@ -347,7 +347,7 @@ list(my_range[-4:])
 ```
 
 ## NumPy arrays
-All of the above data types are part of standard Python.  Often in Math 10 we will be working with types defined in separate Python libraries.  Probably the two most important libraries we will work with are *NumPy* and *pandas*.
+All of the above data types are part of standard Python.  Often in Math 10, we will instead be working with data types defined in separate Python libraries.  *NumPy* is probably the library we will use second-most often (behind only *pandas*).
 
 Here is the syntax for importing NumPy.  There is a standard abbreviation `np` which should always be used when referring to this library.
 
@@ -355,34 +355,60 @@ Here is the syntax for importing NumPy.  There is a standard abbreviation `np` w
 import numpy as np
 ```
 
+We saw above that `range` cannot be used with non-integer values.  (These decimal numbers are called *floats* in Python.)
+
 ```{code-cell} ipython3
-np.arange(0,10,1)
+step = 0.5
+type(step)
 ```
 
 ```{code-cell} ipython3
-np.arange(0,10,0.5)
+range(0,10,step)
 ```
 
-```{code-cell} ipython3
-my_tuple
-```
+NumPy defines a similar function called `arange` which can work with floats.  The following though does not work.
 
 ```{code-cell} ipython3
-A = np.array(my_tuple)
+arange(0,10,step)
 ```
 
+The reason `arange(0,10,step)` does not work is that Python does not know that `arange` is defined by NumPy.  To tell Python where to look for the definition, we use the syntax `np.arange`.
+
 ```{code-cell} ipython3
+A = np.arange(0,10,step)
 A
 ```
 
 ```{code-cell} ipython3
+type(A)
+```
+
+NumPy arrays are the last data type we will consider in this notebook.  Recall the following syntax for turning `my_tuple` into a list:
+
+```{code-cell} ipython3
+list(my_tuple)
+```
+
+There is the same sort of syntax for turning `my_tuple` into a NumPy array:
+
+```{code-cell} ipython3
+A = np.array(my_tuple)
+A
+```
+
+```{code-cell} ipython3
+type(A)
+```
+
+Slicing works with NumPy arrays:
+```{code-cell} ipython3
 A[1:]
 ```
 
+There are many NumPy functions which can be applied very efficiently to every element in a NumPy array.  Here is an example of applying cosine to every entry in `A`:
 ```{code-cell} ipython3
 np.cos(A)
 ```
 
-```{code-cell} ipython3
+We will see later examples of how to time operations in Python, and then we will see concretely that many mathematical operations are much faster when performed on a NumPy array than when performed on something like a list or tuple.
 
-```
