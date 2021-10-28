@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Sample code from Hands-On Machine Learning &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,19 +34,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -109,7 +110,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week1/Week0-Friday.html">
-     Friday Week 0, Math 10, Fall 2021
+     Data types in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -258,6 +259,33 @@
      Homework 5
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week5-Wednesday.html">
+     Linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/video-quiz.html">
+     Video quiz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/matplotlib_intro.html">
+     Introduction to matplotlib
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -402,11 +430,11 @@
         
               <div>
                 
-  <div class="section" id="sample-code-from-hands-on-machine-learning">
+  <section id="sample-code-from-hands-on-machine-learning">
 <h1>Sample code from <em>Hands-On Machine Learning</em><a class="headerlink" href="#sample-code-from-hands-on-machine-learning" title="Permalink to this headline">¶</a></h1>
 <p>One of the best ways to learn to code is to read and understand code written by experienced programmers.</p>
 <p>This code comes from the book <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</em> by Aurélien Géron.  From the UC Irvine campus (or using VPN), the book can be accessed through <a class="reference external" href="https://www.oreilly.com/library/view/temporary-access/">O’Reilly textbooks</a>.  The code was copied from the corresponding <a class="reference external" href="https://github.com/ageron/handson-ml2">GitHub page</a>.  Some small modifications have been made to incorporate additional Math 10 material.  (Here is the <a class="reference external" href="https://github.com/ageron/handson-ml2/blob/master/LICENSE">License</a>.)</p>
-<div class="section" id="worksheet-assignment">
+<section id="worksheet-assignment">
 <h2>Worksheet assignment<a class="headerlink" href="#worksheet-assignment" title="Permalink to this headline">¶</a></h2>
 <p>You can download this notebook by clicking the link at the top right of the page, and then right-clicking on the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> option.  You need to download this notebook so you can evaluate this code yourself.</p>
 <p>Take notes on one of the notecards distributed in class.  The notes can be anything you think is useful from this code.  The notes could be things like: what are the different modules used for?  What is the syntax for plotting in Seaborn vs Matplotlib?</p>
@@ -414,12 +442,12 @@
 <p>Write the <strong>names</strong> of everyone in your group at the top of the notecard.</p>
 <p>Upload a picture of the notecard to Canvas.  (If you don’t receive a notecard, you can take notes on an ordinary sheet of paper.)</p>
 <p><strong>Remark</strong>: You are allowed to use a (different) notecard with notes during the midterm.  So while you are taking notes, be thinking about what sort of material would be useful for the midterm.</p>
-</div>
-<div class="section" id="advice">
+</section>
+<section id="advice">
 <h2>Advice<a class="headerlink" href="#advice" title="Permalink to this headline">¶</a></h2>
 <p>Don’t be intimidated if some of this material looks very unfamiliar.  Almost all code looks unfamiliar the first time you see it.  Even if you return to some of your earlier Math 10 assignments, the code <em>you</em> wrote might also look confusing.</p>
-</div>
-<div class="section" id="preparing-the-data">
+</section>
+<section id="preparing-the-data">
 <h2>Preparing the data<a class="headerlink" href="#preparing-the-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,8 +553,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="linear-regression-with-scikit-learn">
+</section>
+<section id="linear-regression-with-scikit-learn">
 <h2>Linear regression with scikit-learn<a class="headerlink" href="#linear-regression-with-scikit-learn" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,8 +571,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="four-examples-of-plotting-the-data">
+</section>
+<section id="four-examples-of-plotting-the-data">
 <h2>Four examples of plotting the data<a class="headerlink" href="#four-examples-of-plotting-the-data" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -582,8 +610,8 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

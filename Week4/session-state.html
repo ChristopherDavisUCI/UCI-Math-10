@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Remembering values in Streamlit &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -107,7 +108,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week1/Week0-Friday.html">
-     Friday Week 0, Math 10, Fall 2021
+     Data types in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -256,6 +257,33 @@
      Homework 5
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Wednesday.html">
+     Linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/video-quiz.html">
+     Video quiz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/matplotlib_intro.html">
+     Introduction to matplotlib
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -375,9 +403,9 @@
         
               <div>
                 
-  <div class="section" id="remembering-values-in-streamlit">
+  <section id="remembering-values-in-streamlit">
 <h1>Remembering values in Streamlit<a class="headerlink" href="#remembering-values-in-streamlit" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="using-session-state-to-access-the-value-of-a-widget">
+<section id="using-session-state-to-access-the-value-of-a-widget">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">session_state</span></code> to access the value of a widget<a class="headerlink" href="#using-session-state-to-access-the-value-of-a-widget" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following Streamlit code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -414,8 +442,8 @@
 </div>
 <p>By specifying the <code class="docutils literal notranslate"><span class="pre">key</span></code> for the text input widget, we can access the value of that widget using <code class="docutils literal notranslate"><span class="pre">st.session_state[&quot;my_title&quot;]</span></code>.</p>
 <p>Here is another way of doing the same thing, but where we replace the try-except block with an if statement.</p>
-</div>
-<div class="section" id="using-session-state-to-remember-a-value">
+</section>
+<section id="using-session-state-to-remember-a-value">
 <h2>Using <code class="docutils literal notranslate"><span class="pre">session_state</span></code> to remember a value<a class="headerlink" href="#using-session-state-to-remember-a-value" title="Permalink to this headline">¶</a></h2>
 <p>As another example of using <code class="docutils literal notranslate"><span class="pre">session_state</span></code>, we have the following.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -435,8 +463,8 @@
 </pre></div>
 </div>
 <p>Ordinarily, <span class="xref myst">Streamlit reruns</span> would cause the array <code class="docutils literal notranslate"><span class="pre">A</span></code> to change every time the slider is moved, but by using <code class="docutils literal notranslate"><span class="pre">st.session_state</span></code>, we are able to remember the value of <code class="docutils literal notranslate"><span class="pre">A</span></code> from one execution of the code to the next.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

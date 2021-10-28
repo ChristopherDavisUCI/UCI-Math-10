@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Homework 5 &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,19 +34,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -54,6 +55,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Linear regression" href="Week5-Wednesday.html" />
     <link rel="prev" title="Sample code from Hands-On Machine Learning" href="Week5-Monday.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -108,7 +110,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week1/Week0-Friday.html">
-     Friday Week 0, Math 10, Fall 2021
+     Data types in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -257,6 +259,33 @@
      Homework 5
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week5-Wednesday.html">
+     Linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/video-quiz.html">
+     Video quiz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/matplotlib_intro.html">
+     Introduction to matplotlib
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -386,13 +415,13 @@
         
               <div>
                 
-  <div class="section" id="homework-5">
+  <section id="homework-5">
 <h1>Homework 5<a class="headerlink" href="#homework-5" title="Permalink to this headline">¶</a></h1>
 <p>You may submit this homework in a group of 1-3 total students.</p>
 <p><strong>Due date</strong>.  Before lecture on Friday of Week 5, October 29th.</p>
 <p>Name(s):</p>
 <p>UCI ID(s):</p>
-<div class="section" id="setup-for-multi-variable-linear-regression">
+<section id="setup-for-multi-variable-linear-regression">
 <h2>Setup for multi-variable linear regression<a class="headerlink" href="#setup-for-multi-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, m\)</span>, we have an input <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \in \mathbb{R}^{n}\)</span> and an output <span class="math notranslate nohighlight">\(y^{(i)} \in \mathbb{R}\)</span>.</p>
 <p>Given elements <span class="math notranslate nohighlight">\(\theta_0, \theta_1, \ldots, \theta_n \in \mathbb{R}\)</span>, we get a corresponding map <span class="math notranslate nohighlight">\(\mathbb{R}^n \rightarrow \mathbb{R}\)</span> given by</p>
@@ -417,8 +446,8 @@ J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x_1^{(i)} + 
 \[
 X^T X \vec{\theta} = X^T \vec{y}.
 \]</div>
-</div>
-<div class="section" id="questions">
+</section>
+<section id="questions">
 <h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h2>
 <p style="font-size:20px; color:blue; font-weight:bold">Question 1:</p>
 <p>(a) Geometrically, what is the meaning of <span class="math notranslate nohighlight">\(y^{(i)} - (\theta_0 + \theta_1 x_1^{(i)} + \cdots  + \theta_n x_n^{(i)})\)</span>?  Use the word <em>vertical</em> in your answer.</p>
@@ -457,8 +486,8 @@ X^T X \vec{\theta} = X^T \vec{y}.
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -498,6 +527,15 @@ X^T X \vec{\theta} = X^T \vec{y}.
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="Week5-Wednesday.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Linear regression</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

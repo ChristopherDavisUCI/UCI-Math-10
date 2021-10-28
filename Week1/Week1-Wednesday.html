@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Week 1 Wednesday Lecture &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -107,7 +108,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Week0-Friday.html">
-     Friday Week 0, Math 10, Fall 2021
+     Data types in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -254,6 +255,33 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week5/Homework5.html">
      Homework 5
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week5/Week5-Wednesday.html">
+     Linear regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week6/Week6-Intro.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/video-quiz.html">
+     Video quiz
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/matplotlib_intro.html">
+     Introduction to matplotlib
     </a>
    </li>
   </ul>
@@ -406,9 +434,9 @@
         
               <div>
                 
-  <div class="section" id="week-1-wednesday-lecture">
+  <section id="week-1-wednesday-lecture">
 <h1>Week 1 Wednesday Lecture<a class="headerlink" href="#week-1-wednesday-lecture" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="reminders">
+<section id="reminders">
 <h2>Reminders.<a class="headerlink" href="#reminders" title="Permalink to this headline">¶</a></h2>
 <p>Quiz during discussion section Thursday.  Three questions, each pass/no pass (no partial credit).  Will be a chance to redo later.  Here are the learning objectives for this quiz:</p>
 <ul class="simple">
@@ -421,8 +449,8 @@
 <li><p>Determine the result of executing code by reading through the code step-by-step.</p></li>
 </ul>
 <p>Homework 1 due Friday at 11:30am as an online submission.  The instructions for the Streamlit question have changed slightly.  (See my Tuesday email or the assignment page or the Ed Discussion thread.)</p>
-</div>
-<div class="section" id="the-best-way-to-search-in-a-list-is-to-use-the-in-operator-how-could-we-instead-search-in-a-list-using-a-for-loop">
+</section>
+<section id="the-best-way-to-search-in-a-list-is-to-use-the-in-operator-how-could-we-instead-search-in-a-list-using-a-for-loop">
 <h2>The best way to search in a list is to use the <code class="docutils literal notranslate"><span class="pre">in</span></code> operator.  How could we instead search in a list using a for loop?<a class="headerlink" href="#the-best-way-to-search-in-a-list-is-to-use-the-in-operator-how-could-we-instead-search-in-a-list-using-a-for-loop" title="Permalink to this headline">¶</a></h2>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">search_list</span></code> which takes as input a list and an element, and as output returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the element is in the list, and returns <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.  You must use a for loop (do not use the <code class="docutils literal notranslate"><span class="pre">in</span></code> command).</p>
 <div class="cell docutils container">
@@ -509,7 +537,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.1 ns ± 0.313 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>30.8 ns ± 0.111 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -522,7 +550,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.82 ms ± 21.8 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.82 ms ± 30.9 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -536,14 +564,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.26 ms ± 41 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.47 ms ± 22.3 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Our “naively” written search algorithm is almost as good for this element 1 as the built in “in” function in Python.</p>
-</div>
-<div class="section" id="set-vs-list">
+</section>
+<section id="set-vs-list">
 <h2>set vs list<a class="headerlink" href="#set-vs-list" title="Permalink to this headline">¶</a></h2>
 <p>Name three advantages of a list over a set:</p>
 <ul class="simple">
@@ -573,7 +601,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_71467</span><span class="o">/</span><span class="mf">1870974526.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_11010</span><span class="o">/</span><span class="mf">1870974526.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">}}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;set&#39;
@@ -590,7 +618,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_71467</span><span class="o">/</span><span class="mf">3643581426.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_11010</span><span class="o">/</span><span class="mf">3643581426.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">]}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -598,8 +626,8 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="search-speed">
+</section>
+<section id="search-speed">
 <h2>Search speed<a class="headerlink" href="#search-speed" title="Permalink to this headline">¶</a></h2>
 <p>Convert the list to a set.  In a different cell (not the same one with the conversion), time how long it takes to check if 1 is in the set.  Do the same thing for a NumPy array.  Do the same thing for a tuple.  Do the same thing for a range.  (I don’t think you can convert from a list to a range, so you will need to make the correct range “by hand”.)</p>
 <div class="cell docutils container">
@@ -641,7 +669,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31 ns ± 0.2 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>32 ns ± 0.237 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre></div>
 </div>
 </div>
@@ -661,7 +689,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.59 ms ± 55.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.63 ms ± 3.71 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -688,7 +716,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.3 µs ± 537 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.8 µs ± 414 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 </pre></div>
 </div>
 </div>
@@ -708,13 +736,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80.1 ns ± 0.586 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>83.7 ns ± 0.307 ns per loop (mean ± std. dev. of 7 runs, 10000000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="efficiency-for-vectorized-operations-in-numpy">
+</section>
+<section id="efficiency-for-vectorized-operations-in-numpy">
 <h2>Efficiency for vectorized operations in NumPy<a class="headerlink" href="#efficiency-for-vectorized-operations-in-numpy" title="Permalink to this headline">¶</a></h2>
 <p>Make a list and a NumPy array corresponding to <code class="docutils literal notranslate"><span class="pre">range(10**7)</span></code>. Go through and replace all the odd-indexed entries by their reciprocals, so for example, the resulting list would be <code class="docutils literal notranslate"><span class="pre">[0,1/1,2,1/3,4,1/5,...]</span></code>, with the fractions displayed as decimal approximations.  How long does this process take in standard Python vs in NumPy?  Use the <code class="docutils literal notranslate"><span class="pre">%%time</span></code> command, rather than the <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code> command.  (I originally made a mistake and used the <code class="docutils literal notranslate"><span class="pre">%time</span></code> command, but that only times one single line, not the whole cell.)</p>
 <p>For the NumPy array, make the datatype a float.  (If NumPy thinks the entries are of data type int, and you take their reciprocal, you will get many 0s.)</p>
@@ -770,7 +798,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.2 s ± 4.3 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.19 s ± 7.56 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -784,7 +812,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_71467</span><span class="o">/</span><span class="mf">1752169815.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_11010</span><span class="o">/</span><span class="mf">1752169815.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">w</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 
 <span class="ne">NameError</span>: name &#39;w&#39; is not defined
@@ -812,7 +840,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.32 ms ± 63.7 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.3 ms ± 53.1 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -830,8 +858,8 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
