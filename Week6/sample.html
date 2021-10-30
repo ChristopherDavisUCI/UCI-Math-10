@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Week 6 &#8212; UC Irvine Math 10</title>
+    <title>&lt;no title&gt; &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,6 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Video quiz" href="video-quiz.html" />
-    <link rel="prev" title="Linear regression" href="../Week5/Week5-Wednesday.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +92,7 @@
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Week1/Week1-Intro.html">
    Week 1
@@ -159,11 +157,6 @@
    </i>
   </label>
   <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Week3/Week2-Friday.html">
-     Introduction to Altair
-    </a>
-   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week3/intro-Altair.html">
      Altair Preview
@@ -268,11 +261,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6-Intro.html">
    Week 6
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
@@ -286,11 +279,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="datetime-notebook.html">
      pd.datetime notebook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Week6-Monday.html">
-     Monday Worksheet
     </a>
    </li>
    <li class="toctree-l2">
@@ -341,7 +329,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Week6/Week6-Intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Week6/sample.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -379,6 +367,14 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -387,12 +383,49 @@
         
               <div>
                 
-  <div class="section" id="week-6">
-<h1>Week 6<a class="headerlink" href="#week-6" title="Permalink to this headline">¶</a></h1>
-<p>Use the Navigation menu on the left to find the course content.</p>
-<div class="toctree-wrapper compound">
-</div>
-</div>
+  <p>‘’’
+import streamlit as st
+import numpy as np
+import pandas as pd
+import altair as alt
+from sklearn.linear_model import LinearRegression</p>
+<p>rng = np.random.default_rng()</p>
+<p>st.title(“Over-fitting”)</p>
+<p>m = 50
+x = 10*rng.random(size=50) - 5
+c = [3.2,6.5,-1.4]</p>
+<p>y_true = c[0] + c[1]*x + c[2]*x**2</p>
+<p>y = y_true + rng.normal(loc = 0, scale = 30, size = m)</p>
+<p>df = pd.DataFrame({“x”:x,”y_true”:y_true, “y”: y})</p>
+<p>chart_data = alt.Chart(df).mark_circle(clip = True).encode(
+x = “x”,
+y = “y”
+)</p>
+<p>chart_true = alt.Chart(df).mark_line().encode(
+x = “x”,
+y = “y_true”,
+color = alt.value(“black”),
+)</p>
+<p>for i in range(1,21):
+df[“x”+str(i)] = df[“x”]**i</p>
+<p>def poly_reg(df, d):
+reg = LinearRegression()
+X = df[[f”x{i}” for i in range(1,d+1)]]
+reg.fit(X,df[“y”])
+return reg</p>
+<p>def make_chart(df,d):
+df2 = df.copy()
+reg = poly_reg(df,d)
+X = df[[f”x{i}” for i in range(1,d+1)]]
+df2[“y_pred”] = reg.predict(X)
+chart = alt.Chart(df2).mark_line(clip = True).encode(
+x = “x1”,
+y = alt.Y(“y_pred”, scale = alt.Scale(domain=(-100,100))),
+color = alt.value(“red”),
+)
+return chart</p>
+<p>st.altair_chart(make_chart(df,2)+chart_data+chart_true)
+‘’’</p>
 
     <script type="text/x-thebe-config">
     {
@@ -423,24 +456,6 @@
 
 <div class='prev-next-bottom'>
     
-    <div id="prev">
-        <a class="left-prev" href="../Week5/Week5-Wednesday.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Linear regression</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="video-quiz.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Video quiz</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
