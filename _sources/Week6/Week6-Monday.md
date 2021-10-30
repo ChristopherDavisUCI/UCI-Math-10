@@ -94,6 +94,7 @@ Upload the .py file to Canvas before 5pm on Tuesday.  As always with the workshe
 Here are a few more practice exercises for the midterm.  You do not need to submit anything from this portion of the worksheet.
 
 ```
+my_list = []
 for i in range(3,99,3):
     if i < 50:
         my_list.append(i)
