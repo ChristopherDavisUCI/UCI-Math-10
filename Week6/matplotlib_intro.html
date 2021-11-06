@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to matplotlib &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -52,7 +53,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Monday Worksheet" href="Week6-Monday.html" />
+    <link rel="next" title="Week 7" href="../Week7/Week7-Intro.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="Week6-Wednesday.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -288,6 +290,11 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
+    <a class="reference internal" href="Week5-Friday.html">
+     Over-fitting and polynomial regression
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="video-quiz.html">
      Video quiz
     </a>
@@ -305,6 +312,50 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Introduction to matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week6-Friday.html">
+     K-Means clustering using scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
     </a>
    </li>
   </ul>
@@ -456,7 +507,7 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-matplotlib">
+  <section id="introduction-to-matplotlib">
 <h1>Introduction to matplotlib<a class="headerlink" href="#introduction-to-matplotlib" title="Permalink to this headline">¶</a></h1>
 <p>I find matplotlib more confusing than most Python tools, but it is very important to learn, because:</p>
 <ul class="simple">
@@ -466,7 +517,7 @@
 <li><p>Some chart types, like pie charts or 3D scatterplots, might not be available in your favorite plotting library, but are available in matplotlib.</p></li>
 <li><p>Some tools which might seem easier than matplotlib, like Seaborn or the plot method of a pandas DataFrame, are using matplotlib in the background.  (Actually, I think pandas can be customized to use something else, but let’s ignore that.)</p></li>
 </ul>
-<div class="section" id="summary">
+<section id="summary">
 <h2>Summary:<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
 <p>There is a vast amount of options and commands when it comes to matplotlib, and often there can be many different commands for accomplishing the same task. That said, the only syntax I want you to memorize for Math 10 is the following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -478,13 +529,13 @@
 </pre></div>
 </div>
 <p>Aside from that syntax, it is important to recognize alternative conventions that you may see others use, and of course it is important to be able to look up customizations and other types of plots.  For some examples of the types of customizations that are possible, see the <a class="reference external" href="#resources">Resources</a> section below.</p>
-</div>
-<div class="section" id="references">
+</section>
+<section id="references">
 <h2>References:<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p>From the documentation: <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py">Usage Guide</a> and <a class="reference external" href="https://matplotlib.org/stable/tutorials/introductory/lifecycle.html">Lifecycle of a plot</a></p>
 <p>(Somewhat advanced.) From Real Python: <a class="reference external" href="https://realpython.com/python-matplotlib-guide/">Real Python Matplotlib guide</a></p>
-</div>
-<div class="section" id="the-object-oriented-approach-to-matplotlib">
+</section>
+<section id="the-object-oriented-approach-to-matplotlib">
 <h2>The object oriented approach to matplotlib<a class="headerlink" href="#the-object-oriented-approach-to-matplotlib" title="Permalink to this headline">¶</a></h2>
 <p>The approach you will be asked to follow in Math 10, and the approach recommended by the matplotlib documentation, is the object oriented approach.  We will introduce that first, and later in this notebook we will introduce the alternative.</p>
 <p>Relevant quote:</p>
@@ -510,7 +561,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff062e59cd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa7f003d5b0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/matplotlib_intro_3_1.png" src="../_images/matplotlib_intro_3_1.png" />
@@ -676,8 +727,8 @@
 </div>
 </div>
 <p>The reason what we’ve been doing above is called the “object oriented” approach, is because we are focusing on specific axes objects and calling methods on those, like our <code class="docutils literal notranslate"><span class="pre">ax[1,3].plot(x,y)</span></code> should be seen as taking the object <code class="docutils literal notranslate"><span class="pre">ax[1,3]</span></code> and then calling its plot method.  You should follow this object oriented approach in Math 10, but it is useful to be aware of the other method.  Because the other method often takes less writing, many people use it, but in Math 10, we are taking the mindset, that “explicit is better than implicit”.</p>
-</div>
-<div class="section" id="the-state-based-approach-to-matplotlib">
+</section>
+<section id="the-state-based-approach-to-matplotlib">
 <h2>The state-based approach to matplotlib<a class="headerlink" href="#the-state-based-approach-to-matplotlib" title="Permalink to this headline">¶</a></h2>
 <p>Our preferred method in Math 10 is to use code like <code class="docutils literal notranslate"><span class="pre">ax.plot(x,y)</span></code>.  An alternative is to use <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code>, and you will often see that sort of notation used, and it’s important to be aware of it.  Notice that plt is not an object; it is the name we gave to the PyPlot library when we imported it.</p>
 <div class="cell docutils container">
@@ -698,7 +749,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ff0637241c0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fa803a2ac40&gt;]
 </pre></div>
 </div>
 <img alt="../_images/matplotlib_intro_27_1.png" src="../_images/matplotlib_intro_27_1.png" />
@@ -743,7 +794,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41869</span><span class="o">/</span><span class="mf">3161645228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40249</span><span class="o">/</span><span class="mf">3161645228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cosine wave&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">9</span> 
 <span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]);</span>
@@ -774,8 +825,8 @@
 <img alt="../_images/matplotlib_intro_33_0.png" src="../_images/matplotlib_intro_33_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="other-common-notations-that-we-will-try-to-avoid-in-math-10">
+</section>
+<section id="other-common-notations-that-we-will-try-to-avoid-in-math-10">
 <h2>Other common notations (that we will try to avoid in Math 10)<a class="headerlink" href="#other-common-notations-that-we-will-try-to-avoid-in-math-10" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">plt.show()</span></code> is necessary in many contexts for displaying the figure, but for the way we have our Jupyter notebooks set up, using the “magic” command <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code> at the beginning, the explicit command to show the figure is not necessary, it shows automatically at the end of each cell.</p>
 <p>There are some alternatives to <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">inline</span></code>, including <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code>, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">widget</span></code>, <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">ipympl</span></code>.  (Some of these may only be part of Jupyter Lab, and not Jupyter Notebooks, and conversely, I believe <code class="docutils literal notranslate"><span class="pre">%matplotlib</span> <span class="pre">notebook</span></code> will not work with Jupyter Lab.)  With the set-up used above, when we evaluate a command in a new cell like <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code>, it creates a new figure automatically.  With some other set-ups, I believe it would instead update the most recent axes object instead.</p>
@@ -804,8 +855,8 @@
 <img alt="../_images/matplotlib_intro_35_0.png" src="../_images/matplotlib_intro_35_0.png" />
 </div>
 </div>
-</div>
-<div class="section" id="resources-a-name-resources-a">
+</section>
+<section id="resources-a-name-resources-a">
 <h2>Resources <a name="resources"></a><a class="headerlink" href="#resources-a-name-resources-a" title="Permalink to this headline">¶</a></h2>
 <p>Here is an idea of some of the aspects of the figures that can be customized:
 <img alt="" src="../_images/mpl-anatomy.webp" />
@@ -815,8 +866,8 @@ And here are some <a class="reference external" href="https://github.com/matplot
 <img alt="beginner-ref" src="../_images/mpl-handout-beginner.png" />
 <img alt="intermediate-ref" src="../_images/mpl-handout-intermediate.png" />
 <img alt="tips" src="../_images/mpl-handout-tips.png" /></p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -848,14 +899,23 @@ And here are some <a class="reference external" href="https://github.com/matplot
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Week6-Monday.html" title="previous page">
+        <a class="left-prev" href="Week6-Wednesday.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Monday Worksheet</p>
+                <p class="prevnext-title">&lt;no title&gt;</p>
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="../Week7/Week7-Intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Week 7</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

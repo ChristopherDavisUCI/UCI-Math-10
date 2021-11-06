@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Linear Regression &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,19 +34,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -291,6 +292,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week5-Friday.html">
+     Over-fitting and polynomial regression
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Week6/video-quiz.html">
      Video quiz
     </a>
@@ -308,6 +314,50 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week6/matplotlib_intro.html">
      Introduction to matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week6-Friday.html">
+     K-Means clustering using scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
     </a>
    </li>
   </ul>
@@ -429,15 +479,15 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-linear-regression">
+  <section id="introduction-to-linear-regression">
 <h1>Introduction to Linear Regression<a class="headerlink" href="#introduction-to-linear-regression" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="single-variable-linear-regression">
+<section id="single-variable-linear-regression">
 <h2>Single variable linear regression<a class="headerlink" href="#single-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>Consider the following data from our usual Spotify dataset, which shows Acousticness vs Energy.</p>
 <p><img alt="Acousticness vs Energy" src="../_images/SpotifyLR.png" /></p>
 <p>Certainly there is no line that perfectly models this data, but it can still be valuable to search for a line that approximates the relationship illustrated by this scatter-plot.  For example, if we can approximate this data using a <span class="math notranslate nohighlight">\(y = mx + b\)</span> line, then if <span class="math notranslate nohighlight">\(m\)</span> is negative, that tells us that in general, as acousticness increases, the energy tends to decrease.</p>
 <p>The question then becomes, how to find a line that does a good job of approximating the data.  Given two lines, how do we decide which of the lines better approximates the data?  We decide this by defining a <strong>cost function</strong> (or <strong>loss function</strong>).  The cost function provides a measure of how well a given line approximates the data.  The smaller the cost function, the better the approximation, with a cost function value of 0 typically representing a perfect fit.</p>
-<div class="section" id="a-cost-function-for-single-variable-linear-regression">
+<section id="a-cost-function-for-single-variable-linear-regression">
 <h3>A cost function for single variable linear regression<a class="headerlink" href="#a-cost-function-for-single-variable-linear-regression" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(m\)</span> denote the number of data points, and let <span class="math notranslate nohighlight">\((x^{(i)}, y^{(i)})\)</span> denote the <span class="math notranslate nohighlight">\(i\)</span>-th data point.  (We do not use subscripts here because they will serve a different purpose in multi-variable linear regression.)  Let <span class="math notranslate nohighlight">\(y = \theta_0 + \theta_1 x\)</span> denote a linear (degree one) equation, and we want to measure how well this line fits the data.  We define the <strong>residual sum of squares</strong> cost function by</p>
 <div class="math notranslate nohighlight">
@@ -446,16 +496,16 @@ J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x^{(i)})\big
 \]</div>
 <p>This cost function represents the average value of the squares of the vertical distances between the data points and the line.</p>
 <p>If the cost function were to equal zero, that would mean that every data point lies on the line.</p>
-</div>
-<div class="section" id="the-best-line">
+</section>
+<section id="the-best-line">
 <h3>The “best” line<a class="headerlink" href="#the-best-line" title="Permalink to this headline">¶</a></h3>
 <p>It turns out there is a “best” linear approximation to the data, in the sense that there is a line for which the above cost function is minimized.  (In rare cases there might be more than one best line, where the best lines all produce the same value of <span class="math notranslate nohighlight">\(J\)</span>.)</p>
 <p>We can find the minimum of <span class="math notranslate nohighlight">\(J\)</span> using calculus.  Probably the most important thing to realize is, what are the variables we are allowed to change?  The <span class="math notranslate nohighlight">\(m\)</span> the <span class="math notranslate nohighlight">\(y^{(i)}\)</span> and the <span class="math notranslate nohighlight">\(x^{(i)}\)</span> variables are all determined by the data, so we cannot change those.  It is the coefficients of the line, <span class="math notranslate nohighlight">\(\theta_0\)</span> and <span class="math notranslate nohighlight">\(\theta_1\)</span>, that we have freedom to choose.</p>
 <p>Notice that there are two of these variables, so even though this is what I called single-variable linear regression, we cannot use single-variable calculus to solve it, we need multivariable calculus.</p>
 <p>Instead of giving the solution, we give the solution for the more general case of multi-variable linear regression.</p>
-</div>
-</div>
-<div class="section" id="setup-for-multi-variable-linear-regression">
+</section>
+</section>
+<section id="setup-for-multi-variable-linear-regression">
 <h2>Setup for multi-variable linear regression<a class="headerlink" href="#setup-for-multi-variable-linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>For <span class="math notranslate nohighlight">\(i = 1, 2, \ldots, m\)</span>, we have an input <span class="math notranslate nohighlight">\(\vec{x}^{\,(i)} \in \mathbb{R}^{n}\)</span> and an output <span class="math notranslate nohighlight">\(y^{(i)} \in \mathbb{R}\)</span>.</p>
 <p>Given elements <span class="math notranslate nohighlight">\(\theta_0, \theta_1, \ldots, \theta_n \in \mathbb{R}\)</span>, we get a corresponding map <span class="math notranslate nohighlight">\(\mathbb{R}^n \rightarrow \mathbb{R}\)</span> given by</p>
@@ -481,8 +531,8 @@ J = \frac{1}{m} \sum_{i = 1}^m \bigg(y^{(i)} - (\theta_0 + \theta_1 x_1^{(i)} + 
 X^T X \vec{\theta} = X^T \vec{y}.
 \]</div>
 <p>When trying to compute gradients of functions defined in terms of matrix multiplication, I found <a class="reference external" href="https://atmos.washington.edu/~dennis/MatrixCalculus.pdf">these notes</a> titled <em>Matrix Differentiation</em> by Randal Barnes to be helpful.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

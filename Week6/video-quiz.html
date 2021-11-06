@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Video quiz &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -53,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="pd.datetime notebook" href="datetime-notebook.html" />
-    <link rel="prev" title="Week 6" href="Week6-Intro.html" />
+    <link rel="prev" title="Over-fitting and polynomial regression" href="Week5-Friday.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -288,6 +289,11 @@
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Week5-Friday.html">
+     Over-fitting and polynomial regression
+    </a>
+   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Video quiz
@@ -306,6 +312,50 @@
    <li class="toctree-l2">
     <a class="reference internal" href="matplotlib_intro.html">
      Introduction to matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week6-Friday.html">
+     K-Means clustering using scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
     </a>
    </li>
   </ul>
@@ -417,7 +467,7 @@
         
               <div>
                 
-  <div class="section" id="video-quiz">
+  <section id="video-quiz">
 <h1>Video quiz<a class="headerlink" href="#video-quiz" title="Permalink to this headline">¶</a></h1>
 <p>There is just one video quiz this week, but it is a little more difficult than usual; it is meant as practice for the midterm.</p>
 <p>Here is the documentation for the pandas method <code class="docutils literal notranslate"><span class="pre">pd.to_datetime</span></code>.  Notice that one of the allowable inputs is a pandas Series.</p>
@@ -493,7 +543,7 @@
 <p class="admonition-title">Practice Exercise</p>
 <ol class="simple">
 <li><p>Import our usual Spotify dataset using the option <code class="docutils literal notranslate"><span class="pre">na_values=&quot;</span> <span class="pre">&quot;</span></code> to tell <code class="docutils literal notranslate"><span class="pre">pd.read_csv</span></code> that the blank spaces represent NaN values.</p></li>
-<li><p>Convert the “Release Date” column to a datetime values.</p></li>
+<li><p>Convert the “Release Date” column so that it has datetime as its data type.</p></li>
 <li><p>How many songs in our dataset were released on a Tuesday?</p></li>
 </ol>
 </div>
@@ -506,7 +556,7 @@
 <p class="admonition-title">Canvas video quiz</p>
 <p><a class="reference external" href="https://canvas.eee.uci.edu/courses/39211/quizzes/194805">Link to the Canvas quiz</a><br><br>Due Monday before lecture.</p>
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -538,11 +588,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Week6-Intro.html" title="previous page">
+        <a class="left-prev" href="Week5-Friday.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Week 6</p>
+                <p class="prevnext-title">Over-fitting and polynomial regression</p>
             </div>
         </a>
     </div>

@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to pandas &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,17 +34,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -289,6 +290,11 @@
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week5-Friday.html">
+     Over-fitting and polynomial regression
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Week6/video-quiz.html">
      Video quiz
     </a>
@@ -306,6 +312,50 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week6/matplotlib_intro.html">
      Introduction to matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week6-Friday.html">
+     K-Means clustering using scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
     </a>
    </li>
   </ul>
@@ -437,7 +487,7 @@
         
               <div>
                 
-  <div class="section" id="introduction-to-pandas">
+  <section id="introduction-to-pandas">
 <h1>Introduction to pandas<a class="headerlink" href="#introduction-to-pandas" title="Permalink to this headline">¶</a></h1>
 <p>Download the csv file “indexData.csv” from Files-&gt;Datasets on Canvas.  Save the file somewhere you can access on the computer.
 This “indexData.csv” comes from <a class="reference external" href="https://www.kaggle.com/mattiuzc/stock-exchange-data">here</a>, but I changed the name of the first column so you should use the version on Canvas, not the version on Kaggle.</p>
@@ -447,7 +497,7 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <li><p>Introduce the library pandas (for working with spreadsheet-like data)</p></li>
 <li><p>Similarity: both of these involve “named” data entries.</p></li>
 </ul>
-<div class="section" id="dictionaries">
+<section id="dictionaries">
 <h2>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>The main goal of this notebook is to introduce the library <em>pandas</em>, which is arguably the most important library we will work with in Math 10.  There are two fundamental data types defined by pandas, <code class="docutils literal notranslate"><span class="pre">Series</span></code> and <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code>.  The <code class="docutils literal notranslate"><span class="pre">Series</span></code> data type in particular has many similarities to <code class="docutils literal notranslate"><span class="pre">dict</span></code>, for dictionary, which is an important and standard data type in Python.  So before talking about pandas, we introduce this dictionary data type.</p>
 <div class="cell docutils container">
@@ -491,7 +541,7 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41694</span><span class="o">/</span><span class="mf">3930756786.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40169</span><span class="o">/</span><span class="mf">3930756786.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">roles</span><span class="p">[</span><span class="n">xingshuo</span><span class="p">]</span>
 
 <span class="ne">NameError</span>: name &#39;xingshuo&#39; is not defined
@@ -534,7 +584,7 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41694</span><span class="o">/</span><span class="mf">2435546372.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40169</span><span class="o">/</span><span class="mf">2435546372.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">roles</span><span class="p">[[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -617,7 +667,7 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41694</span><span class="o">/</span><span class="mf">46238093.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40169</span><span class="o">/</span><span class="mf">46238093.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_list</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="ne">IndexError</span>: list assignment index out of range
@@ -625,8 +675,8 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="pandas">
+</section>
+<section id="pandas">
 <h2>pandas<a class="headerlink" href="#pandas" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -698,7 +748,7 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41694</span><span class="o">/</span><span class="mf">4274071939.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40169</span><span class="o">/</span><span class="mf">4274071939.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">40</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: cannot reshape array of size 40 into shape (3)
@@ -1015,25 +1065,25 @@ This “indexData.csv” comes from <a class="reference external" href="https://
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_41694</span><span class="o">/</span><span class="mf">3021520278.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40169</span><span class="o">/</span><span class="mf">3021520278.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;hi there chris davis&quot;</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span>
 
-<span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
 <span class="g g-Whitespace">    </span><span class="mi">670</span>                 <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">671</span>             <span class="k">else</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">672</span>                 <span class="n">mgr</span> <span class="o">=</span> <span class="n">ndarray_to_mgr</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">673</span>                     <span class="n">data</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">674</span>                     <span class="n">index</span><span class="p">,</span>
 
-<span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/internals/construction.py</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/internals/construction.py</span> in <span class="ni">ndarray_to_mgr</span><span class="nt">(values, index, columns, dtype, copy, typ)</span>
 <span class="g g-Whitespace">    </span><span class="mi">322</span>     <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">323</span> 
 <span class="ne">--&gt; </span><span class="mi">324</span>     <span class="n">_check_values_indices_shape_match</span><span class="p">(</span><span class="n">values</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">325</span> 
 <span class="g g-Whitespace">    </span><span class="mi">326</span>     <span class="k">if</span> <span class="n">typ</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span><span class="p">:</span>
 
-<span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/internals/construction.py</span> in <span class="ni">_check_values_indices_shape_match</span><span class="nt">(values, index, columns)</span>
+<span class="nn">~/opt/anaconda3/lib/python3.8/site-packages/pandas/core/internals/construction.py</span> in <span class="ni">_check_values_indices_shape_match</span><span class="nt">(values, index, columns)</span>
 <span class="g g-Whitespace">    </span><span class="mi">391</span>         <span class="n">passed</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">shape</span>
 <span class="g g-Whitespace">    </span><span class="mi">392</span>         <span class="n">implied</span> <span class="o">=</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">index</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">columns</span><span class="p">))</span>
 <span class="ne">--&gt; </span><span class="mi">393</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape of passed values is </span><span class="si">{</span><span class="n">passed</span><span class="si">}</span><span class="s2">, indices imply </span><span class="si">{</span><span class="n">implied</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -1777,7 +1827,7 @@ Name: High, Length: 13948, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_41694/3122134759.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_40169/3122134759.py&quot;</span><span class="gt">, line </span><span class="mi">1</span>
     <span class="n">df_nya</span><span class="o">.</span><span class="n">Adj</span> <span class="n">Close</span>
                <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -2040,8 +2090,8 @@ Length: 13948, dtype: bool
 <p>66 rows × 8 columns</p>
 </div></div></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

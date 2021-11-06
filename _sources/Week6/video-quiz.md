@@ -50,7 +50,7 @@ x[1].month_name()
 :class: hint
 
 1. Import our usual Spotify dataset using the option `na_values=" "` to tell `pd.read_csv` that the blank spaces represent NaN values.
-1. Convert the "Release Date" column to a datetime values.
+1. Convert the "Release Date" column so that it has datetime as its data type.
 1. How many songs in our dataset were released on a Tuesday?
  ```
 

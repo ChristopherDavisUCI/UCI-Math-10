@@ -4,7 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Over-fitting and polynomial regression &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -22,8 +23,8 @@
       
 
     
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -33,19 +34,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -54,6 +55,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Video quiz" href="video-quiz.html" />
+    <link rel="prev" title="Week 6" href="Week6-Intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +97,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Week1/Week1-Intro.html">
    Week 1
@@ -278,16 +281,21 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Week6-Intro.html">
    Week 6
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Over-fitting and polynomial regression
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="video-quiz.html">
      Video quiz
@@ -306,6 +314,50 @@
    <li class="toctree-l2">
     <a class="reference internal" href="matplotlib_intro.html">
      Introduction to matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Week7/Week7-Intro.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week6-Friday.html">
+     K-Means clustering using scikit-learn
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Monday.html">
+     Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week7/Week7-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Proj/CourseProject.html">
+     Course Project
     </a>
    </li>
   </ul>
@@ -457,7 +509,7 @@
         
               <div>
                 
-  <h2 style="color:red">Remember to start recording</h2><div class="section" id="over-fitting-and-polynomial-regression">
+  <h2 style="color:red">Remember to start recording</h2><section id="over-fitting-and-polynomial-regression">
 <h1>Over-fitting and polynomial regression<a class="headerlink" href="#over-fitting-and-polynomial-regression" title="Permalink to this headline">¶</a></h1>
 <p>We will use the following constants.</p>
 <ul class="simple">
@@ -480,28 +532,28 @@
 </div>
 </div>
 </div>
-<div class="section" id="define-and-plot-the-initial-data">
+<section id="define-and-plot-the-initial-data">
 <h2>Define and plot the initial data<a class="headerlink" href="#define-and-plot-the-initial-data" title="Permalink to this headline">¶</a></h2>
 <p>Define <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.  Make a pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> with columns for <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
 <p>Plot <code class="docutils literal notranslate"><span class="pre">x</span></code> vs <code class="docutils literal notranslate"><span class="pre">y_true</span></code> in one Altair chart, and <code class="docutils literal notranslate"><span class="pre">x</span></code> vs <code class="docutils literal notranslate"><span class="pre">y</span></code> in another chart.  Save these charts using the names <code class="docutils literal notranslate"><span class="pre">chart_true</span></code> and <code class="docutils literal notranslate"><span class="pre">chart_data</span></code>, respectively.  For <code class="docutils literal notranslate"><span class="pre">chart_true</span></code>, use <code class="docutils literal notranslate"><span class="pre">alt.value('black')</span></code> and plot the data using a black line.  For <code class="docutils literal notranslate"><span class="pre">chart_data</span></code>, plot the data using disks (in the default blue color).</p>
-</div>
-<div class="section" id="include-powers-of-x-in-df">
+</section>
+<section id="include-powers-of-x-in-df">
 <h2>Include powers of x in <code class="docutils literal notranslate"><span class="pre">df</span></code><a class="headerlink" href="#include-powers-of-x-in-df" title="Permalink to this headline">¶</a></h2>
 <p>Put more columns in df, corresponding to the powers of the <code class="docutils literal notranslate"><span class="pre">x</span></code>-column, up to and including degree 20.</p>
-</div>
-<div class="section" id="define-a-function-performing-the-polynomial-regression">
+</section>
+<section id="define-a-function-performing-the-polynomial-regression">
 <h2>Define a function performing the polynomial regression<a class="headerlink" href="#define-a-function-performing-the-polynomial-regression" title="Permalink to this headline">¶</a></h2>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">poly_reg</span></code> which takes as input <code class="docutils literal notranslate"><span class="pre">df</span></code> and a degree <code class="docutils literal notranslate"><span class="pre">d</span></code>, then performs polynomial regression using that degree, and as output returns the fit LinearRegression object.</p>
-</div>
-<div class="section" id="define-a-function-plotting-the-fit-polynomial">
+</section>
+<section id="define-a-function-plotting-the-fit-polynomial">
 <h2>Define a function plotting the fit polynomial<a class="headerlink" href="#define-a-function-plotting-the-fit-polynomial" title="Permalink to this headline">¶</a></h2>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> which takes as input <code class="docutils literal notranslate"><span class="pre">df</span></code> and a degree <code class="docutils literal notranslate"><span class="pre">d</span></code>, and as output returns an Altair chart showing the fit polynomial.  Use a red line for the polynomial.  Use <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> at the beginning of the function so you are not changing the original DataFrame.  Give the chart a title using <code class="docutils literal notranslate"><span class="pre">.properties(title</span> <span class="pre">=</span> <span class="pre">...)</span></code>.</p>
-</div>
-<div class="section" id="put-the-charts-together">
+</section>
+<section id="put-the-charts-together">
 <h2>Put the charts together<a class="headerlink" href="#put-the-charts-together" title="Permalink to this headline">¶</a></h2>
 <p>Make a length 20 list <code class="docutils literal notranslate"><span class="pre">chart_list</span> <span class="pre">=</span> <span class="pre">[make_chart(df,1)</span> <span class="pre">+</span> <span class="pre">chart_true</span> <span class="pre">+</span> <span class="pre">chart_data,</span> <span class="pre">make_chart(df,2)</span> <span class="pre">+</span> <span class="pre">chart_true</span> <span class="pre">+</span> <span class="pre">chart_data,</span> <span class="pre">...,</span> <span class="pre">make_chart(df,20)</span> <span class="pre">+</span> <span class="pre">chart_true</span> <span class="pre">+</span> <span class="pre">chart_data]</span></code>.  Use <code class="docutils literal notranslate"><span class="pre">alt.vconcat</span></code> to display all of these charts.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -532,6 +584,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="Week6-Intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Week 6</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="video-quiz.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Video quiz</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         
