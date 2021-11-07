@@ -36,4 +36,4 @@ The above code is an example of this.  As the user interacts with the slider wid
 
 Here are two possible solutions.
 * Use `rng = np.random.default_rng(seed = 20)` so that consistent numbers are produced during every rerun.  (Of course there is nothing special about the particular number 20.)
-* Use `st.session_state` as described [here](Week4/session-state.md).
+* Use `st.session_state` as described [here](session-state.md).

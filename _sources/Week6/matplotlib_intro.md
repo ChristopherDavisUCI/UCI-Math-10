@@ -19,7 +19,7 @@ I find matplotlib more confusing than most Python tools, but it is very importan
 * Some chart types, like pie charts or 3D scatterplots, might not be available in your favorite plotting library, but are available in matplotlib.
 * Some tools which might seem easier than matplotlib, like Seaborn or the plot method of a pandas DataFrame, are using matplotlib in the background.  (Actually, I think pandas can be customized to use something else, but let's ignore that.)
 
-### Summary:
+## Summary:
 There is a vast amount of options and commands when it comes to matplotlib, and often there can be many different commands for accomplishing the same task. That said, the only syntax I want you to memorize for Math 10 is the following:
 ```
 %matplotlib inline
@@ -31,11 +31,11 @@ ax.plot(x,y)
 ```
 Aside from that syntax, it is important to recognize alternative conventions that you may see others use, and of course it is important to be able to look up customizations and other types of plots.  For some examples of the types of customizations that are possible, see the [Resources](#resources) section below.
 
-### References:
+## References:
 
 From the documentation: [Usage Guide](https://matplotlib.org/stable/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py) and [Lifecycle of a plot](https://matplotlib.org/stable/tutorials/introductory/lifecycle.html)
 
-(Somewhat advanced.) From Real Python: [Real Python Matplotlib guide](https://realpython.com/python-matplotlib-guide/) 
+(Somewhat advanced.) From Real Python: [Real Python Matplotlib guide](https://realpython.com/python-matplotlib-guide/)
 
 +++
 
@@ -239,4 +239,3 @@ And here are some ["cheat sheets"](https://github.com/matplotlib/cheatsheets):<b
 ![beginner-ref](../images/mpl-handout-beginner.png)
 ![intermediate-ref](../images/mpl-handout-intermediate.png)
 ![tips](../images/mpl-handout-tips.png)
-

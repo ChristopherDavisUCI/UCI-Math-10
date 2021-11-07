@@ -113,7 +113,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week1/Week1-Monday.html">
-     UCI Math 10, Fall 2021
+     Worksheet
     </a>
    </li>
    <li class="toctree-l2">
@@ -140,7 +140,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week2/Week2-Monday.html">
-     UCI Math 10, Fall 2021
+     Worksheet
     </a>
    </li>
    <li class="toctree-l2">
@@ -150,7 +150,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week2/Homework2.html">
-     UCI Math 10, Fall 2021
+     Homework 2: Prime numbers, Random numbers, and Intro to pandas
     </a>
    </li>
   </ul>
@@ -307,6 +307,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week6/Week6-Monday.html">
      Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Midterm Review
     </a>
    </li>
    <li class="toctree-l2">
@@ -496,7 +501,7 @@
 <p>On Friday, we ran K-Means clustering on the numeric columns from the Spotify dataset.  We should add an additional step, because it turns out that in the version from Friday, one of the dimensions (“input variables”/”features”/predictors”) was dominating all the others.</p>
 <section id="warm-up-with-any-and-all">
 <h2>Warm-up with <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code><a class="headerlink" href="#warm-up-with-any-and-all" title="Permalink to this headline">¶</a></h2>
-<p>On Friday, we removed the rows which were bad in the Energy column, and were lucky that was good enough.  We really should have removed the rows that bad in any column.  We can do that using either <code class="docutils literal notranslate"><span class="pre">any</span></code> or <code class="docutils literal notranslate"><span class="pre">all</span></code>.</p>
+<p>On Friday, we removed the rows which were bad in the Energy column, and were lucky that was good enough.  We really should have removed the rows that were bad in any column.  We can do that using either <code class="docutils literal notranslate"><span class="pre">any</span></code> or <code class="docutils literal notranslate"><span class="pre">all</span></code>.</p>
 <ul class="simple">
 <li><p>Using <code class="docutils literal notranslate"><span class="pre">rng.choice</span></code> and <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, make a 15x3 pandas DataFrame consisting of randomly chosen values of True and False.  Call it <code class="docutils literal notranslate"><span class="pre">df_bool</span></code>.</p></li>
 <li><p>Try evaluating <code class="docutils literal notranslate"><span class="pre">df_bool.any(axis</span> <span class="pre">=</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.all(axis</span> <span class="pre">=</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.any(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.all(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code> to learn about these <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code> methods.</p></li>
@@ -552,7 +557,7 @@
 <p>You should think of <code class="docutils literal notranslate"><span class="pre">df4</span></code> and <code class="docutils literal notranslate"><span class="pre">df3</span></code> as containing the same data, with the only difference being that the data in <code class="docutils literal notranslate"><span class="pre">df4</span></code> has been normalized.</p>
 <ul class="simple">
 <li><p>Evaluate the mean and standard deviation of the columns of <code class="docutils literal notranslate"><span class="pre">df4</span></code>.</p></li>
-<li><p>Instantiate a new <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> object with however many clusters you want.  <code class="docutils literal notranslate"><span class="pre">fit</span></code> the new object using <code class="docutils literal notranslate"><span class="pre">df4</span></code>, and then <code class="docutils literal notranslate"><span class="pre">predict</span></code> also using <code class="docutils literal notranslate"><span class="pre">df4</span></code>.  (It would be a little more robust to instead predict using <code class="docutils literal notranslate"><span class="pre">df2</span></code>, but then we would need another round of scaling and putting in column names.)  Put the resulting cluster numbers into the “cluster” column of df2 (so overwrite the old “cluster” column.)</p></li>
+<li><p>Instantiate a new <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> object with however many clusters you want.  <code class="docutils literal notranslate"><span class="pre">fit</span></code> the new object using <code class="docutils literal notranslate"><span class="pre">df4</span></code>, and then <code class="docutils literal notranslate"><span class="pre">predict</span></code> also using <code class="docutils literal notranslate"><span class="pre">df4</span></code>.  (It would be a little more robust to instead predict using <code class="docutils literal notranslate"><span class="pre">df2</span></code>, but then we would need another round of scaling and putting in column names.)  Put the resulting cluster numbers into the “cluster” column of <code class="docutils literal notranslate"><span class="pre">df2</span></code> (so overwrite the old “cluster” column.)</p></li>
 <li><p>Redo the Altair plot from above.  Add in a tooltip specifying the song name and artist name.  If everything went correctly, the colors should look less strictly ordered than before the scaling was done.</p></li>
 </ul>
 </section>

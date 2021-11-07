@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>UCI Math 10, Fall 2021 &#8212; UC Irvine Math 10</title>
+    <title>Worksheet &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -115,7 +115,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     UCI Math 10, Fall 2021
+     Worksheet
     </a>
    </li>
    <li class="toctree-l2">
@@ -142,7 +142,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week2/Week2-Monday.html">
-     UCI Math 10, Fall 2021
+     Worksheet
     </a>
    </li>
    <li class="toctree-l2">
@@ -152,7 +152,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week2/Homework2.html">
-     UCI Math 10, Fall 2021
+     Homework 2: Prime numbers, Random numbers, and Intro to pandas
     </a>
    </li>
   </ul>
@@ -309,6 +309,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../Week6/Week6-Monday.html">
      Monday Worksheet
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week6/Week6-Wednesday.html">
+     Midterm Review
     </a>
    </li>
    <li class="toctree-l2">
@@ -473,27 +478,15 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   UCI Math 10, Fall 2021
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-with-for-loops-and-lists-of-lists">
+   Practice with for-loops and lists of lists
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#week-1-monday-in-class-worksheet">
-   Week 1, Monday In-class Worksheet
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice-with-numpy">
+   Practice with NumPy
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practice-with-for-loops-and-lists-of-lists">
-     Practice with for-loops and lists of lists
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#practice-with-numpy">
-     Practice with NumPy
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -506,11 +499,8 @@
         
               <div>
                 
-  <section id="uci-math-10-fall-2021">
-<h1>UCI Math 10, Fall 2021<a class="headerlink" href="#uci-math-10-fall-2021" title="Permalink to this headline">¶</a></h1>
-</section>
-<section id="week-1-monday-in-class-worksheet">
-<h1>Week 1, Monday In-class Worksheet<a class="headerlink" href="#week-1-monday-in-class-worksheet" title="Permalink to this headline">¶</a></h1>
+  <section id="worksheet">
+<h1>Worksheet<a class="headerlink" href="#worksheet" title="Permalink to this headline">¶</a></h1>
 <p>You may submit this worksheet in a group of 1-3 total students.</p>
 <p>These worksheets are graded for effort, not for correctness.</p>
 <p><strong>Due date</strong>.  Due at 5:00pm on Tuesday of Week 1.</p>
@@ -519,20 +509,21 @@
 <p>UCI ID(s):</p>
 <section id="practice-with-for-loops-and-lists-of-lists">
 <h2>Practice with for-loops and lists of lists<a class="headerlink" href="#practice-with-for-loops-and-lists-of-lists" title="Permalink to this headline">¶</a></h2>
-<p>Let’s represent the matrix
-$<span class="math notranslate nohighlight">\(
+<p>We will introduce for-loops now, but throughout Math 10 we will seek more efficient (or at least more elegant or more “Pythonic”) ways of writing code.</p>
+<p>Let’s represent the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{pmatrix} 
 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\
 10 &amp; 11 &amp; 12 &amp; 13 &amp; 14
 \end{pmatrix}
-\)</span>$
-in Python.  The best way to do that is with a two-dimensional NumPy array, but let’s practice with for-loops by first representing it as a list of lists.</p>
+\end{split}\]</div>
+<p>in Python.  The best way to do that is with a two-dimensional NumPy array, but let’s practice with for-loops by first representing it as a list of lists.</p>
+<p>We first make a template containing all zeros.  Try reading through this next cell step-by-step and understanding what it does.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We first make a template containing all zeros.</span>
-<span class="c1"># Try reading through this step-by-step and understanding what it does.</span>
-<span class="n">zero_list</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zero_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
     <span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
@@ -548,11 +539,10 @@ in Python.  The best way to do that is with a two-dimensional NumPy array, but l
 </div>
 </div>
 </div>
+<p>Let’s make a copy of that zero_list, so that we can use zero_list again later if we want.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s make a copy of that zero_list,</span>
-<span class="c1"># so that we can use zero_list again later if we want.</span>
-<span class="n">list_of_lists</span> <span class="o">=</span> <span class="n">zero_list</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_lists</span> <span class="o">=</span> <span class="n">zero_list</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">list_of_lists</span>
 </pre></div>
 </div>
@@ -563,23 +553,14 @@ in Python.  The best way to do that is with a two-dimensional NumPy array, but l
 </div>
 </div>
 </div>
-<p style="font-size:20px; color:blue; font-weight:bold">Question 1:</p><div class="cell docutils container">
+<p style="font-size:20px; color:blue; font-weight:bold">Question 1:</p>
+<p>Fill in the correct values so we make the above matrix as the list of lists <code class="docutils literal notranslate"><span class="pre">[[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14]]</span></code>.  Do not change to a different strategy, even if you know a better one.</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Fill in the correct values so we make the above matrix as the 
-# list of lists [[0,1,2,3,4],[5,6,7,8,9],[10,11,12,13,14]].
-# Do not change to a different strategy, even if you know a better one.
-for i in range(3):
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for i in range(3):
     for j in range(5):
         list_of_lists??? = ???
 print(list_of_lists)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_46015/663415635.py&quot;, line 6
-    list_of_lists??? = ???
-                 ^
-SyntaxError: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -606,6 +587,7 @@ SyntaxError: invalid syntax
 </section>
 <section id="practice-with-numpy">
 <h2>Practice with NumPy<a class="headerlink" href="#practice-with-numpy" title="Permalink to this headline">¶</a></h2>
+<p>As a preview, here is one of the most important libraries we will use in Math 10.  Many aspects of it will remind you of Matlab.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -613,27 +595,34 @@ SyntaxError: invalid syntax
 </div>
 </div>
 </div>
+<p>Here are two ways to learn about the method <code class="docutils literal notranslate"><span class="pre">np.zeros</span></code>.  This method is part of NumPy, but the same sort of help is available also for functions in standard Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can learn how to make an array of all zeros here, or by using help.</span>
-np.zeros<span class="o">?</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>np.zeros<span class="o">?</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p style="font-size:20px; color:blue; font-weight:bold">Question 4:</p><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Make a zero array of the correct 3x5 shape:
-A = np.zeros(???)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p style="font-size:20px; color:blue; font-weight:bold">Question 4:</p>
+<p>Make a zero array of the correct 3x5 shape:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>A = np.zeros(???)
 print(A)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_46015/1439308658.py&quot;, line 2
-    A = np.zeros(???)
-                 ^
-SyntaxError: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -647,14 +636,6 @@ Use syntax like <code class="docutils literal notranslate"><span class="pre">A[1
     for j in range(5):
         A??? = ???
 print(A)
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_46015/3590369514.py&quot;, line 3
-    A??? = ???
-     ^
-SyntaxError: invalid syntax
 </pre></div>
 </div>
 </div>
@@ -688,13 +669,6 @@ SyntaxError: invalid syntax
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 2. 3. 4.]
- [0. 1. 2. 3. 4.]
- [0. 1. 2. 3. 4.]]
-</pre></div>
-</div>
-</div>
 </div>
 <p>I think the above is a good amount for class, but in case you finish early, here is a problem involving function definitions.</p>
 <p style="font-size:20px; color:blue; font-weight:bold">Question 7:</p>
@@ -712,14 +686,6 @@ which takes as input a NumPy array A, and as output returns an array of the same
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  File &quot;/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_46015/3311236170.py&quot;, line 4
-    for i in range(???):
-                   ^
-SyntaxError: invalid syntax
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,12 +694,11 @@ SyntaxError: invalid syntax
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_46015</span><span class="o">/</span><span class="mf">4151160608.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fill_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
-
-<span class="ne">NameError</span>: name &#39;fill_array&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1.],
+       [2., 3.],
+       [4., 5.],
+       [6., 7.],
+       [8., 9.]])
 </pre></div>
 </div>
 </div>
@@ -745,12 +710,10 @@ SyntaxError: invalid syntax
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_46015</span><span class="o">/</span><span class="mf">2876352738.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fill_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;fill_array&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11],
+       [12, 13, 14, 15]], dtype=int32)
 </pre></div>
 </div>
 </div>

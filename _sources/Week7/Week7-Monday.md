@@ -4,7 +4,7 @@ On Friday, we ran K-Means clustering on the numeric columns from the Spotify dat
 
 ## Warm-up with `any` and `all`
 
-On Friday, we removed the rows which were bad in the Energy column, and were lucky that was good enough.  We really should have removed the rows that bad in any column.  We can do that using either `any` or `all`.
+On Friday, we removed the rows which were bad in the Energy column, and were lucky that was good enough.  We really should have removed the rows that were bad in any column.  We can do that using either `any` or `all`.
 
 * Using `rng.choice` and `pd.DataFrame`, make a 15x3 pandas DataFrame consisting of randomly chosen values of True and False.  Call it `df_bool`.
 * Try evaluating `df_bool.any(axis = 1)`, `df_bool.all(axis = 1)`, `df_bool.any(axis = 0)`, `df_bool.all(axis = 0)` to learn about these `any` and `all` methods.
@@ -71,6 +71,6 @@ You should think of `df4` and `df3` as containing the same data, with the only d
 
 * Evaluate the mean and standard deviation of the columns of `df4`.
 
-* Instantiate a new `KMeans` object with however many clusters you want.  `fit` the new object using `df4`, and then `predict` also using `df4`.  (It would be a little more robust to instead predict using `df2`, but then we would need another round of scaling and putting in column names.)  Put the resulting cluster numbers into the "cluster" column of df2 (so overwrite the old "cluster" column.)
+* Instantiate a new `KMeans` object with however many clusters you want.  `fit` the new object using `df4`, and then `predict` also using `df4`.  (It would be a little more robust to instead predict using `df2`, but then we would need another round of scaling and putting in column names.)  Put the resulting cluster numbers into the "cluster" column of `df2` (so overwrite the old "cluster" column.)
 
 * Redo the Altair plot from above.  Add in a tooltip specifying the song name and artist name.  If everything went correctly, the colors should look less strictly ordered than before the scaling was done.

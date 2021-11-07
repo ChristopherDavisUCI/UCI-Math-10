@@ -1,6 +1,6 @@
 # Introduction to Machine Learning
 
-We give a brief introduction to machine learning, and to some of the most commonly used terms in the subject.  Much of the material on this page is vague and not precisely defined.  Things will become more precise when we discuss specific examples of machine learning algorithms, like [linear regression](Week5/LinearRegression.md).
+We give a brief introduction to machine learning, and to some of the most commonly used terms in the subject.  Much of the material on this page is vague and not precisely defined.  Things will become more precise when we discuss specific examples of machine learning algorithms, like [linear regression](LinearRegression.md).
 
 To define machine learning, we will use this quote from *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition*, by Aurélien Géron:
 
