@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monday Worksheet &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,19 +33,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -477,9 +476,9 @@
         
               <div>
                 
-  <section id="monday-worksheet">
+  <div class="section" id="monday-worksheet">
 <h1>Monday Worksheet<a class="headerlink" href="#monday-worksheet" title="Permalink to this headline">¶</a></h1>
-<section id="from-jupyter-notebook-to-streamlit-app">
+<div class="section" id="from-jupyter-notebook-to-streamlit-app">
 <h2>From Jupyter notebook to Streamlit app<a class="headerlink" href="#from-jupyter-notebook-to-streamlit-app" title="Permalink to this headline">¶</a></h2>
 <p>Here is the code from class on Friday, except that it has been merged together into a Streamlit app, and some minor <a class="reference external" href="https://altair-viz.github.io/user_guide/customization.html#adjusting-axis-limits">customizations</a> have been made to the Altair charts.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">streamlit</span> <span class="k">as</span> <span class="nn">st</span>
@@ -563,8 +562,8 @@
 <p class="admonition-title">Submission</p>
 <p>Upload the .py file to Canvas before 5pm on Tuesday.  As always with the worksheets, this is graded on effort, not on correctness, so it’s fine if you do not finish.</p>
 </div>
-</section>
-<section id="miscellaneous-practice-exercises">
+</div>
+<div class="section" id="miscellaneous-practice-exercises">
 <h2>Miscellaneous practice exercises<a class="headerlink" href="#miscellaneous-practice-exercises" title="Permalink to this headline">¶</a></h2>
 <p>Here are a few more practice exercises for the midterm.  You do not need to submit anything from this portion of the worksheet.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[]</span>
@@ -594,8 +593,8 @@ What is the cause of the following error?
 <p class="admonition-title">Exercise</p>
 <p>In lecture on Friday I got confused because I wanted to evaluate the polynomial using something like <code class="docutils literal notranslate"><span class="pre">reg.predict([[3]])</span></code>, whereas I really needed to evaluate with all of the powers, like <code class="docutils literal notranslate"><span class="pre">reg.predict([[3,9,27,81,243]])</span></code>.  Write a function <code class="docutils literal notranslate"><span class="pre">eval_poly(reg,</span> <span class="pre">x)</span></code> which takes as input the fit LinearRegression object <code class="docutils literal notranslate"><span class="pre">reg</span></code> and a number <code class="docutils literal notranslate"><span class="pre">x</span></code>, and as output returns the value of the polynomial.  (Hint.  You can get the degree of the polynomial from reg using the attribute <code class="docutils literal notranslate"><span class="pre">n_features_in_</span></code>.  Here is a <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html">reference page</a>, although that reference page doesn’t have much detail other than to say that this attribute exists.  I didn’t find it using the reference page; I found it by typing <code class="docutils literal notranslate"><span class="pre">reg.</span></code> and then hitting tab.)</p>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

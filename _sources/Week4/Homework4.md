@@ -19,7 +19,7 @@ Your app should have the following features.
 
 1. Using `applymap` and a lambda function, replace all  string entries consisting of a single blank space `" "` in the DataFrame with NumPy's not-a-number.  (The point of this is just to improve our ability to test on the Spotify dataset, and to practice with lambda functions.)
 
-1. Using list comprehension, make a list containing the names of all the columns of the DataFrame which can be made numeric.  (See the material from the [Friday, Week 3 lecture](Week3/Week3-Friday.ipynb), for one method for doing this and the next part.)
+1. Using list comprehension, make a list containing the names of all the columns of the DataFrame which can be made numeric.  (See the material from the [Friday, Week 3 lecture](../Week3/Week3-Friday.ipynb), for one method for doing this and the next part.)
 
 1. Replace the DataFrame with another version, where all those columns are made numeric.
 

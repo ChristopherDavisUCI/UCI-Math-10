@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction to Machine Learning &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,19 +33,19 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -477,7 +476,7 @@
         
               <div>
                 
-  <section id="introduction-to-machine-learning">
+  <div class="section" id="introduction-to-machine-learning">
 <h1>Introduction to Machine Learning<a class="headerlink" href="#introduction-to-machine-learning" title="Permalink to this headline">¶</a></h1>
 <p>We give a brief introduction to machine learning, and to some of the most commonly used terms in the subject.  Much of the material on this page is vague and not precisely defined.  Things will become more precise when we discuss specific examples of machine learning algorithms, like <a class="reference internal" href="LinearRegression.html"><span class="doc std std-doc">linear regression</span></a>.</p>
 <p>To define machine learning, we will use this quote from <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow, 2nd Edition</em>, by Aurélien Géron:</p>
@@ -485,18 +484,18 @@
 <li><p><strong>Machine Learning</strong> is the science (and art) of programming computers so they can learn from data.</p></li>
 </ul>
 <p>The reason for the word <em>learning</em> is that, as more data is provided, the algorithm can update (and hopefully become more accurate).  This updating is what is meant by learning.</p>
-<section id="supervised-vs-unsupervised-learning">
+<div class="section" id="supervised-vs-unsupervised-learning">
 <h2>Supervised vs unsupervised learning<a class="headerlink" href="#supervised-vs-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
 <p>There are two basic categories of machine learning: supervised learning, and unsupervised learning.  In <strong>supervised learning</strong>, there is some specific quantity (or label) that is trying to be assigned, while in <strong>unsupervised learning</strong>, there isn’t.  The reason for the names is that, with supervised learning, the algorithm is trained using labeled data.  The algorithm receives <em>supervision</em> in the form of correct answers for some of the data.  An algorithm for unsupervised learning will also receive data, but it is unlabeled data.</p>
 <p>The most fundamental example of supervised learning is <strong>linear regression</strong>.  With regards to linear regression, we are provided with one or more input variables <span class="math notranslate nohighlight">\(X\)</span>, which are traditionally called <em>predictors</em>, and an output variable <span class="math notranslate nohighlight">\(y\)</span>, called the target, and we try to model the target as a linear (plus a constant) function of the input variables.</p>
 <p>The most famous example of unsupervised learning is <strong>clustering</strong>, where we feed in data and the algorithm is supposed to divide that data into different clusters.  We do not provide any initial labels (for example, we don’t say something like, “these points should be in cluster 1, while these others should be in cluster 2”).  That is the sense in which this would be an unsupervised learning algorithm.</p>
-</section>
-<section id="regression-vs-classification">
+</div>
+<div class="section" id="regression-vs-classification">
 <h2>Regression vs classification<a class="headerlink" href="#regression-vs-classification" title="Permalink to this headline">¶</a></h2>
 <p>Within the supervised learning category, there is a further important distinction between regression problems and classification problems.  In a <strong>regression</strong> problem, the target is assumed to be some continuous quantitative value.  (Even if the target is something like “number of deaths”, I would still count that as a regression problem.  It might not be continuous in the sense that there can never be a fractional death, but there is still a clear ordering and if our model outputs something like 100.4 deaths, that is natural enough to interpret.)</p>
 <p>In a <strong>classification</strong> problem, the target is assumed to take values in some discrete set of categories.  For example, if we are trying to predict the musical genre of a song, this would be thought of as a classification problem.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

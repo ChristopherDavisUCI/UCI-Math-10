@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Project &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -469,6 +468,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advice">
+   Advice
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#frequently-asked-questions">
    Frequently asked questions
   </a>
@@ -484,39 +488,49 @@
         
               <div>
                 
-  <section id="course-project">
+  <div class="section" id="course-project">
 <h1>Course Project<a class="headerlink" href="#course-project" title="Permalink to this headline">¶</a></h1>
-<p>Not yet finalized.  Last updated Friday, November 5th.</p>
-<section id="introduction">
+<p>Not yet finalized.  Last updated Monday, November 8th.</p>
+<div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The goal of the course project is to design and share a data-focused Streamlit app.</p>
-</section>
-<section id="logistics">
+</div>
+<div class="section" id="logistics">
 <h2>Logistics<a class="headerlink" href="#logistics" title="Permalink to this headline">¶</a></h2>
 <p>The following are requirements to receive a passing score on the course project.</p>
 <ul class="simple">
 <li><p>Due date: Monday, December 6th 2021, 3:30pm California time.</p></li>
 <li><p>For the submission, give a link to the app on Streamlit.</p></li>
 <li><p>This is an individual project (not a group project).</p></li>
-<li><p>Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub.</p></li>
+<li><p>Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub, and the app itself should be shared by Streamlit cloud.</p></li>
 <li><p>The primary focus of the app must be on something involving data, and primarily using one or more datasets that weren’t covered in Math 10.</p></li>
 <li><p>The project should clearly build on the Math 10 material.  If you’re an expert in Python material that was not covered in Math 10, you are of course welcome to use that, but the project should use the topics of Math 10 in an essential way (see the rubric below).</p></li>
 <li><p>Anything that is taken from another source (either the idea for the project or a piece of code that is longer than a few lines) should be referenced with a link, both in the source code and in the final Streamlit app.  (One way to do this is to have a <strong>References</strong> section at the bottom of your app.  Then the references should be of the form “This portion of the app was taken from [link]”).</p></li>
 </ul>
-</section>
-<section id="rubric">
+</div>
+<div class="section" id="rubric">
 <h2>Rubric<a class="headerlink" href="#rubric" title="Permalink to this headline">¶</a></h2>
 <p>The course project is worth 25% of your course grade, so we will grade the project out of 25 points.</p>
 <ol class="simple">
 <li><p>(5 points) Is the project clear and well-organized?  Does it explore one or more clearly described datasets, and include links specifying where those datasets came from?  Use text throughout the project to help the reader understand what is going on.  Is the reasoning clear? (It’s fine if you have negative results like, “so there is no clear connection between these variables”.  In fact, those sorts of results are better than over-stated claims.)</p></li>
 <li><p>(4 points) Does the project make essential use of pandas to explore the data?  Using pandas to read and store the data is not sufficient.  It should also be used either to clean the data, or to analyze the data.</p></li>
-<li><p>(4 points) Does the project explore the data using scikit-learn or Keras?</p></li>
-<li><p>(4 points) Does the project include interesting charts from Altair?</p></li>
-<li><p>(4 points) Does the project include interactivity, made possible through the use of multiple different Streamlit widgets?</p></li>
-<li><p>(4 points) Does the project include material that was not covered in Math 10?  This could include different libraries, different machine learning algorithms, or deeper use of the libraries we covered in Math 10.</p></li>
+<li><p>(4 points) Does the project explore the data using a variety of tools from scikit-learn and/or Keras?</p></li>
+<li><p>(4 points) Does the project include a variety of interesting charts, made using Altair?  Do we learn something about the data from these charts?</p></li>
+<li><p>(4 points) Does the project include <em>interactivity</em>, made possible through the use of multiple different Streamlit widgets?  Are additional Streamlit tools used to improve the layout or flow or appearance of the app?</p></li>
+<li><p>(4 points) Does the project include material that was not covered in Math 10?  (This could include different libraries, different machine learning algorithms, or deeper use of the libraries we covered in Math 10.)</p></li>
 </ol>
-</section>
-<section id="frequently-asked-questions">
+</div>
+<div class="section" id="advice">
+<h2>Advice<a class="headerlink" href="#advice" title="Permalink to this headline">¶</a></h2>
+<p>Here is some general advice about the project.</p>
+<ul class="simple">
+<li><p>Don’t repeat the same technique multiple times unless it’s really essential.  For example, it would be better to have one interesting chart and one less interesting chart, than to have the same interesting chart made for two different datasets.</p></li>
+<li><p>Don’t spend too much time searching for the perfect dataset.  Having a great dataset is less important for the project than exploring the dataset in an interesting way.</p></li>
+<li><p>Keep your statements reasonable.  It’s perfectly fine to concluse something like, “Therefore, we did not find a connection between A and B.”</p></li>
+<li><p>I already wrote it above but it’s worth repeating.  Please err on the side of referencing everything.  If your project is based on an idea you saw somewhere else, that’s totally fine, but include a clear link in your app (not just in the source code) to the original source.</p></li>
+</ul>
+</div>
+<div class="section" id="frequently-asked-questions">
 <h2>Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permalink to this headline">¶</a></h2>
 <p>Is there a length requirement?</p>
 <ul class="simple">
@@ -530,8 +544,8 @@
 <ul class="simple">
 <li><p>No!  If you explore the data in an interesting way, but can’t find any interesting conclusions, that’s fine.  In fact, I prefer that to making claims that the data does not support.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {

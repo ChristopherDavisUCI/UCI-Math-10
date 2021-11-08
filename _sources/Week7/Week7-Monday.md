@@ -13,7 +13,7 @@ On Friday, we removed the rows which were bad in the Energy column, and were luc
 
 ## Identifying the problem
 
-In a Jupyter notebook, we will basically follow [the procedure from Friday's class](Week6-Friday.ipynb), but a few changes.
+In a Jupyter notebook, we will basically follow [the procedure from Friday's class](Week6-Friday.ipynb), but there will be a few changes.
 
 * Import the Spotify dataset as `df` (be sure to use the `na_values` argument, so that the appropriate columns become numeric automatically).
 

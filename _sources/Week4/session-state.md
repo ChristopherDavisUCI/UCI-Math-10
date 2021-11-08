@@ -27,7 +27,7 @@ except:
 s = st.text_input("Choose title")
 ```
 
-This code works in the sense that it does not throw an error, but we will never reach the `try` portion of the try-except block.  The title will always stay fixed as the default value.  The reason is that the variable `s` does not get remembered as the code reruns (as described [here](Week4/reruns-Streamlit.md)).
+This code works in the sense that it does not throw an error, but we will never reach the `try` portion of the try-except block.  The title will always stay fixed as the default value.  The reason is that the variable `s` does not get remembered as the code reruns (as described [here](reruns-Streamlit.md)).
 
 One solution to this is to use `st.session_state`.  Notice how similar this is to the above code.
 
@@ -67,4 +67,4 @@ st.write(A)
 
 st.slider("A slider",0,100,40,1)
 ```
-Ordinarily, [Streamlit reruns](Week4/reruns-Streamlit.md) would cause the array `A` to change every time the slider is moved, but by using `st.session_state`, we are able to remember the value of `A` from one execution of the code to the next.
+Ordinarily, [Streamlit reruns](reruns-Streamlit.md) would cause the array `A` to change every time the slider is moved, but by using `st.session_state`, we are able to remember the value of `A` from one execution of the code to the next.

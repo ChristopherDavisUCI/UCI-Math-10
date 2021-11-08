@@ -14,7 +14,7 @@ As of October 27th, 2021, the content from Weeks 1 and 2 is disorganized (it's m
 
 ## Course-level Learning Outcomes
 
-The goal of this course is to introduce programming in Python, with an emphasis on some of the tools that are most relevant to **data science**.  The primary learning outcomes for Math~10 are that students will be able to:
+The goal of this course is to introduce programming in Python, with an emphasis on some of the tools that are most relevant to **data science**.  The primary learning outcomes for Math 10 are that students will be able to:
 * select appropriate data types (both built-in Python types as well as types defined in external libraries) when performing computations;
 * manipulate structured data using NumPy and pandas;
 * display significant aspects of datasets using Altair;

@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Monday Worksheet &#8212; UC Irvine Math 10</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
@@ -23,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,17 +33,17 @@
     
   <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
+    <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -496,10 +495,10 @@
         
               <div>
                 
-  <section id="monday-worksheet">
+  <div class="section" id="monday-worksheet">
 <h1>Monday Worksheet<a class="headerlink" href="#monday-worksheet" title="Permalink to this headline">¶</a></h1>
 <p>On Friday, we ran K-Means clustering on the numeric columns from the Spotify dataset.  We should add an additional step, because it turns out that in the version from Friday, one of the dimensions (“input variables”/”features”/predictors”) was dominating all the others.</p>
-<section id="warm-up-with-any-and-all">
+<div class="section" id="warm-up-with-any-and-all">
 <h2>Warm-up with <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code><a class="headerlink" href="#warm-up-with-any-and-all" title="Permalink to this headline">¶</a></h2>
 <p>On Friday, we removed the rows which were bad in the Energy column, and were lucky that was good enough.  We really should have removed the rows that were bad in any column.  We can do that using either <code class="docutils literal notranslate"><span class="pre">any</span></code> or <code class="docutils literal notranslate"><span class="pre">all</span></code>.</p>
 <ul class="simple">
@@ -507,10 +506,10 @@
 <li><p>Try evaluating <code class="docutils literal notranslate"><span class="pre">df_bool.any(axis</span> <span class="pre">=</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.all(axis</span> <span class="pre">=</span> <span class="pre">1)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.any(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code>, <code class="docutils literal notranslate"><span class="pre">df_bool.all(axis</span> <span class="pre">=</span> <span class="pre">0)</span></code> to learn about these <code class="docutils literal notranslate"><span class="pre">any</span></code> and <code class="docutils literal notranslate"><span class="pre">all</span></code> methods.</p></li>
 </ul>
 <p>(This same syntax works for a NumPy array.  We asked you to convert it to a pandas DataFrame so that the values were easier to display in the notebook.)</p>
-</section>
-<section id="identifying-the-problem">
+</div>
+<div class="section" id="identifying-the-problem">
 <h2>Identifying the problem<a class="headerlink" href="#identifying-the-problem" title="Permalink to this headline">¶</a></h2>
-<p>In a Jupyter notebook, we will basically follow <a class="reference internal" href="Week6-Friday.html"><span class="doc std std-doc">the procedure from Friday’s class</span></a>, but a few changes.</p>
+<p>In a Jupyter notebook, we will basically follow <a class="reference internal" href="Week6-Friday.html"><span class="doc std std-doc">the procedure from Friday’s class</span></a>, but there will be a few changes.</p>
 <ul class="simple">
 <li><p>Import the Spotify dataset as <code class="docutils literal notranslate"><span class="pre">df</span></code> (be sure to use the <code class="docutils literal notranslate"><span class="pre">na_values</span></code> argument, so that the appropriate columns become numeric automatically).</p></li>
 <li><p>Verify that the correct columns are numeric, by using <code class="docutils literal notranslate"><span class="pre">dtypes</span></code>.</p></li>
@@ -539,8 +538,8 @@
 <li><p>Our clusters are fit using 14-dimensional data, but one of those dimensions is dominating because the values in it are so much larger than the others.</p></li>
 <li><p>Check the mean and standard deviation of all the different columns in <code class="docutils literal notranslate"><span class="pre">df3</span></code> by using <code class="docutils literal notranslate"><span class="pre">df3.mean(axis</span> <span class="pre">=</span> <span class="pre">???)</span></code> and <code class="docutils literal notranslate"><span class="pre">df3.std(axis</span> <span class="pre">=</span> <span class="pre">???)</span></code>. (If you want to get numbers that are easier to read, without the scientific notation, you can change the way pandas displays float values, as in this <a class="reference external" href="https://stackoverflow.com/a/21140339">Stack Overflow answer</a>.)</p></li>
 </ul>
-</section>
-<section id="fixing-the-problem-using-standardscaler">
+</div>
+<div class="section" id="fixing-the-problem-using-standardscaler">
 <h2>Fixing the problem using <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code><a class="headerlink" href="#fixing-the-problem-using-standardscaler" title="Permalink to this headline">¶</a></h2>
 <p>This is such a common issue in Machine Learning (not just for clustering), that there is a built-in tool in scikit-learn to rescale the different columns.  The tool is called <code class="docutils literal notranslate"><span class="pre">StandardScaler</span></code>, and its syntax is very similar to the usual scikit-learn syntax.</p>
 <ul class="simple">
@@ -560,8 +559,8 @@
 <li><p>Instantiate a new <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> object with however many clusters you want.  <code class="docutils literal notranslate"><span class="pre">fit</span></code> the new object using <code class="docutils literal notranslate"><span class="pre">df4</span></code>, and then <code class="docutils literal notranslate"><span class="pre">predict</span></code> also using <code class="docutils literal notranslate"><span class="pre">df4</span></code>.  (It would be a little more robust to instead predict using <code class="docutils literal notranslate"><span class="pre">df2</span></code>, but then we would need another round of scaling and putting in column names.)  Put the resulting cluster numbers into the “cluster” column of <code class="docutils literal notranslate"><span class="pre">df2</span></code> (so overwrite the old “cluster” column.)</p></li>
 <li><p>Redo the Altair plot from above.  Add in a tooltip specifying the song name and artist name.  If everything went correctly, the colors should look less strictly ordered than before the scaling was done.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
