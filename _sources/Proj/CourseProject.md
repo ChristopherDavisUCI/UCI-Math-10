@@ -23,7 +23,7 @@ The course project is worth 25% of your course grade, so we will grade the proje
 Here is some general advice about the project.
 * Don't repeat the same technique multiple times unless it's really essential.  For example, it would be better to have one interesting chart and one less interesting chart, than to have the same interesting chart made for two different datasets.
 * Don't spend too much time searching for the perfect dataset.  Having a great dataset is less important for the project than exploring the dataset in an interesting way.
-* Keep your statements reasonable.  It's perfectly fine to concluse something like, "Therefore, we did not find a connection between A and B."
+* Keep your statements reasonable.  It's perfectly fine to conclude something like, "Therefore, we did not find a connection between A and B."
 * I already wrote it above but it's worth repeating.  Please err on the side of referencing everything.  If your project is based on an idea you saw somewhere else, that's totally fine, but include a clear link in your app (not just in the source code) to the original source.
 ## Frequently asked questions
 Is there a length requirement?

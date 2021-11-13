@@ -186,7 +186,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Week3/Week3-Friday.html">
-     Week 3 - Friday Lecture
+     Data cleaning
     </a>
    </li>
   </ul>
@@ -353,11 +353,38 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Proj/Proj-Intro.html">
-   Course Project
+  <a class="reference internal" href="../Week8/Week8-Intro.html">
+   Week 8
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week7-Wednesday.html">
+     Cleaning the “Genre” column
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week7-Friday.html">
+     Example of Logistic Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week8/Week8-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -500,7 +527,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 1, 6, 4, 3]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[9, 3, 3, 0, 5]])
 </pre></div>
 </div>
 </div>
@@ -513,7 +540,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([9, 3, 2, 0, 5])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([7, 0, 8, 4, 0])
 </pre></div>
 </div>
 </div>
@@ -526,8 +553,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 3, 6, 6, 2],
-       [8, 6, 4, 3, 6]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5, 2, 9, 0, 6],
+       [1, 9, 9, 6, 3]])
 </pre></div>
 </div>
 </div>
@@ -578,11 +605,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 9, 5, 5, 2, 7, 5, 5, 4, 3],
-       [5, 3, 5, 6, 1, 4, 4, 0, 9, 0],
-       [5, 3, 4, 5, 5, 3, 8, 1, 0, 6],
-       [6, 6, 0, 7, 0, 2, 7, 2, 4, 0],
-       [3, 0, 0, 2, 1, 5, 9, 7, 2, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 6, 9, 0, 2, 3, 2, 5, 6, 7],
+       [8, 0, 4, 6, 9, 4, 5, 1, 6, 9],
+       [5, 2, 1, 4, 5, 0, 3, 2, 6, 9],
+       [9, 2, 2, 4, 5, 3, 9, 0, 7, 7],
+       [9, 7, 0, 0, 8, 2, 3, 9, 7, 1]])
 </pre></div>
 </div>
 </div>
@@ -613,7 +640,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False,  True])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False])
 </pre></div>
 </div>
 </div>
@@ -626,7 +653,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 0, 1, 0, 0, 0, 0, 0, 1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 1, 0, 1, 0, 0, 0, 0, 3, 0])
 </pre></div>
 </div>
 </div>
@@ -638,7 +665,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -650,11 +677,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[8, 9, 5, 5, 2, 7, 5, 5, 4, 3],
-       [5, 3, 5, 6, 1, 4, 4, 0, 9, 0],
-       [5, 3, 4, 5, 5, 3, 8, 1, 0, 6],
-       [6, 6, 0, 7, 0, 2, 7, 2, 4, 0],
-       [3, 0, 0, 2, 1, 5, 9, 7, 2, 4]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[2, 6, 9, 0, 2, 3, 2, 5, 6, 7],
+       [8, 0, 4, 6, 9, 4, 5, 1, 6, 9],
+       [5, 2, 1, 4, 5, 0, 3, 2, 6, 9],
+       [9, 2, 2, 4, 5, 3, 9, 0, 7, 7],
+       [9, 7, 0, 0, 8, 2, 3, 9, 7, 1]])
 </pre></div>
 </div>
 </div>
@@ -700,68 +727,68 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>8</td>
-      <td>9</td>
-      <td>5</td>
-      <td>5</td>
       <td>2</td>
-      <td>7</td>
-      <td>5</td>
-      <td>5</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>0</td>
+      <td>2</td>
       <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5</td>
-      <td>3</td>
-      <td>5</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
       <td>6</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>0</td>
       <td>9</td>
-      <td>0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
       <td>5</td>
-      <td>3</td>
+      <td>2</td>
+      <td>1</td>
       <td>4</td>
       <td>5</td>
-      <td>5</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1</td>
       <td>0</td>
+      <td>3</td>
+      <td>2</td>
       <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6</td>
-      <td>6</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
+      <td>9</td>
       <td>2</td>
-      <td>7</td>
       <td>2</td>
       <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>9</td>
       <td>0</td>
+      <td>7</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
       <td>9</td>
       <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
       <td>2</td>
-      <td>4</td>
+      <td>3</td>
+      <td>9</td>
+      <td>7</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -836,68 +863,68 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>8</td>
-      <td>9</td>
-      <td>5</td>
-      <td>5</td>
       <td>2</td>
-      <td>7</td>
-      <td>5</td>
-      <td>5</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>0</td>
+      <td>2</td>
       <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5</td>
-      <td>3</td>
-      <td>5</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
       <td>6</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>0</td>
       <td>9</td>
-      <td>0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
       <td>5</td>
-      <td>3</td>
+      <td>2</td>
+      <td>1</td>
       <td>4</td>
       <td>5</td>
-      <td>5</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1</td>
       <td>0</td>
+      <td>3</td>
+      <td>2</td>
       <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6</td>
-      <td>6</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
+      <td>9</td>
       <td>2</td>
-      <td>7</td>
       <td>2</td>
       <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>9</td>
       <td>0</td>
+      <td>7</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
       <td>9</td>
       <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
       <td>2</td>
-      <td>4</td>
+      <td>3</td>
+      <td>9</td>
+      <td>7</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -910,7 +937,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
 1     True
 2    False
 3     True
@@ -918,8 +945,8 @@
 5    False
 6    False
 7    False
-8    False
-9     True
+8     True
+9    False
 dtype: bool
 </pre></div>
 </div>
@@ -966,14 +993,14 @@ dtype: bool
     <tr>
       <th>0</th>
       <td>False</td>
+      <td>True</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
     <tr>
@@ -986,7 +1013,7 @@ dtype: bool
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
+      <td>True</td>
       <td>False</td>
     </tr>
     <tr>
@@ -999,13 +1026,13 @@ dtype: bool
       <td>False</td>
       <td>False</td>
       <td>False</td>
-      <td>False</td>
       <td>True</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>True</td>
-      <td>True</td>
+      <td>False</td>
+      <td>False</td>
       <td>False</td>
       <td>False</td>
       <td>False</td>
@@ -1039,7 +1066,7 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
 1     True
 2    False
 3     True
@@ -1047,8 +1074,8 @@ dtype: bool
 5    False
 6    False
 7    False
-8    False
-9     True
+8     True
+9    False
 dtype: bool
 </pre></div>
 </div>
@@ -1061,10 +1088,10 @@ dtype: bool
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    False
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     True
 1     True
 2     True
-3     True
+3    False
 4    False
 dtype: bool
 </pre></div>
@@ -1111,68 +1138,68 @@ dtype: bool
   <tbody>
     <tr>
       <th>0</th>
-      <td>8</td>
-      <td>9</td>
-      <td>5</td>
-      <td>5</td>
       <td>2</td>
-      <td>7</td>
-      <td>5</td>
-      <td>5</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>0</td>
+      <td>2</td>
       <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5</td>
-      <td>3</td>
-      <td>5</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
       <td>6</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>0</td>
       <td>9</td>
-      <td>0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
       <td>5</td>
-      <td>3</td>
+      <td>2</td>
+      <td>1</td>
       <td>4</td>
       <td>5</td>
-      <td>5</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1</td>
       <td>0</td>
+      <td>3</td>
+      <td>2</td>
       <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6</td>
-      <td>6</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
+      <td>9</td>
       <td>2</td>
-      <td>7</td>
       <td>2</td>
       <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>9</td>
       <td>0</td>
+      <td>7</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
       <td>9</td>
       <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
       <td>2</td>
-      <td>4</td>
+      <td>3</td>
+      <td>9</td>
+      <td>7</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1334,11 +1361,11 @@ apply(func: &#39;AggFuncType&#39;, axis: &#39;Axis&#39; = 0, raw: &#39;bool&#39;
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    0
-1   -1
-2   -1
-3   -7
-4   -2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    9
+1   -2
+2   -3
+3   -2
+4    0
 dtype: int64
 </pre></div>
 </div>
@@ -1384,68 +1411,68 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>8</td>
-      <td>9</td>
-      <td>5</td>
-      <td>5</td>
       <td>2</td>
-      <td>7</td>
-      <td>5</td>
-      <td>5</td>
-      <td>4</td>
+      <td>6</td>
+      <td>9</td>
+      <td>0</td>
+      <td>2</td>
       <td>3</td>
+      <td>2</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>5</td>
-      <td>3</td>
-      <td>5</td>
+      <td>8</td>
+      <td>0</td>
+      <td>4</td>
       <td>6</td>
-      <td>1</td>
-      <td>4</td>
-      <td>4</td>
-      <td>0</td>
       <td>9</td>
-      <td>0</td>
+      <td>4</td>
+      <td>5</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>2</th>
       <td>5</td>
-      <td>3</td>
+      <td>2</td>
+      <td>1</td>
       <td>4</td>
       <td>5</td>
-      <td>5</td>
-      <td>3</td>
-      <td>8</td>
-      <td>1</td>
       <td>0</td>
+      <td>3</td>
+      <td>2</td>
       <td>6</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>6</td>
-      <td>6</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
+      <td>9</td>
       <td>2</td>
-      <td>7</td>
       <td>2</td>
       <td>4</td>
+      <td>5</td>
+      <td>3</td>
+      <td>9</td>
       <td>0</td>
+      <td>7</td>
+      <td>7</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>1</td>
-      <td>5</td>
       <td>9</td>
       <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>8</td>
       <td>2</td>
-      <td>4</td>
+      <td>3</td>
+      <td>9</td>
+      <td>7</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -1458,16 +1485,16 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    8
-1    9
-2    5
-3    7
-4    5
-5    7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    9
+1    7
+2    9
+3    6
+4    9
+5    4
 6    9
-7    7
-8    9
-9    6
+7    9
+8    7
+9    9
 dtype: int64
 </pre></div>
 </div>
@@ -1480,16 +1507,16 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    8
-1    9
-2    5
-3    7
-4    5
-5    7
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    9
+1    7
+2    9
+3    6
+4    9
+5    4
 6    9
-7    7
-8    9
-9    6
+7    9
+8    7
+9    9
 dtype: int64
 </pre></div>
 </div>
@@ -1502,16 +1529,16 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -1
-1   -3
-2    4
-3   -2
-4    5
-5    1
-6    1
-7   -1
-8   -4
-9    6
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0   -4
+1    0
+2   -1
+3    0
+4    0
+5   -3
+6   -6
+7    2
+8   -1
+9    2
 dtype: int64
 </pre></div>
 </div>
@@ -1574,67 +1601,67 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>1000</td>
-      <td>1000</td>
-      <td>1000</td>
-      <td>1000</td>
       <td>0</td>
-      <td>1000</td>
       <td>1000</td>
       <td>1000</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1000</td>
+      <td>1000</td>
+      <td>1000</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1000</td>
       <td>0</td>
+      <td>0</td>
       <td>1000</td>
       <td>1000</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
       <td>0</td>
       <td>1000</td>
       <td>0</td>
+      <td>1000</td>
+      <td>1000</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1000</td>
       <td>0</td>
       <td>0</td>
-      <td>1000</td>
-      <td>1000</td>
       <td>0</td>
       <td>1000</td>
       <td>0</td>
       <td>0</td>
+      <td>0</td>
+      <td>1000</td>
       <td>1000</td>
     </tr>
     <tr>
       <th>3</th>
       <td>1000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
       <td>1000</td>
       <td>0</td>
       <td>1000</td>
       <td>0</td>
-      <td>0</td>
       <td>1000</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
+      <td>1000</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>1000</td>
+      <td>1000</td>
       <td>0</td>
       <td>0</td>
-      <td>0</td>
+      <td>1000</td>
       <td>0</td>
       <td>0</td>
       <td>1000</td>
       <td>1000</td>
-      <td>1000</td>
-      <td>0</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -1681,68 +1708,68 @@ dtype: int64
   <tbody>
     <tr>
       <th>0</th>
-      <td>18</td>
-      <td>19</td>
-      <td>15</td>
-      <td>15</td>
       <td>12</td>
-      <td>17</td>
-      <td>15</td>
-      <td>15</td>
-      <td>14</td>
+      <td>16</td>
+      <td>19</td>
+      <td>10</td>
+      <td>12</td>
       <td>13</td>
+      <td>12</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>15</td>
-      <td>13</td>
-      <td>15</td>
+      <td>18</td>
+      <td>10</td>
+      <td>14</td>
       <td>16</td>
-      <td>11</td>
-      <td>14</td>
-      <td>14</td>
-      <td>10</td>
       <td>19</td>
-      <td>10</td>
+      <td>14</td>
+      <td>15</td>
+      <td>11</td>
+      <td>16</td>
+      <td>19</td>
     </tr>
     <tr>
       <th>2</th>
       <td>15</td>
-      <td>13</td>
+      <td>12</td>
+      <td>11</td>
       <td>14</td>
       <td>15</td>
-      <td>15</td>
-      <td>13</td>
-      <td>18</td>
-      <td>11</td>
       <td>10</td>
+      <td>13</td>
+      <td>12</td>
       <td>16</td>
+      <td>19</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>16</td>
-      <td>16</td>
-      <td>10</td>
-      <td>17</td>
-      <td>10</td>
+      <td>19</td>
       <td>12</td>
-      <td>17</td>
       <td>12</td>
       <td>14</td>
+      <td>15</td>
+      <td>13</td>
+      <td>19</td>
       <td>10</td>
+      <td>17</td>
+      <td>17</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>13</td>
-      <td>10</td>
-      <td>10</td>
-      <td>12</td>
-      <td>11</td>
-      <td>15</td>
       <td>19</td>
       <td>17</td>
+      <td>10</td>
+      <td>10</td>
+      <td>18</td>
       <td>12</td>
-      <td>14</td>
+      <td>13</td>
+      <td>19</td>
+      <td>17</td>
+      <td>11</td>
     </tr>
   </tbody>
 </table>
@@ -1801,7 +1828,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77645</span><span class="o">/</span><span class="mf">1825081433.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40091</span><span class="o">/</span><span class="mf">1825081433.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;b&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="s2">&quot;c&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
 
 <span class="ne">AttributeError</span>: &#39;dict&#39; object has no attribute &#39;max&#39;
@@ -1833,7 +1860,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77645</span><span class="o">/</span><span class="mf">3670777216.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40091</span><span class="o">/</span><span class="mf">3670777216.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">df</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
@@ -1857,7 +1884,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_77645</span><span class="o">/</span><span class="mf">2831778842.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_40091</span><span class="o">/</span><span class="mf">2831778842.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">s</span><span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/generic.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, name)</span>
