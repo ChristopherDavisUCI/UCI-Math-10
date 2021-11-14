@@ -73,7 +73,7 @@ The reason people like this model is that, as the predicted probability of the a
 :class: warning
 1. We had to use some plain English to describe our cost function.  Usually you will see this function written entirely in variables, which makes it look more complicated.  The reason is because the formula looks different based on whether $y^{(i)}$ is 0 or 1.
 
-2.  scikit-learn by default uses a more fancier version of this cost function, which includes some additional component called *regularization*.  Regularization is a useful technique that can help to avoid over-fitting, but I don't think we will discuss it in Math 10.
+2.  scikit-learn by default uses a fancier version of this cost function, which includes some additional component called *regularization*.  Regularization is a useful technique that can help to avoid over-fitting, but I don't think we will discuss it in Math 10.
 ```
 
  
