@@ -36,6 +36,8 @@ $$\sigma(\vec{a} \cdot \vec{w} + b)$$
 
 Here the vector $\vec{a}$ refers to all the values at the previous layer; the vector $\vec{w}$ refers to the weights between the layers; and the number $b$ is called a *bias*.  The function $\sigma$ is what is called an *activation function*.  One common choice activation function, especially at the output layer, is the logistic function $\sigma(x) = 1/(1 + e^{-x})$; this is the same function we used in logistic regression.  An even more common choice is the **ReLU** function $\sigma(x) = \max(0,x)$.
 
+![Deep neural network with annotation](../images/dnn2.png)
+
 ## The *learning* in machine learning
 
 There are many different options in the design of a neural network.  Before we construct it in Keras, we will typically make many choices: how many layers, how many neurons in each (hidden) layer, what activation functions to use (possibly a different activation function in each layer), and even a few more choices that we'll discuss later.   What we do not decide is the values of the weights and biases.  The goal of the training algorithm is to find the best weights and biases; this goal is  completely analogous to the goal of finding the best coefficients $\theta$ in linear regression or logistic regression.
