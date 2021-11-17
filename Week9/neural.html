@@ -544,9 +544,9 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-learning-in-machine-learning">
    The
-   <strong>
+   <em>
     learning
-   </strong>
+   </em>
    in machine learning
   </a>
  </li>
@@ -593,7 +593,7 @@
 <p>Here the vector <span class="math notranslate nohighlight">\(\vec{a}\)</span> refers to all the values at the previous layer; the vector <span class="math notranslate nohighlight">\(\vec{w}\)</span> refers to the weights between the layers; and the number <span class="math notranslate nohighlight">\(b\)</span> is called a <em>bias</em>.  The function <span class="math notranslate nohighlight">\(\sigma\)</span> is what is called an <em>activation function</em>.  One common choice activation function, especially at the output layer, is the logistic function <span class="math notranslate nohighlight">\(\sigma(x) = 1/(1 + e^{-x})\)</span>; this is the same function we used in logistic regression.  An even more common choice is the <strong>ReLU</strong> function <span class="math notranslate nohighlight">\(\sigma(x) = \max(0,x)\)</span>.</p>
 </div>
 <div class="section" id="the-learning-in-machine-learning">
-<h2>The <strong>learning</strong> in machine learning<a class="headerlink" href="#the-learning-in-machine-learning" title="Permalink to this headline">¶</a></h2>
+<h2>The <em>learning</em> in machine learning<a class="headerlink" href="#the-learning-in-machine-learning" title="Permalink to this headline">¶</a></h2>
 <p>There are many different options in the design of a neural network.  Before we construct it in Keras, we will typically make many choices: how many layers, how many neurons in each (hidden) layer, what activation functions to use (possibly a different activation function in each layer), and even a few more choices that we’ll discuss later.   What we do not decide is the values of the weights and biases.  The goal of the training algorithm is to find the best weights and biases; this goal is  completely analogous to the goal of finding the best coefficients <span class="math notranslate nohighlight">\(\theta\)</span> in linear regression or logistic regression.</p>
 <p>At least for me, the “learning” in machine learning is less obvious in linear regression and logistic regression, but it is very clear with neural networks.  We will usually start with randomly chosen weights, and then gradually update the weights a little at a time.  This procedure of updating the weights is what is meant by learning.</p>
 </div>
