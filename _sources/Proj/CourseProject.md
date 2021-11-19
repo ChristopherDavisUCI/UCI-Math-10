@@ -1,5 +1,4 @@
 # Course Project
-Not yet finalized.  Last updated Monday, November 8th.
 ## Introduction
 The goal of the course project is to design and share a data-focused Streamlit app.
 ## Logistics
