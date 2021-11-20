@@ -52,6 +52,8 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Course Project" href="../Proj/Proj-Intro.html" />
+    <link rel="prev" title="Neural networks" href="neural.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -92,7 +94,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Week1/Week1-Intro.html">
    Week 1
@@ -387,19 +389,24 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Week9-Intro.html">
    Week 9
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="neural.html">
      Neural networks
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Worksheet
     </a>
    </li>
   </ul>
@@ -533,8 +540,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recap-of-mnist-code-from-last-week">
-   Recap of MNIST code from last week
+  <a class="reference internal nav-link" href="#recap-of-mnist-code">
+   Recap of MNIST code
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -568,8 +575,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#leftover-material-not-to-be-turned-in-for-this-worksheet">
-   Leftover material (not to be turned in for this worksheet)
+  <a class="reference internal nav-link" href="#leftover-material">
+   Leftover material
   </a>
  </li>
 </ul>
@@ -597,8 +604,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="recap-of-mnist-code-from-last-week">
-<h2>Recap of MNIST code from last week<a class="headerlink" href="#recap-of-mnist-code-from-last-week" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="recap-of-mnist-code">
+<h2>Recap of MNIST code<a class="headerlink" href="#recap-of-mnist-code" title="Permalink to this headline">¶</a></h2>
 <p>Here is the code used on Friday:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mnist</span> <span class="o">=</span> <span class="n">keras</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">mnist</span>
 <span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="n">_</span> <span class="o">=</span> <span class="n">mnist</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
@@ -683,8 +690,9 @@
 <li><p>I think it is best to leave the loss as <code class="docutils literal notranslate"><span class="pre">sparse_categorical_crossentropy</span></code> and the activation function of the output layer as <code class="docutils literal notranslate"><span class="pre">softmax</span></code>, but go ahead and try changing those and let me know if they improve performance.</p></li>
 </ul>
 </div>
-<div class="section" id="leftover-material-not-to-be-turned-in-for-this-worksheet">
-<h2>Leftover material (not to be turned in for this worksheet)<a class="headerlink" href="#leftover-material-not-to-be-turned-in-for-this-worksheet" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="leftover-material">
+<h2>Leftover material<a class="headerlink" href="#leftover-material" title="Permalink to this headline">¶</a></h2>
+<p>(Not to be turned in for this worksheet.)</p>
 <p>Here is a useful function that I don’t think we’ve covered yet in Math 10, <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code>.</p>
 <p>Let <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">=</span> <span class="pre">np.array([1,0,5,10,5,8,0,5])</span></code>.   Try the commands <code class="docutils literal notranslate"><span class="pre">np.nonzero(A)</span></code> and <code class="docutils literal notranslate"><span class="pre">np.nonzero(A==5)</span></code>.</p>
 <p>You can read about the <code class="docutils literal notranslate"><span class="pre">nonzero</span></code> function in the NumPy <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.nonzero.html">documentation</a>.</p>
@@ -735,6 +743,24 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="neural.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Neural networks</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../Proj/Proj-Intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Course Project</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

@@ -13,7 +13,7 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 ```
 
-## Recap of MNIST code from last week
+## Recap of MNIST code
 
 Here is the code used on Friday:
 
@@ -106,7 +106,9 @@ Some things to try:
 
 * I think it is best to leave the loss as `sparse_categorical_crossentropy` and the activation function of the output layer as `softmax`, but go ahead and try changing those and let me know if they improve performance.
 
-## Leftover material (not to be turned in for this worksheet)
+## Leftover material
+
+(Not to be turned in for this worksheet.)
 
 Here is a useful function that I don't think we've covered yet in Math 10, `np.nonzero`.
 
