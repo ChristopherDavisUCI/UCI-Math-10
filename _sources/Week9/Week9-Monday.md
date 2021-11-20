@@ -2,6 +2,8 @@
 
 (Not finalized, as of Nov 20.)
 
+There is no Jupyter notebook template this week; so create a new Jupyter notebook and copy code from here as you need it.
+
 ## Imports
 
 ```
@@ -45,32 +47,19 @@ model.fit(X_train,y_train,epochs=5)
 Answer the following questions related to the above code:
 
 
-* Which lines create the hidden layers?
+1. Which lines create the hidden layers?
 
-**Answer**:
-* Is it possible to have the same number of hidden layers, but with more weights and biases and neurons?  If so, what should be changed?  If not, why not?
+1. Is it possible to have the same number of hidden layers, but with more weights and biases and neurons?  If so, what should be changed?  If not, why not?
 
-**Answer**:
+1. What does the term `Dense` refer to?
 
-* What does the term `Dense` refer to?
+1. Which line measures the performance of the neural network?
 
-**Answer**:
+1. Which line specifies how to update the weights, in response to the measured performance?
 
-* Which line measures the performance of the neural network?
+1. Which line specifies to display extra information during training, but does not actually affect the training?
 
-**Answer**:
-
-* Which line specifies how to update the weights, in response to the measured performance?
-
-**Answer**:
-
-* Which line specifies to display extra information during training, but does not actually affect the training?
-
-**Answer**:
-
-* What number should we change if we want to take bigger steps when performing gradient descent?
-
-**Answer**:
+1. What number should we change if we want to take bigger steps when performing gradient descent?
 
 
 
