@@ -40,7 +40,7 @@ model.compile(
 model.fit(X_train,y_train,epochs=5)
 ```
 
-## Question 2
+## Question 1
 
 Answer the following questions related to the above code:
 
@@ -74,7 +74,7 @@ Answer the following questions related to the above code:
 
 
 
-## Question 3
+## Question 2
 
 Currently, the outputs always sum to 1 (up to rounding errors):  `model.predict(X_train[:5]).sum(axis=1)` produces 5 numbers very close to 1.  If we change the `softmax` to `sigmoid` in the output layer, what would be the possible sums of the outputs?
 
@@ -82,15 +82,15 @@ Currently, the outputs always sum to 1 (up to rounding errors):  `model.predict(
 
 Import a new dataset, specified by `fashion_mnist = keras.datasets.fashion_mnist`.
 
-## Question 4
+## Question 3
 
 Display the zeroth element in the new `X_train`, using `ax.imshow` like what we did on Friday, and also check the corresponding label using `y_train`.  Does the image match the label description? [Label descriptions for Fashion-MNIST](https://keras.io/api/datasets/fashion_mnist/)
 
-## Question 5
+## Question 4
 
 We will try to recognize the images in Fashion-MNIST with as high of accuracy as possible.  Even if we get 100% accuracy, it's not necessarily a good sign.  Briefly explain why.  (We'll learn a better measure, using a *test set*, later.)
 
-## Question 6
+## Question 5
 
 Try to design and train a neural network that determines labels for Fashion-MNIST with over 85% accuracy.  (**Warning**.  I haven't tried to get this high of accuracy on Fashion-MNIST, but I think it should be possible.)
 

@@ -545,18 +545,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#question-1">
+   Question 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-2">
    Question 2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-3">
-   Question 3
+  <a class="reference internal nav-link" href="#a-different-dataset-fashion-mnist">
+   A different dataset: Fashion-MNIST
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-different-dataset-fashion-mnist">
-   A different dataset: Fashion-MNIST
+  <a class="reference internal nav-link" href="#question-3">
+   Question 3
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -567,11 +572,6 @@
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#question-5">
    Question 5
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#question-6">
-   Question 6
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -630,8 +630,8 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="question-2">
-<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <p>Answer the following questions related to the above code:</p>
 <ul class="simple">
 <li><p>Which lines create the hidden layers?</p></li>
@@ -662,24 +662,24 @@
 </ul>
 <p><strong>Answer</strong>:</p>
 </div>
-<div class="section" id="question-3">
-<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this headline">¶</a></h2>
 <p>Currently, the outputs always sum to 1 (up to rounding errors):  <code class="docutils literal notranslate"><span class="pre">model.predict(X_train[:5]).sum(axis=1)</span></code> produces 5 numbers very close to 1.  If we change the <code class="docutils literal notranslate"><span class="pre">softmax</span></code> to <code class="docutils literal notranslate"><span class="pre">sigmoid</span></code> in the output layer, what would be the possible sums of the outputs?</p>
 </div>
 <div class="section" id="a-different-dataset-fashion-mnist">
 <h2>A different dataset: Fashion-MNIST<a class="headerlink" href="#a-different-dataset-fashion-mnist" title="Permalink to this headline">¶</a></h2>
 <p>Import a new dataset, specified by <code class="docutils literal notranslate"><span class="pre">fashion_mnist</span> <span class="pre">=</span> <span class="pre">keras.datasets.fashion_mnist</span></code>.</p>
 </div>
+<div class="section" id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
+<p>Display the zeroth element in the new <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, using <code class="docutils literal notranslate"><span class="pre">ax.imshow</span></code> like what we did on Friday, and also check the corresponding label using <code class="docutils literal notranslate"><span class="pre">y_train</span></code>.  Does the image match the label description? <a class="reference external" href="https://keras.io/api/datasets/fashion_mnist/">Label descriptions for Fashion-MNIST</a></p>
+</div>
 <div class="section" id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
-<p>Display the zeroth element in the new <code class="docutils literal notranslate"><span class="pre">X_train</span></code>, using <code class="docutils literal notranslate"><span class="pre">ax.imshow</span></code> like what we did on Friday, and also check the corresponding label using <code class="docutils literal notranslate"><span class="pre">y_train</span></code>.  Does the image match the label description? <a class="reference external" href="https://keras.io/api/datasets/fashion_mnist/">Label descriptions for Fashion-MNIST</a></p>
+<p>We will try to recognize the images in Fashion-MNIST with as high of accuracy as possible.  Even if we get 100% accuracy, it’s not necessarily a good sign.  Briefly explain why.  (We’ll learn a better measure, using a <em>test set</em>, later.)</p>
 </div>
 <div class="section" id="question-5">
 <h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h2>
-<p>We will try to recognize the images in Fashion-MNIST with as high of accuracy as possible.  Even if we get 100% accuracy, it’s not necessarily a good sign.  Briefly explain why.  (We’ll learn a better measure, using a <em>test set</em>, later.)</p>
-</div>
-<div class="section" id="question-6">
-<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h2>
 <p>Try to design and train a neural network that determines labels for Fashion-MNIST with over 85% accuracy.  (<strong>Warning</strong>.  I haven’t tried to get this high of accuracy on Fashion-MNIST, but I think it should be possible.)</p>
 <p>Some things to try:</p>
 <ul class="simple">
