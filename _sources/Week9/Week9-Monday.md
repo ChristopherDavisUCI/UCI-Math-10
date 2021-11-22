@@ -71,7 +71,7 @@ Import a new dataset, specified by `fashion_mnist = keras.datasets.fashion_mnist
 
 ## Question 3
 
-Display the zeroth element in the new `X_train`, using `ax.imshow` like what we did on Friday, and also check the corresponding label using `y_train`.  Does the image match the label description? [Label descriptions for Fashion-MNIST](https://keras.io/api/datasets/fashion_mnist/)
+Display the zeroth element in the new `X_train`, using `ax.imshow` like what we did on [Friday](Week8-Friday.ipynb), and also check the corresponding label using `y_train`.  Does the image match the label description? [Label descriptions for Fashion-MNIST](https://keras.io/api/datasets/fashion_mnist/)
 
 ## Question 4
 
