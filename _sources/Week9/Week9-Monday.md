@@ -1,7 +1,5 @@
 # Worksheet
 
-(Not finalized, as of Nov 20.)
-
 There is no Jupyter notebook template this week; so create a new Jupyter notebook and copy code from here as you need it.
 
 ## Imports
