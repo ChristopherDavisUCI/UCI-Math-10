@@ -6,7 +6,7 @@ The following are requirements to receive a passing score on the course project.
 * Due date: Monday, December 6th 2021, 3:30pm California time.
 * For the submission, give a link to the app on Streamlit.
 * This is an individual project (not a group project).
-* Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub, and the app itself should be shared by Streamlit cloud.
+* Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub, and the app itself should be shared by Streamlit cloud.  Include a link to the GitHub repository somewhere in the Streamlit app.
 * The primary focus of the app must be on something involving data, and primarily using one or more datasets that weren't covered in Math 10.
 * The project should clearly build on the Math 10 material.  If you're an expert in Python material that was not covered in Math 10, you are of course welcome to use that, but the project should use the topics of Math 10 in an essential way (see the rubric below).
 * Anything that is taken from another source (either the idea for the project or a piece of code that is longer than a few lines) should be referenced with a link, both in the source code and in the final Streamlit app.  (One way to do this is to have a **References** section at the bottom of your app.  Then the references should be of the form "This portion of the app was taken from \[link\]").
