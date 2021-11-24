@@ -1,5 +1,7 @@
 # Homework
 
+Not yet finalized.  Last updated 11/24.
+
 ## Gradient descent
 
 The first part of the homework is about gradient descent.  We will practice using gradient descent with the two-variable function $f(x,y) = \frac{x^2}{4} + y^2$.

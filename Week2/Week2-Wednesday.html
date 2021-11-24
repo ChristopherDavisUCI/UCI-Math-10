@@ -427,11 +427,33 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Proj/Proj-Intro.html">
-   Course Project
+  <a class="reference internal" href="../Week10/Week10-Intro.html">
+   Week 10
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
   <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/overfitting.html">
+     Overfitting in TensorFlow
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Week10/Week10-Homework.html">
+     Homework
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Proj/Proj-Intro.html">
+   Course Project
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -452,8 +474,8 @@
   <a class="reference internal" href="../CourseFiles/CourseFiles-Intro.html">
    Course Handouts
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -734,7 +756,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_81456</span><span class="o">/</span><span class="mf">3680709340.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1459</span><span class="o">/</span><span class="mf">3680709340.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">d2</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;C&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;G&quot;</span><span class="p">:</span> <span class="s2">&quot;chris&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]}</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
 
@@ -844,16 +866,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.37870052, 0.37747693, 0.90397566, 0.51595389],
-       [0.99232986, 0.77702727, 0.49105154, 0.17257689],
-       [0.36281487, 0.4267484 , 0.17978361, 0.29544818],
-       [0.77663314, 0.82071191, 0.13671992, 0.4341667 ],
-       [0.69197945, 0.6162938 , 0.79745006, 0.37152748],
-       [0.96282324, 0.72347804, 0.01845835, 0.80943437],
-       [0.3007178 , 0.55459024, 0.08511925, 0.06749851],
-       [0.39373819, 0.32328811, 0.95511516, 0.46591581],
-       [0.30683472, 0.50611163, 0.26580605, 0.96155423],
-       [0.66916322, 0.68497213, 0.12771731, 0.09687574]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.73357906, 0.9332406 , 0.54304699, 0.86411986],
+       [0.56077623, 0.73162005, 0.11617143, 0.36594745],
+       [0.42638011, 0.22945081, 0.23233551, 0.66904882],
+       [0.8868324 , 0.33941627, 0.56660311, 0.34327278],
+       [0.77992972, 0.81240976, 0.95360127, 0.92304096],
+       [0.51430892, 0.7048311 , 0.53666018, 0.71057841],
+       [0.52206579, 0.61921244, 0.92926309, 0.37014034],
+       [0.86531294, 0.01972714, 0.18919321, 0.74157753],
+       [0.32945173, 0.07973119, 0.18830824, 0.84229893],
+       [0.12985401, 0.03871782, 0.61322155, 0.06064868]])
 </pre></div>
 </div>
 </div>
@@ -867,7 +889,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_81456</span><span class="o">/</span><span class="mf">1874637228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1459</span><span class="o">/</span><span class="mf">1874637228.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">DataFrame</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;DataFrame&#39; is not defined
@@ -909,73 +931,73 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>0.903976</td>
-      <td>0.515954</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>0.543047</td>
+      <td>0.864120</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>0.491052</td>
-      <td>0.172577</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>0.116171</td>
+      <td>0.365947</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>0.179784</td>
-      <td>0.295448</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>0.232336</td>
+      <td>0.669049</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>0.136720</td>
-      <td>0.434167</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>0.566603</td>
+      <td>0.343273</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>0.797450</td>
-      <td>0.371527</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>0.953601</td>
+      <td>0.923041</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>0.018458</td>
-      <td>0.809434</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>0.536660</td>
+      <td>0.710578</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>0.085119</td>
-      <td>0.067499</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>0.929263</td>
+      <td>0.370140</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>0.955115</td>
-      <td>0.465916</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>0.189193</td>
+      <td>0.741578</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>0.265806</td>
-      <td>0.961554</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>0.188308</td>
+      <td>0.842299</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>0.127717</td>
-      <td>0.096876</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0.613222</td>
+      <td>0.060649</td>
     </tr>
   </tbody>
 </table>
@@ -989,16 +1011,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.37870052, 0.37747693, 0.90397566, 0.51595389],
-       [0.99232986, 0.77702727, 0.49105154, 0.17257689],
-       [0.36281487, 0.4267484 , 0.17978361, 0.29544818],
-       [0.77663314, 0.82071191, 0.13671992, 0.4341667 ],
-       [0.69197945, 0.6162938 , 0.79745006, 0.37152748],
-       [0.96282324, 0.72347804, 0.01845835, 0.80943437],
-       [0.3007178 , 0.55459024, 0.08511925, 0.06749851],
-       [0.39373819, 0.32328811, 0.95511516, 0.46591581],
-       [0.30683472, 0.50611163, 0.26580605, 0.96155423],
-       [0.66916322, 0.68497213, 0.12771731, 0.09687574]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.73357906, 0.9332406 , 0.54304699, 0.86411986],
+       [0.56077623, 0.73162005, 0.11617143, 0.36594745],
+       [0.42638011, 0.22945081, 0.23233551, 0.66904882],
+       [0.8868324 , 0.33941627, 0.56660311, 0.34327278],
+       [0.77992972, 0.81240976, 0.95360127, 0.92304096],
+       [0.51430892, 0.7048311 , 0.53666018, 0.71057841],
+       [0.52206579, 0.61921244, 0.92926309, 0.37014034],
+       [0.86531294, 0.01972714, 0.18919321, 0.74157753],
+       [0.32945173, 0.07973119, 0.18830824, 0.84229893],
+       [0.12985401, 0.03871782, 0.61322155, 0.06064868]])
 </pre></div>
 </div>
 </div>
@@ -1012,7 +1034,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_81456</span><span class="o">/</span><span class="mf">4048147504.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1459</span><span class="o">/</span><span class="mf">4048147504.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">),</span><span class="n">index</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 
 <span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/frame.py</span> in <span class="ni">__init__</span><span class="nt">(self, data, index, columns, dtype, copy)</span>
@@ -1076,73 +1098,73 @@
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>0.903976</td>
-      <td>0.515954</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>0.543047</td>
+      <td>0.864120</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>0.491052</td>
-      <td>0.172577</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>0.116171</td>
+      <td>0.365947</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>0.179784</td>
-      <td>0.295448</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>0.232336</td>
+      <td>0.669049</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>0.136720</td>
-      <td>0.434167</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>0.566603</td>
+      <td>0.343273</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>0.797450</td>
-      <td>0.371527</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>0.953601</td>
+      <td>0.923041</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>0.018458</td>
-      <td>0.809434</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>0.536660</td>
+      <td>0.710578</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>0.085119</td>
-      <td>0.067499</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>0.929263</td>
+      <td>0.370140</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>0.955115</td>
-      <td>0.465916</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>0.189193</td>
+      <td>0.741578</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>0.265806</td>
-      <td>0.961554</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>0.188308</td>
+      <td>0.842299</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>0.127717</td>
-      <td>0.096876</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0.613222</td>
+      <td>0.060649</td>
     </tr>
   </tbody>
 </table>
@@ -1186,7 +1208,7 @@
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_81456</span><span class="o">/</span><span class="mf">946357898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1459</span><span class="o">/</span><span class="mf">946357898.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Motivation: this means: look for a column named 2</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">df</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 
@@ -1217,16 +1239,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.903976
-2     0.491052
-4     0.179784
-6     0.136720
-8     0.797450
-10    0.018458
-12    0.085119
-14    0.955115
-16    0.265806
-18    0.127717
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.543047
+2     0.116171
+4     0.232336
+6     0.566603
+8     0.953601
+10    0.536660
+12    0.929263
+14    0.189193
+16    0.188308
+18    0.613222
 Name: c, dtype: float64
 </pre></div>
 </div>
@@ -1251,7 +1273,7 @@ Name: c, dtype: float64
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_81456</span><span class="o">/</span><span class="mf">1108723751.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">8</span><span class="n">j</span><span class="o">/</span><span class="n">gshrlmtn7dg4qtztj4d4t_w40000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_1459</span><span class="o">/</span><span class="mf">1108723751.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">my_series</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 
 <span class="nn">~/opt/anaconda3/envs/book/lib/python3.8/site-packages/pandas/core/series.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
@@ -1287,7 +1309,7 @@ Name: c, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1367199195461507
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.566603107129045
 </pre></div>
 </div>
 </div>
@@ -1299,7 +1321,7 @@ Name: c, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.961196922034588
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.868404585925159
 </pre></div>
 </div>
 </div>
@@ -1338,63 +1360,63 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.903976</td>
-      <td>0.378701</td>
-      <td>0.903976</td>
+      <td>0.543047</td>
+      <td>0.733579</td>
+      <td>0.543047</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.491052</td>
-      <td>0.992330</td>
-      <td>0.491052</td>
+      <td>0.116171</td>
+      <td>0.560776</td>
+      <td>0.116171</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.179784</td>
-      <td>0.362815</td>
-      <td>0.179784</td>
+      <td>0.232336</td>
+      <td>0.426380</td>
+      <td>0.232336</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.136720</td>
-      <td>0.776633</td>
-      <td>0.136720</td>
+      <td>0.566603</td>
+      <td>0.886832</td>
+      <td>0.566603</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.797450</td>
-      <td>0.691979</td>
-      <td>0.797450</td>
+      <td>0.953601</td>
+      <td>0.779930</td>
+      <td>0.953601</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.018458</td>
-      <td>0.962823</td>
-      <td>0.018458</td>
+      <td>0.536660</td>
+      <td>0.514309</td>
+      <td>0.536660</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.085119</td>
-      <td>0.300718</td>
-      <td>0.085119</td>
+      <td>0.929263</td>
+      <td>0.522066</td>
+      <td>0.929263</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.955115</td>
-      <td>0.393738</td>
-      <td>0.955115</td>
+      <td>0.189193</td>
+      <td>0.865313</td>
+      <td>0.189193</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.265806</td>
-      <td>0.306835</td>
-      <td>0.265806</td>
+      <td>0.188308</td>
+      <td>0.329452</td>
+      <td>0.188308</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.127717</td>
-      <td>0.669163</td>
-      <td>0.127717</td>
+      <td>0.613222</td>
+      <td>0.129854</td>
+      <td>0.613222</td>
     </tr>
   </tbody>
 </table>
@@ -1407,16 +1429,16 @@ Name: c, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.903976
-2     0.491052
-4     0.179784
-6     0.136720
-8     0.797450
-10    0.018458
-12    0.085119
-14    0.955115
-16    0.265806
-18    0.127717
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.543047
+2     0.116171
+4     0.232336
+6     0.566603
+8     0.953601
+10    0.536660
+12    0.929263
+14    0.189193
+16    0.188308
+18    0.613222
 Name: c, dtype: float64
 </pre></div>
 </div>
@@ -1429,16 +1451,16 @@ Name: c, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.903976
-2     0.491052
-4     0.179784
-6     0.136720
-8     0.797450
-10    0.018458
-12    0.085119
-14    0.955115
-16    0.265806
-18    0.127717
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0     0.543047
+2     0.116171
+4     0.232336
+6     0.566603
+8     0.953601
+10    0.536660
+12    0.929263
+14    0.189193
+16    0.188308
+18    0.613222
 Name: c, dtype: float64
 </pre></div>
 </div>
@@ -1478,63 +1500,63 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>0.903976</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>0.543047</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>0.491052</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>0.116171</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>0.179784</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>0.232336</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>0.136720</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>0.566603</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>0.797450</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>0.953601</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>0.018458</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>0.536660</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>0.085119</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>0.929263</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>0.955115</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>0.189193</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>0.265806</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>0.188308</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>0.127717</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0.613222</td>
     </tr>
   </tbody>
 </table>
@@ -1573,53 +1595,53 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
     </tr>
   </tbody>
 </table>
@@ -1663,73 +1685,73 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>0.903976</td>
-      <td>0.515954</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>0.543047</td>
+      <td>0.864120</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>0.491052</td>
-      <td>0.172577</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>0.116171</td>
+      <td>0.365947</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>0.179784</td>
-      <td>0.295448</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>0.232336</td>
+      <td>0.669049</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>0.136720</td>
-      <td>0.434167</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>0.566603</td>
+      <td>0.343273</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>0.797450</td>
-      <td>0.371527</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>0.953601</td>
+      <td>0.923041</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>0.018458</td>
-      <td>0.809434</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>0.536660</td>
+      <td>0.710578</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>0.085119</td>
-      <td>0.067499</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>0.929263</td>
+      <td>0.370140</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>0.955115</td>
-      <td>0.465916</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>0.189193</td>
+      <td>0.741578</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>0.265806</td>
-      <td>0.961554</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>0.188308</td>
+      <td>0.842299</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>0.127717</td>
-      <td>0.096876</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0.613222</td>
+      <td>0.060649</td>
     </tr>
   </tbody>
 </table>
@@ -1776,73 +1798,73 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
       <td>chris</td>
-      <td>0.515954</td>
+      <td>0.864120</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>chris</td>
-      <td>0.172577</td>
+      <td>0.365947</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
       <td>chris</td>
-      <td>0.295448</td>
+      <td>0.669049</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
       <td>chris</td>
-      <td>0.434167</td>
+      <td>0.343273</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
       <td>chris</td>
-      <td>0.371527</td>
+      <td>0.923041</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
       <td>chris</td>
-      <td>0.809434</td>
+      <td>0.710578</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
       <td>chris</td>
-      <td>0.067499</td>
+      <td>0.370140</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
       <td>chris</td>
-      <td>0.465916</td>
+      <td>0.741578</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
       <td>chris</td>
-      <td>0.961554</td>
+      <td>0.842299</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
       <td>chris</td>
-      <td>0.096876</td>
+      <td>0.060649</td>
     </tr>
   </tbody>
 </table>
@@ -1889,73 +1911,73 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>4</td>
-      <td>0.515954</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>-2</td>
+      <td>0.864120</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>1</td>
-      <td>0.172577</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>-5</td>
+      <td>0.365947</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>-1</td>
-      <td>0.295448</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>4</td>
+      <td>0.669049</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>-4</td>
-      <td>0.434167</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>3</td>
+      <td>0.343273</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>-1</td>
-      <td>0.371527</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>-4</td>
+      <td>0.923041</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>3</td>
-      <td>0.809434</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>2</td>
+      <td>0.710578</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>1</td>
-      <td>0.067499</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>-3</td>
+      <td>0.370140</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>3</td>
-      <td>0.465916</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>4</td>
+      <td>0.741578</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>-2</td>
-      <td>0.961554</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>-1</td>
+      <td>0.842299</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>-1</td>
-      <td>0.096876</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0</td>
+      <td>0.060649</td>
     </tr>
   </tbody>
 </table>
@@ -2002,73 +2024,73 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>4</td>
-      <td>12.378701</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>-2</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>1</td>
-      <td>12.992330</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>-5</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>-1</td>
-      <td>12.362815</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>4</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>-4</td>
-      <td>12.776633</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>3</td>
+      <td>12.886832</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>-1</td>
-      <td>12.691979</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>-4</td>
+      <td>12.779930</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>3</td>
-      <td>12.962823</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>2</td>
+      <td>12.514309</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>1</td>
-      <td>12.300718</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>-3</td>
+      <td>12.522066</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>3</td>
-      <td>12.393738</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>4</td>
+      <td>12.865313</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>-2</td>
-      <td>12.306835</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>-1</td>
+      <td>12.329452</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>-1</td>
-      <td>12.669163</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0</td>
+      <td>12.129854</td>
     </tr>
   </tbody>
 </table>
@@ -2111,73 +2133,73 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>4</td>
-      <td>12.378701</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>-2</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>1</td>
-      <td>12.992330</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>-5</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>-1</td>
-      <td>12.362815</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>4</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>-4</td>
-      <td>12.776633</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>3</td>
+      <td>12.886832</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>-1</td>
-      <td>12.691979</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>-4</td>
+      <td>12.779930</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>3</td>
-      <td>12.962823</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>2</td>
+      <td>12.514309</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>1</td>
-      <td>12.300718</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>-3</td>
+      <td>12.522066</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>3</td>
-      <td>12.393738</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>4</td>
+      <td>12.865313</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>-2</td>
-      <td>12.306835</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>-1</td>
+      <td>12.329452</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>-1</td>
-      <td>12.669163</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0</td>
+      <td>12.129854</td>
     </tr>
   </tbody>
 </table>
@@ -2224,31 +2246,31 @@ Name: c, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
-      <td>4</td>
-      <td>12.378701</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
+      <td>-2</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
-      <td>1</td>
-      <td>12.992330</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
+      <td>-5</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
-      <td>-1</td>
-      <td>12.362815</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
+      <td>4</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
-      <td>-4</td>
-      <td>12.776633</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
+      <td>3</td>
+      <td>12.886832</td>
     </tr>
   </tbody>
 </table>
@@ -2261,7 +2283,7 @@ Name: c, dtype: float64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_81456/3169448060.py:1: SettingWithCopyWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/8j/gshrlmtn7dg4qtztj4d4t_w40000gn/T/ipykernel_1459/3169448060.py:1: SettingWithCopyWarning: 
 A value is trying to be set on a copy of a slice from a DataFrame.
 Try using .loc[row_indexer,col_indexer] = value instead
 
@@ -2320,31 +2342,31 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
       <td>3</td>
-      <td>12.378701</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>3</td>
-      <td>12.992330</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
       <td>3</td>
-      <td>12.776633</td>
+      <td>12.886832</td>
     </tr>
   </tbody>
 </table>
@@ -2393,73 +2415,73 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
       <td>3</td>
-      <td>12.378701</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>3</td>
-      <td>12.992330</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
       <td>3</td>
-      <td>12.776633</td>
+      <td>12.886832</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>-1</td>
-      <td>12.691979</td>
+      <td>0.779930</td>
+      <td>0.812410</td>
+      <td>-4</td>
+      <td>12.779930</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>3</td>
-      <td>12.962823</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>2</td>
+      <td>12.514309</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>0.300718</td>
-      <td>0.554590</td>
-      <td>1</td>
-      <td>12.300718</td>
+      <td>0.522066</td>
+      <td>0.619212</td>
+      <td>-3</td>
+      <td>12.522066</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>0.393738</td>
-      <td>0.323288</td>
-      <td>3</td>
-      <td>12.393738</td>
+      <td>0.865313</td>
+      <td>0.019727</td>
+      <td>4</td>
+      <td>12.865313</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>0.306835</td>
-      <td>0.506112</td>
-      <td>-2</td>
-      <td>12.306835</td>
+      <td>0.329452</td>
+      <td>0.079731</td>
+      <td>-1</td>
+      <td>12.329452</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>0.669163</td>
-      <td>0.684972</td>
-      <td>-1</td>
-      <td>12.669163</td>
+      <td>0.129854</td>
+      <td>0.038718</td>
+      <td>0</td>
+      <td>12.129854</td>
     </tr>
   </tbody>
 </table>
@@ -2499,31 +2521,31 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>3</td>
-      <td>12.992330</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>0.962823</td>
-      <td>0.723478</td>
-      <td>3</td>
-      <td>12.962823</td>
+      <td>0.514309</td>
+      <td>0.704831</td>
+      <td>2</td>
+      <td>12.514309</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>3</td>
-      <td>12.992330</td>
+      <td>12.560776</td>
     </tr>
   </tbody>
 </table>
@@ -2563,24 +2585,24 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.42638</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.42638</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>0.691979</td>
-      <td>0.616294</td>
-      <td>-1</td>
-      <td>12.691979</td>
+      <td>0.77993</td>
+      <td>0.812410</td>
+      <td>-4</td>
+      <td>12.77993</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.42638</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.42638</td>
     </tr>
   </tbody>
 </table>
@@ -2621,31 +2643,31 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.378701</td>
-      <td>0.377477</td>
+      <td>0.733579</td>
+      <td>0.933241</td>
       <td>3</td>
-      <td>12.378701</td>
+      <td>12.733579</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.992330</td>
-      <td>0.777027</td>
+      <td>0.560776</td>
+      <td>0.731620</td>
       <td>3</td>
-      <td>12.992330</td>
+      <td>12.560776</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.362815</td>
-      <td>0.426748</td>
+      <td>0.426380</td>
+      <td>0.229451</td>
       <td>3</td>
-      <td>12.362815</td>
+      <td>12.426380</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0.776633</td>
-      <td>0.820712</td>
+      <td>0.886832</td>
+      <td>0.339416</td>
       <td>3</td>
-      <td>12.776633</td>
+      <td>12.886832</td>
     </tr>
   </tbody>
 </table>
@@ -2697,143 +2719,143 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>11</td>
-      <td>4</td>
-      <td>23</td>
-      <td>35</td>
+      <td>33</td>
+      <td>29</td>
+      <td>6</td>
+      <td>25</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>19</td>
-      <td>24</td>
-      <td>10</td>
+      <td>15</td>
+      <td>16</td>
+      <td>34</td>
       <td>20</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>5</td>
-      <td>18</td>
-      <td>28</td>
-      <td>24</td>
+      <td>12</td>
+      <td>20</td>
+      <td>34</td>
+      <td>12</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>5</td>
-      <td>30</td>
-      <td>16</td>
-      <td>21</td>
+      <td>2</td>
+      <td>9</td>
+      <td>38</td>
+      <td>27</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>25</td>
-      <td>1</td>
-      <td>35</td>
-      <td>14</td>
+      <td>7</td>
+      <td>38</td>
+      <td>19</td>
+      <td>16</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>35</td>
-      <td>24</td>
-      <td>35</td>
-      <td>24</td>
+      <td>2</td>
+      <td>26</td>
+      <td>5</td>
+      <td>6</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>0</td>
-      <td>6</td>
-      <td>14</td>
-      <td>3</td>
+      <td>36</td>
+      <td>18</td>
+      <td>32</td>
+      <td>36</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>21</td>
-      <td>8</td>
-      <td>16</td>
-      <td>28</td>
+      <td>10</td>
+      <td>30</td>
+      <td>1</td>
+      <td>9</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>27</td>
-      <td>30</td>
-      <td>16</td>
-      <td>13</td>
+      <td>19</td>
+      <td>20</td>
+      <td>36</td>
+      <td>23</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>15</td>
-      <td>25</td>
-      <td>5</td>
-      <td>24</td>
+      <td>1</td>
+      <td>6</td>
+      <td>9</td>
+      <td>29</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>7</td>
-      <td>36</td>
-      <td>18</td>
-      <td>19</td>
+      <td>12</td>
+      <td>1</td>
+      <td>16</td>
+      <td>14</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>29</td>
-      <td>6</td>
-      <td>24</td>
-      <td>31</td>
+      <td>28</td>
+      <td>3</td>
+      <td>16</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>1</td>
-      <td>14</td>
-      <td>19</td>
-      <td>16</td>
+      <td>10</td>
+      <td>28</td>
+      <td>28</td>
+      <td>3</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>20</td>
-      <td>28</td>
-      <td>7</td>
-      <td>22</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>22</td>
       <td>9</td>
-      <td>22</td>
-      <td>21</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>13</td>
-      <td>13</td>
-      <td>11</td>
-      <td>37</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>9</td>
-      <td>29</td>
-      <td>21</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>22</td>
       <td>11</td>
       <td>12</td>
-      <td>4</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>5</td>
-      <td>36</td>
-      <td>11</td>
       <td>26</td>
     </tr>
     <tr>
-      <th>19</th>
+      <th>14</th>
+      <td>35</td>
+      <td>15</td>
+      <td>9</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>24</td>
+      <td>9</td>
+      <td>39</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>12</td>
+      <td>2</td>
+      <td>32</td>
+      <td>36</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>15</td>
+      <td>7</td>
+      <td>36</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>39</td>
+      <td>6</td>
+      <td>17</td>
       <td>19</td>
-      <td>22</td>
-      <td>5</td>
-      <td>5</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>37</td>
+      <td>23</td>
+      <td>15</td>
+      <td>17</td>
     </tr>
   </tbody>
 </table>
@@ -2886,68 +2908,68 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.049310</td>
-      <td>0.621925</td>
-      <td>0.630408</td>
-      <td>0.719062</td>
-      <td>0.716772</td>
-      <td>0.178300</td>
-      <td>0.044365</td>
-      <td>0.155564</td>
-      <td>0.460827</td>
-      <td>0.538702</td>
+      <td>0.407384</td>
+      <td>0.693965</td>
+      <td>0.205632</td>
+      <td>0.049208</td>
+      <td>0.968028</td>
+      <td>0.333876</td>
+      <td>0.425437</td>
+      <td>0.269236</td>
+      <td>0.200796</td>
+      <td>0.911768</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.406629</td>
-      <td>0.848094</td>
-      <td>0.575352</td>
-      <td>0.561427</td>
-      <td>0.616539</td>
-      <td>0.005471</td>
-      <td>0.684039</td>
-      <td>0.317661</td>
-      <td>0.123184</td>
-      <td>0.364916</td>
+      <td>0.245107</td>
+      <td>0.578313</td>
+      <td>0.589374</td>
+      <td>0.744945</td>
+      <td>0.224687</td>
+      <td>0.885644</td>
+      <td>0.130163</td>
+      <td>0.669546</td>
+      <td>0.762811</td>
+      <td>0.591545</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.559596</td>
-      <td>0.135626</td>
-      <td>0.965751</td>
-      <td>0.061283</td>
-      <td>0.472531</td>
-      <td>0.155668</td>
-      <td>0.217788</td>
-      <td>0.936182</td>
-      <td>0.012490</td>
-      <td>0.130037</td>
+      <td>0.752893</td>
+      <td>0.919097</td>
+      <td>0.790374</td>
+      <td>0.375085</td>
+      <td>0.358103</td>
+      <td>0.145151</td>
+      <td>0.044941</td>
+      <td>0.730470</td>
+      <td>0.954472</td>
+      <td>0.457081</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.969386</td>
-      <td>0.686101</td>
-      <td>0.931279</td>
-      <td>0.027201</td>
-      <td>0.149049</td>
-      <td>0.477844</td>
-      <td>0.175493</td>
-      <td>0.721418</td>
-      <td>0.697597</td>
-      <td>0.075407</td>
+      <td>0.396142</td>
+      <td>0.080852</td>
+      <td>0.061702</td>
+      <td>0.381525</td>
+      <td>0.202414</td>
+      <td>0.136864</td>
+      <td>0.623323</td>
+      <td>0.353058</td>
+      <td>0.885449</td>
+      <td>0.698431</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.025342</td>
-      <td>0.769967</td>
-      <td>0.845459</td>
-      <td>0.718082</td>
-      <td>0.993952</td>
-      <td>0.952085</td>
-      <td>0.289461</td>
-      <td>0.189077</td>
-      <td>0.685147</td>
-      <td>0.606998</td>
+      <td>0.294204</td>
+      <td>0.135303</td>
+      <td>0.953848</td>
+      <td>0.979291</td>
+      <td>0.031120</td>
+      <td>0.390091</td>
+      <td>0.968440</td>
+      <td>0.498273</td>
+      <td>0.849175</td>
+      <td>0.213056</td>
     </tr>
   </tbody>
 </table>
@@ -3002,73 +3024,73 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.049310</td>
-      <td>0.621925</td>
-      <td>0.630408</td>
-      <td>0.719062</td>
-      <td>0.716772</td>
-      <td>0.178300</td>
-      <td>0.044365</td>
-      <td>0.155564</td>
-      <td>0.460827</td>
-      <td>0.538702</td>
-      <td>4.065925</td>
+      <td>0.407384</td>
+      <td>0.693965</td>
+      <td>0.205632</td>
+      <td>0.049208</td>
+      <td>0.968028</td>
+      <td>0.333876</td>
+      <td>0.425437</td>
+      <td>0.269236</td>
+      <td>0.200796</td>
+      <td>0.911768</td>
+      <td>4.057945</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.406629</td>
-      <td>0.848094</td>
-      <td>0.575352</td>
-      <td>0.561427</td>
-      <td>0.616539</td>
-      <td>0.005471</td>
-      <td>0.684039</td>
-      <td>0.317661</td>
-      <td>0.123184</td>
-      <td>0.364916</td>
-      <td>4.096683</td>
+      <td>0.245107</td>
+      <td>0.578313</td>
+      <td>0.589374</td>
+      <td>0.744945</td>
+      <td>0.224687</td>
+      <td>0.885644</td>
+      <td>0.130163</td>
+      <td>0.669546</td>
+      <td>0.762811</td>
+      <td>0.591545</td>
+      <td>5.177029</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.559596</td>
-      <td>0.135626</td>
-      <td>0.965751</td>
-      <td>0.061283</td>
-      <td>0.472531</td>
-      <td>0.155668</td>
-      <td>0.217788</td>
-      <td>0.936182</td>
-      <td>0.012490</td>
-      <td>0.130037</td>
-      <td>3.087356</td>
+      <td>0.752893</td>
+      <td>0.919097</td>
+      <td>0.790374</td>
+      <td>0.375085</td>
+      <td>0.358103</td>
+      <td>0.145151</td>
+      <td>0.044941</td>
+      <td>0.730470</td>
+      <td>0.954472</td>
+      <td>0.457081</td>
+      <td>4.774773</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.969386</td>
-      <td>0.686101</td>
-      <td>0.931279</td>
-      <td>0.027201</td>
-      <td>0.149049</td>
-      <td>0.477844</td>
-      <td>0.175493</td>
-      <td>0.721418</td>
-      <td>0.697597</td>
-      <td>0.075407</td>
-      <td>3.941388</td>
+      <td>0.396142</td>
+      <td>0.080852</td>
+      <td>0.061702</td>
+      <td>0.381525</td>
+      <td>0.202414</td>
+      <td>0.136864</td>
+      <td>0.623323</td>
+      <td>0.353058</td>
+      <td>0.885449</td>
+      <td>0.698431</td>
+      <td>3.423618</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.025342</td>
-      <td>0.769967</td>
-      <td>0.845459</td>
-      <td>0.718082</td>
-      <td>0.993952</td>
-      <td>0.952085</td>
-      <td>0.289461</td>
-      <td>0.189077</td>
-      <td>0.685147</td>
-      <td>0.606998</td>
-      <td>6.050228</td>
+      <td>0.294204</td>
+      <td>0.135303</td>
+      <td>0.953848</td>
+      <td>0.979291</td>
+      <td>0.031120</td>
+      <td>0.390091</td>
+      <td>0.968440</td>
+      <td>0.498273</td>
+      <td>0.849175</td>
+      <td>0.213056</td>
+      <td>5.018597</td>
     </tr>
   </tbody>
 </table>
@@ -3123,77 +3145,77 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.049310</td>
-      <td>0.621925</td>
-      <td>0.630408</td>
-      <td>0.719062</td>
-      <td>0.716772</td>
-      <td>0.178300</td>
-      <td>0.044365</td>
-      <td>0.155564</td>
-      <td>0.460827</td>
-      <td>0.538702</td>
-      <td>4.065925</td>
+      <td>0.407384</td>
+      <td>0.693965</td>
+      <td>0.205632</td>
+      <td>0.049208</td>
+      <td>0.968028</td>
+      <td>0.333876</td>
+      <td>0.425437</td>
+      <td>0.269236</td>
+      <td>0.200796</td>
+      <td>0.911768</td>
+      <td>4.057945</td>
       <td>False</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.406629</td>
-      <td>0.848094</td>
-      <td>0.575352</td>
-      <td>0.561427</td>
-      <td>0.616539</td>
-      <td>0.005471</td>
-      <td>0.684039</td>
-      <td>0.317661</td>
-      <td>0.123184</td>
-      <td>0.364916</td>
-      <td>4.096683</td>
+      <td>0.245107</td>
+      <td>0.578313</td>
+      <td>0.589374</td>
+      <td>0.744945</td>
+      <td>0.224687</td>
+      <td>0.885644</td>
+      <td>0.130163</td>
+      <td>0.669546</td>
+      <td>0.762811</td>
+      <td>0.591545</td>
+      <td>5.177029</td>
       <td>False</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.559596</td>
-      <td>0.135626</td>
-      <td>0.965751</td>
-      <td>0.061283</td>
-      <td>0.472531</td>
-      <td>0.155668</td>
-      <td>0.217788</td>
-      <td>0.936182</td>
-      <td>0.012490</td>
-      <td>0.130037</td>
-      <td>3.087356</td>
+      <td>0.752893</td>
+      <td>0.919097</td>
+      <td>0.790374</td>
+      <td>0.375085</td>
+      <td>0.358103</td>
+      <td>0.145151</td>
+      <td>0.044941</td>
+      <td>0.730470</td>
+      <td>0.954472</td>
+      <td>0.457081</td>
+      <td>4.774773</td>
       <td>False</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.969386</td>
-      <td>0.686101</td>
-      <td>0.931279</td>
-      <td>0.027201</td>
-      <td>0.149049</td>
-      <td>0.477844</td>
-      <td>0.175493</td>
-      <td>0.721418</td>
-      <td>0.697597</td>
-      <td>0.075407</td>
-      <td>3.941388</td>
+      <td>0.396142</td>
+      <td>0.080852</td>
+      <td>0.061702</td>
+      <td>0.381525</td>
+      <td>0.202414</td>
+      <td>0.136864</td>
+      <td>0.623323</td>
+      <td>0.353058</td>
+      <td>0.885449</td>
+      <td>0.698431</td>
+      <td>3.423618</td>
       <td>False</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.025342</td>
-      <td>0.769967</td>
-      <td>0.845459</td>
-      <td>0.718082</td>
-      <td>0.993952</td>
-      <td>0.952085</td>
-      <td>0.289461</td>
-      <td>0.189077</td>
-      <td>0.685147</td>
-      <td>0.606998</td>
-      <td>6.050228</td>
+      <td>0.294204</td>
+      <td>0.135303</td>
+      <td>0.953848</td>
+      <td>0.979291</td>
+      <td>0.031120</td>
+      <td>0.390091</td>
+      <td>0.968440</td>
+      <td>0.498273</td>
+      <td>0.849175</td>
+      <td>0.213056</td>
+      <td>5.018597</td>
       <td>False</td>
     </tr>
     <tr>
@@ -3213,77 +3235,77 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
     </tr>
     <tr>
       <th>9999995</th>
-      <td>0.042098</td>
-      <td>0.389572</td>
-      <td>0.932686</td>
-      <td>0.146563</td>
-      <td>0.368023</td>
-      <td>0.966497</td>
-      <td>0.007481</td>
-      <td>0.934652</td>
-      <td>0.267381</td>
-      <td>0.621501</td>
-      <td>4.634356</td>
+      <td>0.108682</td>
+      <td>0.371949</td>
+      <td>0.716442</td>
+      <td>0.146383</td>
+      <td>0.203397</td>
+      <td>0.931017</td>
+      <td>0.501932</td>
+      <td>0.615126</td>
+      <td>0.807378</td>
+      <td>0.302542</td>
+      <td>4.596165</td>
       <td>False</td>
     </tr>
     <tr>
       <th>9999996</th>
-      <td>0.482693</td>
-      <td>0.440048</td>
-      <td>0.854057</td>
-      <td>0.467529</td>
-      <td>0.938787</td>
-      <td>0.063282</td>
-      <td>0.514490</td>
-      <td>0.769122</td>
-      <td>0.283370</td>
-      <td>0.229513</td>
-      <td>4.560197</td>
+      <td>0.578538</td>
+      <td>0.875929</td>
+      <td>0.835630</td>
+      <td>0.461247</td>
+      <td>0.558273</td>
+      <td>0.618982</td>
+      <td>0.310896</td>
+      <td>0.433431</td>
+      <td>0.609191</td>
+      <td>0.651973</td>
+      <td>5.355553</td>
       <td>False</td>
     </tr>
     <tr>
       <th>9999997</th>
-      <td>0.383746</td>
-      <td>0.360324</td>
-      <td>0.253252</td>
-      <td>0.223199</td>
-      <td>0.992927</td>
-      <td>0.784623</td>
-      <td>0.955299</td>
-      <td>0.005253</td>
-      <td>0.862158</td>
-      <td>0.587251</td>
-      <td>5.024286</td>
+      <td>0.092265</td>
+      <td>0.558249</td>
+      <td>0.948984</td>
+      <td>0.199587</td>
+      <td>0.448452</td>
+      <td>0.783250</td>
+      <td>0.457271</td>
+      <td>0.400164</td>
+      <td>0.090472</td>
+      <td>0.061948</td>
+      <td>3.948378</td>
       <td>False</td>
     </tr>
     <tr>
       <th>9999998</th>
-      <td>0.685922</td>
-      <td>0.417649</td>
-      <td>0.210415</td>
-      <td>0.564859</td>
-      <td>0.052665</td>
-      <td>0.551537</td>
-      <td>0.671031</td>
-      <td>0.402759</td>
-      <td>0.668116</td>
-      <td>0.679297</td>
-      <td>4.218328</td>
+      <td>0.945970</td>
+      <td>0.475357</td>
+      <td>0.483569</td>
+      <td>0.066954</td>
+      <td>0.505506</td>
+      <td>0.818767</td>
+      <td>0.945001</td>
+      <td>0.526738</td>
+      <td>0.402633</td>
+      <td>0.801143</td>
+      <td>5.025669</td>
       <td>False</td>
     </tr>
     <tr>
       <th>9999999</th>
-      <td>0.593699</td>
-      <td>0.696921</td>
-      <td>0.008123</td>
-      <td>0.019606</td>
-      <td>0.098547</td>
-      <td>0.249093</td>
-      <td>0.252064</td>
-      <td>0.396060</td>
-      <td>0.808481</td>
-      <td>0.161212</td>
-      <td>2.690106</td>
+      <td>0.511076</td>
+      <td>0.187824</td>
+      <td>0.623521</td>
+      <td>0.373132</td>
+      <td>0.470074</td>
+      <td>0.358577</td>
+      <td>0.308023</td>
+      <td>0.648047</td>
+      <td>0.754659</td>
+      <td>0.103874</td>
+      <td>3.827730</td>
       <td>False</td>
     </tr>
   </tbody>
@@ -3334,48 +3356,48 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
   </thead>
   <tbody>
     <tr>
-      <th>2849362</th>
-      <td>0.848483</td>
-      <td>0.168034</td>
-      <td>0.140996</td>
-      <td>0.172964</td>
-      <td>0.008902</td>
-      <td>0.050977</td>
-      <td>0.042511</td>
-      <td>0.001255</td>
-      <td>0.076987</td>
-      <td>0.116105</td>
-      <td>0.778732</td>
+      <th>3806698</th>
+      <td>0.995980</td>
+      <td>0.193832</td>
+      <td>0.002643</td>
+      <td>0.140139</td>
+      <td>0.120991</td>
+      <td>0.167684</td>
+      <td>0.120578</td>
+      <td>0.037485</td>
+      <td>0.070225</td>
+      <td>0.116560</td>
+      <td>0.970136</td>
       <td>True</td>
     </tr>
     <tr>
-      <th>5487667</th>
-      <td>0.960318</td>
-      <td>0.164650</td>
-      <td>0.119489</td>
-      <td>0.154546</td>
-      <td>0.161789</td>
-      <td>0.032271</td>
-      <td>0.065510</td>
-      <td>0.016130</td>
-      <td>0.098412</td>
-      <td>0.060767</td>
-      <td>0.873566</td>
+      <th>5756440</th>
+      <td>0.983155</td>
+      <td>0.098719</td>
+      <td>0.026335</td>
+      <td>0.124464</td>
+      <td>0.072973</td>
+      <td>0.009883</td>
+      <td>0.091905</td>
+      <td>0.262584</td>
+      <td>0.262897</td>
+      <td>0.011985</td>
+      <td>0.961745</td>
       <td>True</td>
     </tr>
     <tr>
-      <th>9815320</th>
-      <td>0.942501</td>
-      <td>0.007618</td>
-      <td>0.010154</td>
-      <td>0.047322</td>
-      <td>0.194093</td>
-      <td>0.071251</td>
-      <td>0.503757</td>
-      <td>0.050460</td>
-      <td>0.002598</td>
-      <td>0.037288</td>
-      <td>0.924540</td>
+      <th>8569989</th>
+      <td>0.980895</td>
+      <td>0.025338</td>
+      <td>0.051381</td>
+      <td>0.105055</td>
+      <td>0.107801</td>
+      <td>0.047937</td>
+      <td>0.201129</td>
+      <td>0.001386</td>
+      <td>0.098763</td>
+      <td>0.318158</td>
+      <td>0.956949</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -3389,7 +3411,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.49953751926711
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.4997917700285255
 </pre></div>
 </div>
 </div>
