@@ -8,7 +8,7 @@ This is a combined homework and worksheet, due at the usual worksheet time, Tues
 
 The first part of the homework is about gradient descent.  We will practice using gradient descent with the two-variable function $f(x,y) = \frac{x^2}{4} + y^2$.
 
-Here is an example of plotting conour lines using Matplotlib.  (Adapted from [Density and Contour Plots](https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html).)
+Here is an example of plotting contour lines using Matplotlib.  (Adapted from [Density and Contour Plots](https://jakevdp.github.io/PythonDataScienceHandbook/04.04-density-and-contour-plots.html).)
 
 ```
 %matplotlib inline
