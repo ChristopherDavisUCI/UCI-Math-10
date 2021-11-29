@@ -43,9 +43,9 @@ Perform gradient descent by hand, starting at the initial point $(4,4)$ and usin
 :class: note
 * The gradient at a point is a vector pointing in the direction of fastest increase (but we want decrease, so we want to move in the opposite direction).  
 * We multiply the gradient by the learning rate to change the step size.
-* Here is the relevant part from the 3Blue1Brown video:
+* Here is the relevant part (starting at 8:17) from the 3Blue1Brown video:
 
-<iframe width="372" height="210" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=498" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="372" height="210" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=497" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 * General [references](../Week9/gradientdescent.md).
 ```
