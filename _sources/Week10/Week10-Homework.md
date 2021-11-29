@@ -29,7 +29,7 @@ plt.contour(X, Y, Z, 10, cmap='Greys');
 
 ## Question 1
 Try to make the plot look better:
-* Try adding `plt.style.use('???')`, where `???` gets replaced by one of the choices from `plt.style.available`.
+* Try adding `plt.style.use('???')`, where `???` gets replaced by one of the choices from `plt.style.available`
 * Change `cmap='Greys'` to use a more interesting color map.  You can find options in the [Matplotlib documentation](https://matplotlib.org/stable/tutorials/colors/colormaps.html).
 
 ## Question 2
@@ -37,19 +37,36 @@ Math 2D review: what is the relationship between gradient and contour lines?  (W
 
 ## Question 3
 
-Perform gradient descent by hand, starting at the initial point $(4,4)$ and using a step size (or learning rate) of 0.01.  Where do you land after one step?  After two steps?  Repeat this for a step size of 1, and a step size of 10.  (Your answer for this question should be six total points: two points for each step size.  Always begin at the point (4,4).  You'll definitely want to use a calculator.)
+Perform gradient descent by hand, starting at the initial point $(4,4)$ and using a learning rate of 0.01.  Where do you land after one step?  After two steps?  Repeat this for a learning rate of 1, and a learning rate of 10.  (Your answer for this question should be six total points: two points for each learning rate.  Always begin at the point (4,4).  You'll definitely want to use the computer or a calculator.)
+
+```{admonition} Reminders on gradient descent
+:class: note
+* The gradient at a point is a vector pointing in the direction of fastest increase (but we want decrease, so we want to move in the opposite direction).  
+* We multiply the gradient by the learning rate to change the step size.
+* Here is the relevant part from the 3Blue1Brown video:
+
+<iframe width="372" height="210" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=498" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+* General [references](../Week9/gradientdescent.md).
+```
 
 ## Neural networks and overfitting
 
 The second part of this homework is to practice with neural networks using the dataset for your final project.
 
 ## Question 4
-Train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.  
+Build and train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.  You can adapt the code we used for [Handwritten digits](../Week9/Week8-Friday.ipynb) or [Fashion-MNIST](../Week9/Week9-Monday.md) or [Spotify](overfitting.ipynb).
 
-(In class, we have mostly done examples of training neural networks with *classification*, but see the [](tf-regression) section from the end of class on Wednesday.  An alternative is to add a column which is something like, "True or False: this value is bigger than 8", and then use classification on that.)
+```{admonition} Classification or Regression?
+:class: note
+
+We have mostly done examples of training neural networks with *classification* problems, but see the [](tf-regression) section from the end of class on Wednesday for an example of training a neural network for a *regression* problem.  
+
+An alternative is to add a column to your DataFrame which is something like, "True or False: this value is bigger than 8", and then use classification on that new column.  That is a way to create a classification problem out of quantitative data.
+```
 
 ## Question 5
-Show a plot of the training loss and the validation loss, like what we did in class on [Wednesday](overfitting.ipynb).
+Use the [validation_split](https://keras.io/api/models/model_training_apis/#fit-method) keyword argument when training the network.  Show a plot of the training loss and the validation loss, like what we did in class on [Wednesday](overfitting.ipynb).
 
 ## Question 6
 Based on the plot, do you think you were overfitting the data?

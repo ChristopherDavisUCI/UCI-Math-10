@@ -661,7 +661,7 @@
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this headline">¶</a></h2>
 <p>Try to make the plot look better:</p>
 <ul class="simple">
-<li><p>Try adding <code class="docutils literal notranslate"><span class="pre">plt.style.use('???')</span></code>, where <code class="docutils literal notranslate"><span class="pre">???</span></code> gets replaced by one of the choices from <code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code>.</p></li>
+<li><p>Try adding <code class="docutils literal notranslate"><span class="pre">plt.style.use('???')</span></code>, where <code class="docutils literal notranslate"><span class="pre">???</span></code> gets replaced by one of the choices from <code class="docutils literal notranslate"><span class="pre">plt.style.available</span></code></p></li>
 <li><p>Change <code class="docutils literal notranslate"><span class="pre">cmap='Greys'</span></code> to use a more interesting color map.  You can find options in the <a class="reference external" href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">Matplotlib documentation</a>.</p></li>
 </ul>
 </div>
@@ -671,7 +671,19 @@
 </div>
 <div class="section" id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this headline">¶</a></h2>
-<p>Perform gradient descent by hand, starting at the initial point <span class="math notranslate nohighlight">\((4,4)\)</span> and using a step size (or learning rate) of 0.01.  Where do you land after one step?  After two steps?  Repeat this for a step size of 1, and a step size of 10.  (Your answer for this question should be six total points: two points for each step size.  Always begin at the point (4,4).  You’ll definitely want to use a calculator.)</p>
+<p>Perform gradient descent by hand, starting at the initial point <span class="math notranslate nohighlight">\((4,4)\)</span> and using a learning rate of 0.01.  Where do you land after one step?  After two steps?  Repeat this for a learning rate of 1, and a learning rate of 10.  (Your answer for this question should be six total points: two points for each learning rate.  Always begin at the point (4,4).  You’ll definitely want to use the computer or a calculator.)</p>
+<div class="note admonition">
+<p class="admonition-title">Reminders on gradient descent</p>
+<ul class="simple">
+<li><p>The gradient at a point is a vector pointing in the direction of fastest increase (but we want decrease, so we want to move in the opposite direction).</p></li>
+<li><p>We multiply the gradient by the learning rate to change the step size.</p></li>
+<li><p>Here is the relevant part from the 3Blue1Brown video:</p></li>
+</ul>
+<iframe width="372" height="210" src="https://www.youtube.com/embed/IHZwWFHWa-w?start=498" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<ul class="simple">
+<li><p>General <a class="reference internal" href="../Week9/gradientdescent.html"><span class="doc std std-doc">references</span></a>.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="neural-networks-and-overfitting">
 <h2>Neural networks and overfitting<a class="headerlink" href="#neural-networks-and-overfitting" title="Permalink to this headline">¶</a></h2>
@@ -679,12 +691,16 @@
 </div>
 <div class="section" id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this headline">¶</a></h2>
-<p>Train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.</p>
-<p>(In class, we have mostly done examples of training neural networks with <em>classification</em>, but see the <a class="reference internal" href="overfitting.html#tf-regression"><span class="std std-ref">Regression</span></a> section from the end of class on Wednesday.  An alternative is to add a column which is something like, “True or False: this value is bigger than 8”, and then use classification on that.)</p>
+<p>Build and train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.  You can adapt the code we used for <a class="reference internal" href="../Week9/Week8-Friday.html"><span class="doc std std-doc">Handwritten digits</span></a> or <a class="reference internal" href="../Week9/Week9-Monday.html"><span class="doc std std-doc">Fashion-MNIST</span></a> or <a class="reference internal" href="overfitting.html"><span class="doc std std-doc">Spotify</span></a>.</p>
+<div class="note admonition">
+<p class="admonition-title">Classification or Regression?</p>
+<p>We have mostly done examples of training neural networks with <em>classification</em> problems, but see the <a class="reference internal" href="overfitting.html#tf-regression"><span class="std std-ref">Regression</span></a> section from the end of class on Wednesday for an example of training a neural network for a <em>regression</em> problem.</p>
+<p>An alternative is to add a column to your DataFrame which is something like, “True or False: this value is bigger than 8”, and then use classification on that new column.  That is a way to create a classification problem out of quantitative data.</p>
+</div>
 </div>
 <div class="section" id="question-5">
 <h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h2>
-<p>Show a plot of the training loss and the validation loss, like what we did in class on <a class="reference internal" href="overfitting.html"><span class="doc std std-doc">Wednesday</span></a>.</p>
+<p>Use the <a class="reference external" href="https://keras.io/api/models/model_training_apis/#fit-method">validation_split</a> keyword argument when training the network.  Show a plot of the training loss and the validation loss, like what we did in class on <a class="reference internal" href="overfitting.html"><span class="doc std std-doc">Wednesday</span></a>.</p>
 </div>
 <div class="section" id="question-6">
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this headline">¶</a></h2>
