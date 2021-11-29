@@ -636,7 +636,7 @@
         
               <div>
                 
-  <h2 style="color:red">Remember to start recording</h2><div class="section" id="over-fitting-and-polynomial-regression">
+  <div class="section" id="over-fitting-and-polynomial-regression">
 <h1>Over-fitting and polynomial regression<a class="headerlink" href="#over-fitting-and-polynomial-regression" title="Permalink to this headline">¶</a></h1>
 <p>We will use the following constants.</p>
 <ul class="simple">
@@ -662,19 +662,986 @@
 <div class="section" id="define-and-plot-the-initial-data">
 <h2>Define and plot the initial data<a class="headerlink" href="#define-and-plot-the-initial-data" title="Permalink to this headline">¶</a></h2>
 <p>Define <code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>.  Make a pandas DataFrame <code class="docutils literal notranslate"><span class="pre">df</span></code> with columns for <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span> <span class="o">-</span> <span class="mi">5</span>
+<span class="c1"># 𝑐2=−1.4 ,  𝑐1=6.5 , and  𝑐0=3.2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="mf">3.2</span><span class="p">,</span><span class="mf">6.5</span><span class="p">,</span><span class="o">-</span><span class="mf">1.4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_true</span> <span class="o">=</span> <span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;x&quot;</span><span class="p">:</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot;y_true&quot;</span><span class="p">:</span><span class="n">y_true</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y_true</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.509667</td>
+      <td>4.040899</td>
+      <td>13.860584</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-3.166516</td>
+      <td>-31.419915</td>
+      <td>-33.892553</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.804016</td>
+      <td>7.667353</td>
+      <td>-23.558530</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.920619</td>
+      <td>10.242002</td>
+      <td>20.727033</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-2.079359</td>
+      <td>-16.369063</td>
+      <td>-65.543223</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-4.453436</td>
+      <td>-53.513658</td>
+      <td>-12.126434</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.194002</td>
+      <td>4.408324</td>
+      <td>27.192645</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.135824</td>
+      <td>-17.069298</td>
+      <td>-20.210511</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3.650950</td>
+      <td>8.269963</td>
+      <td>36.934422</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.340339</td>
+      <td>9.397091</td>
+      <td>-9.673700</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4.483322</td>
+      <td>4.201349</td>
+      <td>-17.607444</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.342063</td>
+      <td>-8.044991</td>
+      <td>-0.258849</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.577651</td>
+      <td>6.487578</td>
+      <td>29.173689</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-3.953694</td>
+      <td>-44.383387</td>
+      <td>-43.167135</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-4.523512</td>
+      <td>-54.849860</td>
+      <td>-56.501206</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-3.454692</td>
+      <td>-35.964357</td>
+      <td>-25.221488</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.508232</td>
+      <td>-0.465131</td>
+      <td>-16.770615</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>3.859995</td>
+      <td>7.430582</td>
+      <td>55.858492</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.995466</td>
+      <td>8.283196</td>
+      <td>4.298243</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4.804252</td>
+      <td>2.114463</td>
+      <td>31.153408</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>4.969944</td>
+      <td>0.924158</td>
+      <td>37.989205</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-3.306620</td>
+      <td>-33.600259</td>
+      <td>-67.556875</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-0.662280</td>
+      <td>-1.718883</td>
+      <td>24.650757</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>3.100807</td>
+      <td>9.894241</td>
+      <td>18.504563</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-4.571314</td>
+      <td>-55.769212</td>
+      <td>-104.939595</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-2.656497</td>
+      <td>-23.947003</td>
+      <td>-68.748632</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-2.703586</td>
+      <td>-24.606431</td>
+      <td>-9.786675</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-3.142442</td>
+      <td>-31.050797</td>
+      <td>7.466470</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-0.276784</td>
+      <td>1.293650</td>
+      <td>22.259169</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.007129</td>
+      <td>8.326306</td>
+      <td>61.806991</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>-2.141095</td>
+      <td>-17.135124</td>
+      <td>-37.219776</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>-4.545864</td>
+      <td>-55.278953</td>
+      <td>-73.789379</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>-2.635664</td>
+      <td>-23.657235</td>
+      <td>-28.081999</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>4.778541</td>
+      <td>2.292281</td>
+      <td>-34.433211</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>0.659407</td>
+      <td>6.877402</td>
+      <td>9.215047</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2.017367</td>
+      <td>10.615208</td>
+      <td>-14.977114</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>-0.707148</td>
+      <td>-2.096548</td>
+      <td>-0.639327</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>3.434677</td>
+      <td>9.009592</td>
+      <td>-29.374202</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>-2.292712</td>
+      <td>-19.061769</td>
+      <td>2.537527</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>-1.137891</td>
+      <td>-6.009009</td>
+      <td>-1.837691</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>3.612368</td>
+      <td>8.411510</td>
+      <td>26.335993</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>3.082798</td>
+      <td>9.933087</td>
+      <td>51.058296</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>-4.779178</td>
+      <td>-59.841415</td>
+      <td>-48.831719</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.508940</td>
+      <td>9.820449</td>
+      <td>5.832218</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.843249</td>
+      <td>10.424525</td>
+      <td>-12.927221</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2.035421</td>
+      <td>10.630122</td>
+      <td>44.513628</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>-4.585588</td>
+      <td>-56.044977</td>
+      <td>-42.459960</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>-1.261919</td>
+      <td>-7.231888</td>
+      <td>-89.199704</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>-3.573522</td>
+      <td>-37.905976</td>
+      <td>-28.006688</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>4.693116</td>
+      <td>2.869781</td>
+      <td>-12.968585</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart_data</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_circle</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;y&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart_true</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;y_true&quot;</span><span class="p">,</span>
+    <span class="n">color</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s2">&quot;black&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">chart_data</span> <span class="o">+</span> <span class="n">chart_true</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-ea4300b39ed14ac98a36bc4722492042"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-ea4300b39ed14ac98a36bc4722492042") {
+      outputDiv = document.getElementById("altair-viz-ea4300b39ed14ac98a36bc4722492042");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}, {"mark": "line", "encoding": {"color": {"value": "black"}, "x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y_true"}}}], "data": {"name": "data-2b4b023b97b8d8fa22d7e703853501e3"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-2b4b023b97b8d8fa22d7e703853501e3": [{"x": 4.509667241905046, "y_true": 4.040898986586754, "y": 13.86058359060289}, {"x": -3.1665164959254377, "y_true": -31.419914630070423, "y": -33.89255329438597}, {"x": 3.8040156488629133, "y_true": 7.667352638097434, "y": -23.55853041205494}, {"x": 2.920619301184071, "y_true": 10.242001514267958, "y": 20.72703309118681}, {"x": -2.079359146530928, "y_true": -16.369062696817593, "y": -65.54322266802379}, {"x": -4.4534357387203025, "y_true": -53.513658132157715, "y": -12.126433531198984}, {"x": 0.19400234565812724, "y_true": 4.408323572608629, "y": 27.192644897073873}, {"x": -2.13582404377916, "y_true": -17.069298368943766, "y": -20.21051148501505}, {"x": 3.6509503943897332, "y_true": 8.269963268320897, "y": 36.93442193007205}, {"x": 1.3403388464632844, "y_true": 9.397090989337407, "y": -9.673699991420754}, {"x": 4.483321623891056, "y_true": 4.201348658743072, "y": -17.60744405587399}, {"x": -1.3420625320351034, "y_true": -8.044991034077634, "y": -0.2588493310894693}, {"x": 0.5776508507642912, "y_true": 6.4875778224237, "y": 29.173688898484553}, {"x": -3.953694067535677, "y_true": -44.38338693051543, "y": -43.16713512092493}, {"x": -4.523512342158181, "y_true": -54.849859697548524, "y": -56.50120592033782}, {"x": -3.4546922188901394, "y_true": -35.96435708095001, "y": -25.221487890329822}, {"x": -0.5082324781477476, "y_true": -0.4651314605422405, "y": -16.77061480962025}, {"x": 3.8599949409553016, "y_true": 7.430581794328731, "y": 55.85849193647838}, {"x": 0.995466094513489, "y_true": 8.283195770881363, "y": 4.298242634793069}, {"x": 4.804252349696368, "y_true": 2.1144633776380957, "y": 31.153408344439825}, {"x": 4.969943665054238, "y_true": 0.9241577755147006, "y": 37.98920508996598}, {"x": -3.3066199525550477, "y_true": -33.60025940649701, "y": -67.55687483568997}, {"x": -0.6622803164320068, "y_true": -1.7188833613546346, "y": 24.650757404872802}, {"x": 3.1008065502081745, "y_true": 9.894240809813645, "y": 18.504563257254198}, {"x": -4.571313722666145, "y_true": -55.76921200878007, "y": -104.93959454050682}, {"x": -2.6564974173337106, "y_true": -23.947003152290065, "y": -68.74863150872463}, {"x": -2.7035855713618084, "y_true": -24.606431132197812, "y": -9.786675036596375}, {"x": -3.1424423407777247, "y_true": -31.05079662621283, "y": 7.46646964170246}, {"x": -0.27678406752955276, "y_true": 1.2936503730044215, "y": 22.259169271503563}, {"x": 1.0071289141770752, "y_true": 8.326305832470897, "y": 61.80699143440138}, {"x": -2.1410952769501335, "y_true": -17.1351238791453, "y": -37.21977599874035}, {"x": -4.545864303323746, "y_true": -55.27895314153066, "y": -73.78937898565052}, {"x": -2.6356643236724056, "y_true": -23.657235101781964, "y": -28.081998957401538}, {"x": 4.778540909440304, "y_true": 2.2922813988895854, "y": -34.43321114112697}, {"x": 0.6594072283207888, "y_true": 6.8774019342187405, "y": 9.21504689749324}, {"x": 2.017367010130883, "y_true": 10.615208050860554, "y": -14.977113782612191}, {"x": -0.7071484994896293, "y_true": -2.0965478471451986, "y": -0.6393269836123898}, {"x": 3.434677022094842, "y_true": 9.009591899067665, "y": -29.374201686112578}, {"x": -2.292712142253338, "y_true": -19.06176947877694, "y": 2.537527310411601}, {"x": -1.1378912971139021, "y_true": -6.009008676906946, "y": -1.837691004536647}, {"x": 3.6123676193291843, "y_true": 8.4115097815905, "y": 26.335993336850215}, {"x": 3.082797519004094, "y_true": 9.933087113077695, "y": 51.05829616037274}, {"x": -4.779177946788384, "y_true": -59.84141524002031, "y": -48.83171901174568}, {"x": 1.5089395566704136, "y_true": 9.820449098399102, "y": 5.832218180217666}, {"x": 1.843248841093689, "y_true": 10.424524660838461, "y": -12.927221136646736}, {"x": 2.035420945670361, "y_true": 10.63012235035427, "y": 44.51362759159636}, {"x": -4.585587537109249, "y_true": -56.044977275898454, "y": -42.45995978397906}, {"x": -1.2619188887140154, "y_true": -7.231887771011602, "y": -89.19970389676834}, {"x": -3.5735220053747376, "y_true": -37.90597636699228, "y": -28.006687964722687}, {"x": 4.693115961137654, "y_true": 2.869781352835748, "y": -12.968584923637604}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
 <p>Plot <code class="docutils literal notranslate"><span class="pre">x</span></code> vs <code class="docutils literal notranslate"><span class="pre">y_true</span></code> in one Altair chart, and <code class="docutils literal notranslate"><span class="pre">x</span></code> vs <code class="docutils literal notranslate"><span class="pre">y</span></code> in another chart.  Save these charts using the names <code class="docutils literal notranslate"><span class="pre">chart_true</span></code> and <code class="docutils literal notranslate"><span class="pre">chart_data</span></code>, respectively.  For <code class="docutils literal notranslate"><span class="pre">chart_true</span></code>, use <code class="docutils literal notranslate"><span class="pre">alt.value('black')</span></code> and plot the data using a black line.  For <code class="docutils literal notranslate"><span class="pre">chart_data</span></code>, plot the data using disks (in the default blue color).</p>
 </div>
 <div class="section" id="include-powers-of-x-in-df">
 <h2>Include powers of x in <code class="docutils literal notranslate"><span class="pre">df</span></code><a class="headerlink" href="#include-powers-of-x-in-df" title="Permalink to this headline">¶</a></h2>
 <p>Put more columns in df, corresponding to the powers of the <code class="docutils literal notranslate"><span class="pre">x</span></code>-column, up to and including degree 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">):</span>
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span><span class="o">**</span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="define-a-function-performing-the-polynomial-regression">
 <h2>Define a function performing the polynomial regression<a class="headerlink" href="#define-a-function-performing-the-polynomial-regression" title="Permalink to this headline">¶</a></h2>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">poly_reg</span></code> which takes as input <code class="docutils literal notranslate"><span class="pre">df</span></code> and a degree <code class="docutils literal notranslate"><span class="pre">d</span></code>, then performs polynomial regression using that degree, and as output returns the fit LinearRegression object.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">poly_reg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">)]]</span>
+    <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">reg</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">poly_reg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;x1&quot;</span><span class="p">,</span><span class="s2">&quot;x2&quot;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 10.54493867, -33.83757074,  13.00019031,  14.20881279,
+       -18.03441018, -56.60380366,   4.86137893, -18.77787295,
+        13.35813247,  11.19812572,  10.66038403,  -9.10412746,
+         7.37088299, -47.24046468, -57.96983742, -38.55314294,
+        -0.74518745,  12.85373523,   9.65896699,   9.12846895,
+         8.23043995, -36.1025949 ,  -2.15034617,  14.1306386 ,
+       -58.90913703, -26.03273601, -26.72436499, -33.45362008,
+         1.24744263,   9.71618115, -18.84771066, -58.40829884,
+       -25.72862036,   9.26128366,   7.85510995,  13.30046595,
+        -2.57147263,  13.75775799, -20.88806187,  -6.88655507,
+        13.43853375,  14.1423323 , -63.06428817,  11.83556448,
+        12.87612837,  13.33985496, -59.19079546,  -8.2204538 ,
+       -40.56187611,   9.68994001])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;x1&#39;, &#39;x2&#39;, &#39;x3&#39;, &#39;x4&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x1</th>
+      <th>x2</th>
+      <th>x3</th>
+      <th>x4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.509667</td>
+      <td>20.337099</td>
+      <td>91.713547</td>
+      <td>413.597581</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-3.166516</td>
+      <td>10.026827</td>
+      <td>-31.750112</td>
+      <td>100.537254</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3.804016</td>
+      <td>14.470535</td>
+      <td>55.046142</td>
+      <td>209.396385</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.920619</td>
+      <td>8.530017</td>
+      <td>24.912933</td>
+      <td>72.761192</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-2.079359</td>
+      <td>4.323734</td>
+      <td>-8.990597</td>
+      <td>18.694680</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-4.453436</td>
+      <td>19.833090</td>
+      <td>-88.325391</td>
+      <td>393.351454</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.194002</td>
+      <td>0.037637</td>
+      <td>0.007302</td>
+      <td>0.001417</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-2.135824</td>
+      <td>4.561744</td>
+      <td>-9.743083</td>
+      <td>20.809511</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3.650950</td>
+      <td>13.329439</td>
+      <td>48.665120</td>
+      <td>177.673938</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1.340339</td>
+      <td>1.796508</td>
+      <td>2.407930</td>
+      <td>3.227442</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>4.483322</td>
+      <td>20.100173</td>
+      <td>90.115539</td>
+      <td>404.016946</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-1.342063</td>
+      <td>1.801132</td>
+      <td>-2.417232</td>
+      <td>3.244076</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.577651</td>
+      <td>0.333681</td>
+      <td>0.192751</td>
+      <td>0.111343</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-3.953694</td>
+      <td>15.631697</td>
+      <td>-61.802947</td>
+      <td>244.349944</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-4.523512</td>
+      <td>20.462164</td>
+      <td>-92.560851</td>
+      <td>418.700152</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-3.454692</td>
+      <td>11.934898</td>
+      <td>-41.231400</td>
+      <td>142.441798</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-0.508232</td>
+      <td>0.258300</td>
+      <td>-0.131277</td>
+      <td>0.066719</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>3.859995</td>
+      <td>14.899561</td>
+      <td>57.512230</td>
+      <td>221.996916</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0.995466</td>
+      <td>0.990953</td>
+      <td>0.986460</td>
+      <td>0.981987</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4.804252</td>
+      <td>23.080841</td>
+      <td>110.886183</td>
+      <td>532.725205</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>4.969944</td>
+      <td>24.700340</td>
+      <td>122.759298</td>
+      <td>610.106798</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>-3.306620</td>
+      <td>10.933736</td>
+      <td>-36.153708</td>
+      <td>119.546572</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>-0.662280</td>
+      <td>0.438615</td>
+      <td>-0.290486</td>
+      <td>0.192383</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>3.100807</td>
+      <td>9.615001</td>
+      <td>29.814259</td>
+      <td>92.448249</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>-4.571314</td>
+      <td>20.896909</td>
+      <td>-95.526328</td>
+      <td>436.680812</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>-2.656497</td>
+      <td>7.056979</td>
+      <td>-18.746845</td>
+      <td>49.800946</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>-2.703586</td>
+      <td>7.309375</td>
+      <td>-19.761521</td>
+      <td>53.426962</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>-3.142442</td>
+      <td>9.874944</td>
+      <td>-31.031442</td>
+      <td>97.514516</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>-0.276784</td>
+      <td>0.076609</td>
+      <td>-0.021204</td>
+      <td>0.005869</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.007129</td>
+      <td>1.014309</td>
+      <td>1.021540</td>
+      <td>1.028822</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>-2.141095</td>
+      <td>4.584289</td>
+      <td>-9.815399</td>
+      <td>21.015705</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>-4.545864</td>
+      <td>20.664882</td>
+      <td>-93.939751</td>
+      <td>427.037359</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>-2.635664</td>
+      <td>6.946726</td>
+      <td>-18.309239</td>
+      <td>48.257008</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>4.778541</td>
+      <td>22.834453</td>
+      <td>109.115369</td>
+      <td>521.412254</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>0.659407</td>
+      <td>0.434818</td>
+      <td>0.286722</td>
+      <td>0.189067</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>2.017367</td>
+      <td>4.069770</td>
+      <td>8.210219</td>
+      <td>16.563025</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>-0.707148</td>
+      <td>0.500059</td>
+      <td>-0.353616</td>
+      <td>0.250059</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>3.434677</td>
+      <td>11.797006</td>
+      <td>40.518906</td>
+      <td>139.169356</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>-2.292712</td>
+      <td>5.256529</td>
+      <td>-12.051708</td>
+      <td>27.631097</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>-1.137891</td>
+      <td>1.294797</td>
+      <td>-1.473338</td>
+      <td>1.676498</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>3.612368</td>
+      <td>13.049200</td>
+      <td>47.138507</td>
+      <td>170.281616</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>3.082798</td>
+      <td>9.503641</td>
+      <td>29.297799</td>
+      <td>90.319184</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>-4.779178</td>
+      <td>22.840542</td>
+      <td>-109.159014</td>
+      <td>521.690352</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>1.508940</td>
+      <td>2.276899</td>
+      <td>3.435702</td>
+      <td>5.184267</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>1.843249</td>
+      <td>3.397566</td>
+      <td>6.262560</td>
+      <td>11.543457</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>2.035421</td>
+      <td>4.142938</td>
+      <td>8.432624</td>
+      <td>17.163939</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>-4.585588</td>
+      <td>21.027613</td>
+      <td>-96.423960</td>
+      <td>442.160511</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>-1.261919</td>
+      <td>1.592439</td>
+      <td>-2.009529</td>
+      <td>2.535863</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>-3.573522</td>
+      <td>12.770060</td>
+      <td>-45.634089</td>
+      <td>163.074420</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>4.693116</td>
+      <td>22.025337</td>
+      <td>103.367463</td>
+      <td>485.115489</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
 </div>
 <div class="section" id="define-a-function-plotting-the-fit-polynomial">
 <h2>Define a function plotting the fit polynomial<a class="headerlink" href="#define-a-function-plotting-the-fit-polynomial" title="Permalink to this headline">¶</a></h2>
 <p>Define a function <code class="docutils literal notranslate"><span class="pre">make_chart</span></code> which takes as input <code class="docutils literal notranslate"><span class="pre">df</span></code> and a degree <code class="docutils literal notranslate"><span class="pre">d</span></code>, and as output returns an Altair chart showing the fit polynomial.  Use a red line for the polynomial.  Use <code class="docutils literal notranslate"><span class="pre">.copy()</span></code> at the beginning of the function so you are not changing the original DataFrame.  Give the chart a title using <code class="docutils literal notranslate"><span class="pre">.properties(title</span> <span class="pre">=</span> <span class="pre">...)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">reg</span> <span class="o">=</span> <span class="n">poly_reg</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="sa">f</span><span class="s2">&quot;x</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">d</span><span class="o">+</span><span class="mi">1</span><span class="p">)]]</span>
+    <span class="n">df2</span><span class="p">[</span><span class="s2">&quot;y_pred&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+    <span class="n">chart</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df2</span><span class="p">)</span><span class="o">.</span><span class="n">mark_line</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;x1&quot;</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;y_pred&quot;</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">chart</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">make_chart</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span> <span class="o">+</span> <span class="n">chart_true</span> <span class="o">+</span> <span class="n">chart_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-2b617f7ed002434682ace5a133920585"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2b617f7ed002434682ace5a133920585") {
+      outputDiv = document.getElementById("altair-viz-2b617f7ed002434682ace5a133920585");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"data": {"name": "data-2bf0b4f2b4c2ff60279381e7dfceafbd"}, "mark": "line", "encoding": {"x": {"type": "quantitative", "field": "x1"}, "y": {"type": "quantitative", "field": "y_pred"}}}, {"data": {"name": "data-8d91da1ab3e1d7849945106d4b4b79f9"}, "mark": "line", "encoding": {"color": {"value": "black"}, "x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y_true"}}}, {"data": {"name": "data-8d91da1ab3e1d7849945106d4b4b79f9"}, "mark": "circle", "encoding": {"x": {"type": "quantitative", "field": "x"}, "y": {"type": "quantitative", "field": "y"}}}], "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-2bf0b4f2b4c2ff60279381e7dfceafbd": [{"x": 4.509667241905046, "y_true": 4.040898986586754, "y": 13.86058359060289, "x1": 4.509667241905046, "x2": 20.337098632711463, "x3": 91.71354749933077, "x4": 413.5975807966344, "x5": 1865.1874614497574, "x6": 8411.374794912, "x7": 37932.50137200043, "x8": 171062.9588408285, "x9": 771437.0217878355, "x10": 3478924.2663493906, "x11": 15688790.80102439, "x12": 70751225.94048092, "x13": 319064485.9484093, "x14": 1438874660.3368142, "x15": 6488845920.92818, "x16": 29262535887.37899, "x17": 131964299506.38383, "x18": 595115078584.8854, "x19": 2683770975058.0044, "x20": 12102914050994.646, "y_pred": -4.626623312009459}, {"x": -3.1665164959254377, "y_true": -31.419914630070423, "y": -33.89255329438597, "x1": -3.1665164959254377, "x2": 10.026826718967913, "x3": -31.750112207397827, "x4": 100.53725405220884, "x5": -318.3528734113658, "x6": 1008.0696251823526, "x7": -3192.0690971812924, "x8": 10107.739452358383, "x9": -32006.323712409165, "x10": 101348.55200927312, "x11": -320921.8617755205, "x12": 1016204.3692152888, "x13": -3217827.8983517163, "x14": 10189305.121179791, "x15": -32264602.74823335, "x16": 102166396.83676212, "x17": -323511580.9128717, "x18": 1024404757.5835253, "x19": -3243794563.3927317, "x20": 10271528994.376339, "y_pred": -27.912947014146}, {"x": 3.8040156488629133, "y_true": 7.667352638097434, "y": -23.55853041205494, "x1": 3.8040156488629133, "x2": 14.470535056793931, "x3": 55.0461418034635, "x4": 209.39638482990216, "x5": 796.5471247082685, "x6": 3030.077727447012, "x7": 11526.463092479407, "x8": 43846.84597983248, "x9": 166794.08826056466, "x10": 634487.3218810098, "x11": 2413599.701440482, "x12": 9181371.034370448, "x13": 34926079.09276186, "x14": 132859351.42228994, "x15": 505399051.9081681, "x16": 1922545902.3791513, "x17": 7313394698.307563, "x18": 27820267878.67303, "x19": 105828734366.03046, "x20": 402574161627.73627, "y_pred": 24.081150688109204}, {"x": 2.920619301184071, "y_true": 10.242001514267958, "y": 20.72703309118681, "x1": 2.920619301184071, "x2": 8.53001710244893, "x3": 24.91293258884257, "x4": 72.76119176807124, "x5": 212.50774105498442, "x6": 620.6542101762141, "x7": 1812.6946656018058, "x8": 5294.191027510039, "x9": 15462.31649910135, "x10": 45159.54000829231, "x11": 131893.82418081278, "x12": 385211.6486094601, "x13": 1125056.5759697254, "x14": 3285861.950701243, "x15": 9596751.834244391, "x16": 28028458.635767803, "x17": 81860457.2740628, "x18": 239083231.51838177, "x19": 698271100.5620456, "x20": 2039384053.7605538, "y_pred": 36.915508724363775}, {"x": -2.079359146530928, "y_true": -16.369062696817593, "y": -65.54322266802379, "x1": -2.079359146530928, "x2": 4.3237344602618295, "x3": -8.9905967971164, "x4": 18.694679682855654, "x5": -38.87295319001181, "x6": 80.83083076831967, "x7": -168.07632727979907, "x8": 349.49104844457594, "x9": -726.7174082139127, "x10": 1511.1064897128495, "x11": -3142.133100766657, "x12": 6533.623202696735, "x13": -13585.74916651415, "x14": 28249.65179186613, "x15": -58741.171839730654, "x16": 122143.99294288893, "x17": -253981.2289196052, "x18": 528118.1914011466, "x19": -1098147.3917393454, "x20": 2283442.82325229, "y_pred": -34.89018562551338}, {"x": -4.4534357387203025, "y_true": -53.513658132157715, "y": -12.126433531198984, "x1": -4.4534357387203025, "x2": 19.833089878911245, "x3": -88.32539127599526, "x4": 393.35145414497174, "x5": -1751.7654237668173, "x6": 7801.37474405766, "x7": -34742.92109633634, "x8": 154725.3664779638, "x9": -689059.4767595602, "x10": 3068682.099904937, "x11": -13666178.534487912, "x12": 60861447.89722072, "x13": -271042547.1757464, "x14": 1207070566.3062525, "x15": -5375611199.145619, "x16": 23939939031.740204, "x17": -106614980066.73694, "x18": 474802962512.15894, "x19": -2114504482101.9246, "x20": 9416809830276.975, "y_pred": -24.8184003282785}, {"x": 0.19400234565812724, "y_true": 4.408323572608629, "y": 27.192644897073873, "x1": 0.19400234565812724, "x2": 0.03763691012085548, "x3": 0.0073016488467700725, "x4": 0.0014165370034453536, "x5": 0.0002748115013799333, "x6": 5.331407588153873e-05, "x7": 1.03430557776139e-05, "x8": 2.006577082129942e-06, "x9": 3.892806606770494e-07, "x10": 7.552136129069308e-08, "x11": 1.465132123768935e-08, "x12": 2.8423906871024696e-09, "x13": 5.514304605746951e-10, "x14": 1.0697880281883231e-10, "x15": 2.075413868255174e-11, "x16": 4.026351586529113e-12, "x17": 7.811216522309699e-13, "x18": 1.5153943277716007e-13, "x19": 2.939900541847115e-14, "x20": 5.703476011199395e-15, "y_pred": 17.280325817857886}, {"x": -2.13582404377916, "y_true": -17.069298368943766, "y": -20.21051148501505, "x1": -2.13582404377916, "x2": 4.561744345985162, "x3": -9.743083255728749, "x4": 20.809511478127597, "x5": -44.44545495428332, "x6": 94.9276713280619, "x7": -202.74880284244017, "x8": 433.0357679583242, "x9": -924.8882050217619, "x10": 1975.398466093228, "x11": -4219.103539926387, "x12": 9011.262783768545, "x13": -19246.471718385183, "x14": 41107.077054042675, "x15": -87797.48354150694, "x16": 187519.97633125557, "x17": -400509.67413719464, "x18": 855418.1917883765, "x19": -1827022.7415077074, "x20": 3902199.0998434783, "y_pred": -33.08037715407216}, {"x": 3.6509503943897332, "y_true": 8.269963268320897, "y": 36.93442193007205, "x1": 3.6509503943897332, "x2": 13.329438782294549, "x3": 48.66511977921209, "x4": 177.673938250938, "x5": 648.6787349300391, "x6": 2368.2938831250594, "x7": 8646.523486626229, "x8": 31568.028333598122, "x9": 115253.30549465634, "x10": 420784.101150436, "x11": 1536261.8800481136, "x12": 5608815.916847574, "x13": 20477508.68367406, "x14": 74762368.404779, "x15": 272953698.4129384, "x16": 996540412.8708538, "x17": 3638319613.3961515, "x18": 13283324427.44458, "x19": 48496758557.18557, "x20": 177059259780.98032, "y_pred": 11.134138963827438}, {"x": 1.3403388464632844, "y_true": 9.397090989337407, "y": -9.673699991420754, "x1": 1.3403388464632844, "x2": 1.7965082233385279, "x3": 2.407929759731367, "x4": 3.2274417965229536, "x5": 4.325865614578966, "x6": 5.798125727799958, "x7": 7.7714531496484875, "x8": 10.41638054994331, "x9": 13.961479490633609, "x10": 18.713113315396654, "x11": 25.08191271489548, "x12": 33.61826195537579, "x13": 45.059862449368914, "x14": 60.39548405718139, "x15": 80.95041343279419, "x16": 108.50098376123732, "x17": 145.42808341466838, "x18": 194.92290956738293, "x19": 261.26274775881313, "x20": 350.1806099548756, "y_pred": 3.607391057875141}, {"x": 4.483321623891056, "y_true": 4.201348658743072, "y": -17.60744405587399, "x1": 4.483321623891056, "x2": 20.10017278324914, "x3": 90.11553928308733, "x4": 404.0169459164694, "x5": 1811.3379100457305, "x6": 8120.810420281657, "x7": 36408.20496076857, "x8": 163229.69258767136, "x9": 731811.2104393967, "x10": 3280945.024368835, "x11": 14709531.774550568, "x12": 65947561.88215514, "x13": 295664130.2291597, "x14": 1325557388.465333, "x15": 5942900103.415185, "x16": 26643932542.26569, "x17": 119453318912.23438, "x18": 535547647724.77484, "x19": 2401032349668.473, "x20": 10764600252930.617, "y_pred": 0.5388503982704531}, {"x": -1.3420625320351034, "y_true": -8.044991034077634, "y": -0.2588493310894693, "x1": -1.3420625320351034, "x2": 1.801131839892473, "x3": -2.417231557575137, "x4": 3.2440759046744447, "x5": -4.353752722741454, "x6": 5.843008402937121, "x7": -7.841682651948179, "x8": 10.524028475289317, "x9": -14.123904302756308, "x10": 18.955162770778625, "x11": -25.439013743288687, "x12": 34.14074719679381, "x13": -45.81901762849946, "x14": 61.49198681386502, "x15": -82.52609152328488, "x16": 110.75517534870039, "x17": -148.6403710644687, "x18": 199.48467275341818, "x19": -267.72090501764643, "x20": 359.298195666712, "y_pred": -38.631154905506}, {"x": 0.5776508507642912, "y_true": 6.4875778224237, "y": 29.173688898484553, "x1": 0.5776508507642912, "x2": 0.33368050538870947, "x3": 0.1927508278212467, "x4": 0.11134267967646456, "x5": 0.06431719364148572, "x6": 0.03715288162577589, "x7": 0.021461393679474444, "x8": 0.012397192317535796, "x9": 0.007161248689313088, "x10": 0.00413670139791637, "x11": 0.0023895690818642244, "x12": 0.0013803366130989154, "x13": 0.0007973526188976888, "x14": 0.0004605914186653856, "x15": 0.00026606102484679183, "x16": 0.00015369037735796855, "x17": 8.87793772351155e-05, "x18": 5.128348279018841e-05, "x19": 2.9623947463908227e-05, "x20": 1.7112298455523253e-05, "y_pred": 28.010873982121726}, {"x": -3.953694067535677, "y_true": -44.38338693051543, "y": -43.16713512092493, "x1": -3.953694067535677, "x2": 15.631696779666807, "x3": -61.802946823285204, "x4": 244.34994421144563, "x5": -966.0849248314662, "x6": 3819.6042360418187, "x7": -15101.54660837268, "x8": 59706.89523613659, "x9": -236062.79748608742, "x10": 933320.0819866197, "x11": -3690062.0712624104, "x12": 14589376.519988606, "x13": -57681931.39612325, "x14": 228056709.9648524, "x15": -901666461.2497416, "x16": 3564913338.7389903, "x17": -14094576718.65115, "x18": 55725644356.95752, "x19": -220322149503.70593, "x20": 871086375439.5107, "y_pred": -38.36511005868479}, {"x": -4.523512342158181, "y_true": -54.849859697548524, "y": -56.50120592033782, "x1": -4.523512342158181, "x2": 20.46216390965739, "x3": -92.56085099259892, "x4": 418.70015186568554, "x5": -1893.9953046279334, "x6": 8567.5111364741, "x7": -38755.24236741826, "x8": 175309.81717234812, "x9": -793016.121680611, "x10": 3587218.2139526578, "x11": -16226825.864829475, "x12": 73402247.07360773, "x13": -332035970.5796088, "x14": 1501968810.9573312, "x15": -6794174453.902135, "x16": 30733531997.00213, "x17": -139023511306.5525, "x18": 628874569245.3577, "x19": -2844721875650.785, "x20": 12868134514513.697, "y_pred": -51.89380746870111}, {"x": -3.4546922188901394, "y_true": -35.96435708095001, "y": -25.221487890329822, "x1": -3.4546922188901394, "x2": 11.934898327260075, "x3": -41.23140038443032, "x4": 142.44179808203535, "x5": -492.0925714787279, "x6": 1700.028377661201, "x7": -5873.0748081985785, "x8": 20289.665840843325, "x9": -70094.5507042425, "x10": 242155.0989045469, "x11": -836571.3359501103, "x12": 2890096.484853375, "x13": -9984393.838064699, "x14": 34493007.70269677, "x15": -119162725.31662416, "x16": 411670539.93308455, "x17": -1422195011.0531297, "x18": 4913246038.429623, "x19": -16973752858.45562, "x20": 58639091925.470894, "y_pred": -33.226188528898916}, {"x": -0.5082324781477476, "y_true": -0.4651314605422405, "y": -16.77061480962025, "x1": -0.5082324781477476, "x2": 0.2583002518442008, "x3": -0.1312765771009655, "x4": 0.06671902010277754, "x5": -0.033908772926424025, "x6": 0.017233539695345735, "x7": -0.008758644586623142, "x8": 0.004451427643474834, "x9": -0.0022623601025386036, "x10": 0.001149804881375787, "x11": -0.0005843681842479932, "x12": 0.00029699489043105714, "x13": -0.00015094244916099496, "x14": 7.671385499478288e-05, "x15": -3.898847263226547e-05, "x16": 1.981520806509192e-05, "x17": -1.0070732299934901e-05, "x18": 5.1182732335584806e-06, "x19": -2.6012726893287122e-06, "x20": 1.3220512652355875e-06, "y_pred": 10.608769237845605}, {"x": 3.8599949409553016, "y_true": 7.430581794328731, "y": 55.85849193647838, "x1": 3.8599949409553016, "x2": 14.899560944200521, "x3": 57.512229867069216, "x4": 221.99691632994555, "x5": 856.9069739412672, "x6": 3307.656584282608, "x7": 12767.53768174836, "x8": 49282.63086000485, "x9": 190230.70579658635, "x10": 734289.5619891797, "x11": 2834353.9944745176, "x12": 10940592.079548089, "x13": 42230630.07811127, "x14": 163010018.4548643, "x15": 629217846.5608065, "x16": 2428777704.4835024, "x17": 9375069652.011349, "x18": 36187721427.867386, "x19": 139684421636.26788, "x20": 539181160846.2613, "y_pred": 29.380589556445642}, {"x": 0.995466094513489, "y_true": 8.283195770881363, "y": 4.298242634793069, "x1": 0.995466094513489, "x2": 0.9909527453259386, "x3": 0.9864598592370322, "x4": 0.9819873434690145, "x5": 0.977535105664776, "x6": 0.9731030538859454, "x7": 0.9686910966109913, "x8": 0.9642991427333324, "x9": 0.9599271015594558, "x10": 0.9555748828070448, "x11": 0.9512423966031138, "x12": 0.9469295534821531, "x13": 0.9426362643842809, "x14": 0.9383624406534048, "x15": 0.9341079940353905, "x16": 0.9298728366762397, "x17": 0.9256568811202757, "x18": 0.9214600403083378, "x19": 0.9172822275759832, "x20": 0.9131233566516974, "y_pred": 23.7949399202129}, {"x": 4.804252349696368, "y_true": 2.1144633776380957, "y": 31.153408344439825, "x1": 4.804252349696368, "x2": 23.08084063956307, "x3": 110.8861828755883, "x4": 532.7252046289062, "x5": 2559.346316080901, "x6": 12295.745552718412, "x7": 59071.8644629161, "x8": 283796.14364691003, "x9": 1363428.2899504355, "x10": 6550253.565636881, "x11": 31469071.083817992, "x12": 151185358.69719464, "x13": 726332614.7606854, "x14": 3489485171.1251297, "x15": 16764367332.608538, "x16": 80540251148.85759, "x17": 386935690827.03467, "x18": 1858936701837.1687, "x19": 8930801017738.035, "x20": 42905821774138.664, "y_pred": 6.395856737859587}, {"x": 4.969943665054238, "y_true": 0.9241577755147006, "y": 37.98920508996598, "x1": 4.969943665054238, "x2": 24.700340033812754, "x3": 122.75929847573327, "x4": 610.106797785973, "x5": 3032.1964146629234, "x6": 15069.845362254171, "x7": 74896.28249148211, "x8": 372230.30470465415, "x9": 1849963.6448081047, "x10": 9194215.097094689, "x11": 45694731.07695178, "x12": 227100239.24225354, "x13": 1128675395.3543398, "x14": 5609453131.043889, "x15": 27878666053.050236, "x16": 138555399740.51965, "x17": 688612531199.4534, "x18": 3422365487111.687, "x19": 17008963672170.99, "x20": 84533591251643.89, "y_pred": 38.795082798928064}, {"x": -3.3066199525550477, "y_true": -33.60025940649701, "y": -67.55687483568997, "x1": -3.3066199525550477, "x2": 10.933735510635145, "x3": -36.153707995425826, "x4": 119.546572216524, "x5": -395.29508095072117, "x6": 1307.0906018185174, "x7": -4322.051863770294, "x8": 14291.382928720586, "x9": -47256.171941712084, "x10": 156258.2010238372, "x11": -516686.48525577766, "x12": 1708485.8413622938, "x13": -5649313.371706359, "x14": 18680132.313120276, "x15": -61768098.22293178, "x16": 204243626.01532623, "x17": -675356048.9644688, "x18": 2233145786.5846567, "x19": -7384164414.885062, "x20": 24416625387.205914, "y_pred": -28.91257979188586}, {"x": -0.6622803164320068, "y_true": -1.7188833613546346, "y": 24.650757404872802, "x1": -0.6622803164320068, "x2": 0.43861521753327903, "x3": -0.29048622505983357, "x4": 0.1923833090517657, "x5": -0.12741167879503995, "x6": 0.08438224694951227, "x7": -0.055884701210966725, "x8": 0.037011337601707196, "x9": -0.024511880378430474, "x10": 0.016233735893370432, "x11": -0.010751283744334997, "x12": 0.007120363600248473, "x13": -0.004715676658283502, "x14": 0.003123099829439026, "x15": -0.0020683675432896244, "x16": 0.001369839111067545, "x17": -0.0009072174799387527, "x18": 0.0006008322796864848, "x19": -0.0003979193923133292, "x20": 0.0002635341810557035, "y_pred": 6.131948031632769}, {"x": 3.1008065502081745, "y_true": 9.894240809813645, "y": 18.504563257254198, "x1": 3.1008065502081745, "x2": 9.615001261813921, "x3": 29.814258892892468, "x4": 92.44824926468328, "x5": 286.664136875208, "x6": 888.8900333324176, "x7": 2756.2760377719233, "x8": 8546.678792105013, "x9": 26501.597581084512, "x10": 82176.32737040798, "x11": 254812.89418221233, "x12": 790125.4913577065, "x13": 2450026.2990884287, "x14": 7597057.596395691, "x15": 23557005.95721253, "x16": 73045718.3754176, "x17": 226500642.0031565, "x18": 702334674.3497446, "x19": 2177803958.662013, "x20": 6752948780.088462, "y_pred": 21.137601953874622}, {"x": -4.571313722666145, "y_true": -55.76921200878007, "y": -104.93959454050682, "x1": -4.571313722666145, "x2": 20.896909151035807, "x3": -95.52632756343772, "x4": 436.680812066644, "x5": -1996.2049886252455, "x6": 9125.2792577572, "x7": -41714.51429414622, "x8": 190690.13162718367, "x9": -871704.4154843581, "x10": 3984834.3566123163, "x11": -18215927.9769334, "x12": 83270721.5320538, "x13": -380656592.0357887, "x14": 1740100702.7965293, "x15": -7954546221.514776, "x16": 36362726299.99263, "x17": -166225429728.70944, "x18": 759868587974.9263, "x19": -3473597703632.7275, "x20": 15878904849637.895, "y_pred": -73.33405457646396}, {"x": -2.6564974173337106, "y_true": -23.947003152290065, "y": -68.74863150872463, "x1": -2.6564974173337106, "x2": 7.056978528300674, "x3": -18.74684523461019, "x4": 49.800945948896754, "x5": -132.29608429401995, "x6": 351.4442062504269, "x7": -933.6106262411548, "x8": 2480.134217404936, "x9": -6588.470143177176, "x10": 17502.25391953043, "x11": -46494.6923347514, "x12": 123513.03010699256, "x13": -328112.0454862866, "x14": 871628.8014304013, "x15": -2315479.6598735387, "x16": 6151065.736342794, "x17": -16340290.242444512, "x18": 43407938.827537075, "x19": -115313077.38713194, "x20": 306328892.2637183, "y_pred": -28.95157272271709}, {"x": -2.7035855713618084, "y_true": -24.606431132197812, "y": -9.786675036596375, "x1": -2.7035855713618084, "x2": 7.309374941675756, "x3": -19.761520627988133, "x4": 53.42696203799746, "x5": -144.444363687625, "x6": 390.51769753040054, "x7": -1055.798012404626, "x8": 2854.4402726096223, "x9": -7717.223535341442, "x10": 20864.174201122885, "x11": -56408.08032853512, "x12": 152504.07208444542, "x13": -412307.80886142777, "x14": 1114709.4429975585, "x15": -3013712.3663489576, "x16": 8147829.269895694, "x17": -22028353.652009416, "x18": 59555539.094427854, "x19": -161013496.19036925, "x20": 435313765.09480184, "y_pred": -29.209021723309974}, {"x": -3.1424423407777247, "y_true": -31.05079662621283, "y": 7.46646964170246, "x1": -3.1424423407777247, "x2": 9.874943865112586, "x3": -31.031441714533024, "x4": 97.51451633912468, "x5": -306.43374498452664, "x6": 962.9503748824603, "x7": -3026.016030098426, "x8": 9509.080896853417, "x9": -29881.738432152793, "x10": 93901.64006524193, "x11": -295080.4896094862, "x12": 927273.4244862709, "x13": -2913903.270583614, "x14": 9156773.014412638, "x15": -28774631.225381155, "x16": 90422619.50290257, "x17": -284147868.0899547, "x18": 892918291.7275972, "x19": -2805944246.779718, "x20": 8817518006.942245, "y_pred": -27.96299220074971}, {"x": -0.27678406752955276, "y_true": 1.2936503730044215, "y": 22.259169271503563, "x1": -0.27678406752955276, "x2": 0.07660942003820402, "x3": -0.021204266889254135, "x4": 0.005869003238589976, "x5": -0.0016244465887210516, "x6": 0.0004496209343107192, "x7": -0.0001244479110449587, "x8": 3.444519901457962e-05, "x9": -9.533882290120292e-06, "x10": 2.6388267196074616e-06, "x11": -7.303851929586199e-07, "x12": 2.0215898457044405e-07, "x13": -5.59543860370516e-08, "x14": 1.5487282563453955e-08, "x15": -4.286633062892304e-09, "x16": 1.1864717351539972e-09, "x17": -3.2839647286476956e-10, "x18": 9.089491152186933e-11, "x19": -2.5158263328761803e-11, "x20": 6.963406456114277e-12, "y_pred": 12.644466264985779}, {"x": 1.0071289141770752, "y_true": 8.326305832470897, "y": 61.80699143440138, "x1": 1.0071289141770752, "x2": 1.0143086497714944, "x3": 1.0215395690847804, "x4": 1.0288220370012722, "x5": 1.036156421006538, "x6": 1.043543091205919, "x7": 1.0509824203432057, "x8": 1.058474783819447, "x9": 1.0660205597118941, "x10": 1.0736201287930778, "x11": 1.081273874550024, "x12": 1.0889821832036048, "x13": 1.0967454437280273, "x14": 1.1045640478704626, "x15": 1.112438390170814, "x16": 1.1203688679816253, "x17": 1.1283558814881332, "x18": 1.13639983372846, "x19": 1.1445011306139528, "x20": 1.152660180949665, "y_pred": 23.271991651230834}, {"x": -2.1410952769501335, "y_true": -17.1351238791453, "y": -37.21977599874035, "x1": -2.1410952769501335, "x2": 4.584288984978168, "x3": -9.81539949391128, "x4": 21.01570549779217, "x5": -44.996627783097765, "x6": 96.34206722507378, "x7": -206.27754510721772, "x8": 441.65987756993195, "x9": -945.6358778833555, "x10": 2024.6965118506457, "x11": -4335.068138780827, "x12": 9281.793917200635, "x13": -19873.20511774276, "x14": 42550.42561546024, "x15": -91104.5153174799, "x16": 195063.4474550873, "x17": -417649.4260516979, "x18": 894227.2135402245, "x19": -1914625.663431253, "x20": 4099395.965100172, "y_pred": -32.92221829511301}, {"x": -4.545864303323746, "y_true": -55.27895314153066, "y": -73.78937898565052, "x1": -4.545864303323746, "x2": 20.664882264233082, "x3": -93.93975061736515, "x4": 427.03735899461503, "x5": -1941.253886439268, "x6": 8824.676746052755, "x7": -40115.78300825237, "x8": 182360.9059770957, "x9": -828987.9328030573, "x10": 3768466.651615562, "x11": -17130938.029845145, "x12": 77874919.67232426, "x13": -354008817.46262294, "x14": 1609276046.3651896, "x15": -7315550533.365484, "x16": 33255500028.78714, "x17": -151174990470.04526, "x18": 687220992733.0862, "x19": -3124013379360.0435, "x20": 14201340904338.604, "y_pred": -61.84736794815208}, {"x": -2.6356643236724056, "y_true": -23.657235101781964, "y": -28.081998957401538, "x1": -2.6356643236724056, "x2": 6.946726427079519, "x3": -18.309239010165765, "x4": 48.25700805268498, "x5": -127.18927449163378, "x6": 335.22823313137593, "x7": -883.5490943521033, "x8": 2328.738826196903, "x9": -6137.773843357932, "x10": 16177.111545708165, "x11": -42637.435761091976, "x12": 112377.96828838412, "x13": -296190.60178448295, "x14": 780659.002130422, "x15": -2057555.080868854, "x16": 5423024.520636929, "x17": -14293272.255443403, "x18": 37672267.7522088, "x19": -99291452.10633117, "x20": 261698937.96228442, "y_pred": -28.828609923172706}, {"x": 4.778540909440304, "y_true": 2.2922813988895854, "y": -34.43321114112697, "x1": 4.778540909440304, "x2": 22.83445322319457, "x3": 109.11536887173625, "x4": 521.4122540022607, "x5": 2491.589786433282, "x6": 11906.163724015069, "x7": 56894.09042970012, "x8": 271870.7386237181, "x9": 1299145.4465931891, "x10": 6208019.663858647, "x11": 29665275.93035839, "x12": 141756734.62305236, "x13": 677390355.5849284, "x14": 3236937525.8228946, "x15": 15467838388.447182, "x16": 73913698519.80605, "x17": 353199632144.9304, "x18": 1687778891403.8167, "x19": 8065120478662.941, "x20": 38539508146855.63, "y_pred": -2.2341047462522585}, {"x": 0.6594072283207888, "y_true": 6.8774019342187405, "y": 9.21504689749324, "x1": 0.6594072283207888, "x2": 0.4348178927617049, "x3": 0.2867220614902818, "x4": 0.1890665998657295, "x5": 0.1246718825854963, "x6": 0.08220954054523694, "x7": 0.054209565272460195, "x8": 0.03574617918478786, "x9": 0.02357128893929924, "x10": 0.015543078307411777, "x11": 0.010249218186263377, "x12": 0.0067584085566589555, "x13": 0.004456543454205984, "x14": 0.0029386769670291225, "x15": 0.0019377848337588156, "x16": 0.001277789326310961, "x17": 0.0008425835180405987, "x18": 0.0005556056622599306, "x19": 0.0003663703897901571, "x20": 0.00024158728327033452, "y_pred": 29.294478228974967}, {"x": 2.017367010130883, "y_true": 10.615208050860554, "y": -14.977113782612191, "x1": 2.017367010130883, "x2": 4.069769653564418, "x3": 8.21021903793265, "x4": 16.563025033073842, "x5": 33.41370028969514, "x6": 67.40769665083171, "x7": 135.9860634522979, "x8": 274.33379824623074, "x9": 553.4319543458474, "x10": 1116.4753670495734, "x11": 2252.340573109578, "x12": 4543.797567770549, "x13": 9166.50731393325, "x14": 18492.20945325239, "x15": 37305.573295421826, "x16": 75259.03286020365, "x17": 151825.09010653087, "x18": 306286.9280910641, "x19": 617893.1443652427, "x20": 1246517.2452284798, "y_pred": 10.114822777996775}, {"x": -0.7071484994896293, "y_true": -2.0965478471451986, "y": -0.6393269836123898, "x1": -0.7071484994896293, "x2": 0.5000590003304343, "x3": -0.35361597173995063, "x4": 0.2500590038114733, "x5": -0.17682884932915482, "x6": 0.12504425546958958, "x7": -0.08842485762511815, "x8": 0.06252950538718641, "x9": -0.04421764590837756, "x10": 0.03126844195507294, "x11": -0.0221114318099084, "x12": 0.015636065825943984, "x13": -0.01105702048673736, "x14": 0.007818955446022414, "x15": -0.005529162611231016, "x16": 0.003909939043966174, "x17": -0.0027649075280365954, "x18": 0.001955200209678659, "x19": -0.0013826168944760721, "x20": 0.0009777154622977657, "y_pred": 4.207254413035027}, {"x": 3.434677022094842, "y_true": 9.009591899067665, "y": -29.374201686112578, "x1": 3.434677022094842, "x2": 11.797006246106292, "x3": 40.518906283010615, "x4": 139.1693563706709, "x5": 478.00179050607176, "x6": 1641.781766371397, "x7": 5638.99010825012, "x8": 19368.109752626795, "x9": 66523.20152875826, "x10": 228485.7117270105, "x11": 784774.6239457489, "x12": 2695447.3683895846, "x13": 9257991.140473718, "x14": 31798209.440942697, "x15": 109216579.31056516, "x16": 375123675.3897971, "x17": 1288428668.3051007, "x18": 4425336341.635786, "x19": 15199601047.657684, "x20": 52205720463.39854, "y_pred": 3.5939936540035813}, {"x": -2.292712142253338, "y_true": -19.06176947877694, "y": 2.537527310411601, "x1": -2.292712142253338, "x2": 5.25652896723589, "x3": -12.051707789288123, "x4": 27.63109678339001, "x5": -63.350151099055424, "x6": 145.243660638388, "x7": -333.00190433095537, "x8": 763.4775094530657, "x9": -1750.4341562603813, "x10": 4013.241644273153, "x11": -9201.207847621808, "x12": 21095.72095563922, "x13": -48366.41558458223, "x14": 110890.26828804275, "x15": -254239.46456172585, "x16": 582897.9074406561, "x17": -1336417.1100832545, "x18": 3064019.735402993, "x19": -7024915.251462302, "x20": 16106108.49532828, "y_pred": -29.420615485837864}, {"x": -1.1378912971139021, "y_true": -6.009008676906946, "y": -1.837691004536647, "x1": -1.1378912971139021, "x2": 1.2947966040475587, "x3": -1.4733377872783522, "x4": 1.6764982458530906, "x5": -1.9076727635829547, "x6": 2.170724235422271, "x7": -2.470048215921231, "x8": 2.8106463683484897, "x9": -3.198210041808541, "x10": 3.639215372916228, "x11": -4.1410315011645, "x12": 4.712043706249602, "x13": -5.361793524961758, "x14": 6.101138188975657, "x15": -6.942432047724674, "x16": 7.8997330079105526, "x17": -8.989037439224846, "x18": 10.22854747152499, "x19": -11.638975149964695, "x20": 13.2438885304698, "y_pred": -25.028998061156557}, {"x": 3.6123676193291843, "y_true": 8.4115097815905, "y": 26.335993336850215, "x1": 3.6123676193291843, "x2": 13.049199817177998, "x3": 47.138506877730116, "x4": 170.2816158686383, "x5": 615.1197953309196, "x6": 2222.0388306618092, "x7": 8026.821120774804, "x8": 28995.828702834493, "x9": 104743.59270173506, "x10": 378372.36260795244, "x11": 1366820.070734048, "x12": 4937456.5649689, "x13": 17835908.217137955, "x14": 64429857.30491648, "x15": 232744330.2462802, "x16": 840758082.1641206, "x17": 3037127271.698975, "x18": 10971220212.066967, "x19": 39632080638.60058, "x20": 143165644785.52383, "y_pred": 8.67273162876708}, {"x": 3.082797519004094, "y_true": 9.933087113077695, "y": 51.05829616037274, "x1": 3.082797519004094, "x2": 9.503640543177799, "x3": 29.297799488015237, "x4": 90.31918357393279, "x5": 278.4357550401954, "x6": 858.361054839946, "x7": 2646.1533302703224, "x8": 8157.554921461772, "x9": 25148.090073021987, "x10": 77526.46968480367, "x11": 238998.40840145887, "x12": 736783.7004659447, "x13": 2271354.96383907, "x14": 7002127.447300719, "x15": 21586141.12228913, "x16": 66545702.29666518, "x17": 205146925.94054446, "x18": 632426434.3208271, "x19": 1949642642.6768515, "x20": 6010353501.788783, "y_pred": 22.712262031422682}, {"x": -4.779177946788384, "y_true": -59.84141524002031, "y": -48.83171901174568, "x1": -4.779177946788384, "x2": 22.840541847068437, "x3": -109.1590138882067, "x4": 521.6903518676845, "x5": -2493.25102469831, "x6": 11915.690313045705, "x7": -56947.20436486801, "x8": 272160.8232318284, "x9": -1300705.0043693262, "x10": 6216300.672159173, "x11": -29708807.08298893, "x12": 141983675.63641125, "x13": -678565251.4054918, "x14": 3242984084.9740424, "x15": -15498798020.693651, "x16": 74071513702.22656, "x17": -354000944770.9148, "x18": 1691833508391.409, "x19": -8085573392941.842, "x20": 38642394046686.586, "y_pred": -48.18729020398851}, {"x": 1.5089395566704136, "y_true": 9.820449098399102, "y": 5.832218180217666, "x1": 1.5089395566704136, "x2": 2.2768985856847044, "x3": 3.4357023424665694, "x4": 5.1842671694930065, "x5": 7.822745804395757, "x6": 11.804050586030272, "x7": 17.811598858199652, "x8": 26.87662608468303, "x9": 40.55520424901808, "x10": 61.19535192019142, "x11": 92.34008719674358, "x12": 139.3356102375616, "x13": 210.24901394026773, "x14": 317.2530538854192, "x15": 478.71568248219927, "x16": 722.3530296958643, "x17": 1089.9870603888075, "x18": 1644.7245916795744, "x19": 2481.789996213904, "x20": 3744.871096636076, "y_pred": -4.648501215360968}, {"x": 1.843248841093689, "y_true": 10.424524660838461, "y": -12.927221136646736, "x1": 1.843248841093689, "x2": 3.397566290193227, "x3": 6.26256012693765, "x4": 11.543456696257369, "x5": 21.277463177591578, "x6": 39.21965934350931, "x7": 72.29159163301281, "x8": 133.25139249836909, "x9": 245.6154747967391, "x10": 452.7304392737655, "x11": 834.494857519205, "x12": 1538.1816790209175, "x13": 2835.251597246851, "x14": 5226.074220834288, "x15": 9632.955251022406, "x16": 17755.933602754416, "x17": 32728.60403581356, "x18": 60326.96145962758, "x19": 111197.60179716218, "x20": 204964.85064501668, "y_pred": -2.274135314227175}, {"x": 2.035420945670361, "y_true": 10.63012235035427, "y": 44.51362759159636, "x1": 2.035420945670361, "x2": 4.142938426073626, "x3": 8.432623649052857, "x4": 17.163938802237418, "x5": 34.935840548278286, "x6": 71.10914160656553, "x7": 144.73703625464321, "x8": 294.6007952069512, "x9": 599.636629175373, "x10": 1220.5129548147252, "x11": 2484.2576326919143, "x12": 5056.510020022588, "x13": 10292.126406746032, "x14": 20948.8096637779, "x15": 42639.64597651521, "x16": 86789.628536568, "x17": 176653.42779028058, "x18": 359564.0870488037, "x19": 731864.274089976, "x20": 1489651.8728705712, "y_pred": 11.708705430001583}, {"x": -4.585587537109249, "y_true": -56.044977275898454, "y": -42.45995978397906, "x1": -4.585587537109249, "x2": 21.027613060491667, "x3": -96.42396038534626, "x4": 442.16051102175976, "x5": -2027.5657287432382, "x6": 9297.580136394825, "x7": -42634.86759872662, "x8": 195505.91750702373, "x9": -896509.4987513169, "x10": 4111022.7843740988, "x11": -18851454.84479803, "x12": 86444996.39268361, "x13": -396401098.103744, "x14": 1817731935.160949, "x15": -8335368907.679525, "x16": 38222563780.26317, "x17": -175272912107.13815, "x18": 803729281351.3375, "x19": -3685570975774.4663, "x20": 16900508333642.967, "y_pred": -79.6286438119113}, {"x": -1.2619188887140154, "y_true": -7.231887771011602, "y": -89.19970389676834, "x1": -1.2619188887140154, "x2": 1.5924392816932156, "x3": -2.009529208698847, "x4": 2.5358628658796043, "x5": -3.200053249641928, "x6": 4.038207640613815, "x7": -5.095890498239832, "x8": 6.430600474547119, "x9": -8.114896204604321, "x10": 10.240340800543866, "x11": -12.922479483075104, "x12": 16.3071209487118, "x13": -20.578263945723435, "x14": 25.968099970051004, "x15": -32.76963585622122, "x16": 41.35262246324563, "x17": -52.183655384229155, "x18": 65.8515404115016, "x19": -83.09930269618818, "x20": 104.86457971128337, "y_pred": -33.84496552968454}, {"x": -3.5735220053747376, "y_true": -37.90597636699228, "y": -28.006687964722687, "x1": -3.5735220053747376, "x2": 12.770059522897487, "x3": -45.63408871501939, "x4": 163.07442021834478, "x5": -582.750029163982, "x6": 2082.47005285026, "x7": -7441.752559394297, "x8": 26593.266529549295, "x9": -95031.62313813988, "x10": 339597.596490622, "x11": -1213559.4840316083, "x12": 4336681.521018165, "x13": -15497226.845660402, "x14": 55379681.15525158, "x15": -197900509.25892818, "x16": 707201824.7116468, "x17": -2527201282.848238, "x18": 9031009396.269445, "x19": -32272510808.314884, "x20": 115326527542.2073, "y_pred": -38.70308682223222}, {"x": 4.693115961137654, "y_true": 2.869781352835748, "y": -12.968584923637604, "x1": 4.693115961137654, "x2": 22.025337424685002, "x3": 103.36746261723168, "x4": 485.11548867122974, "x5": 2276.703242878041, "x6": 10684.83232792479, "x7": 50145.15714026342, "x8": 235337.03734872607, "x9": 1104464.0062281543, "x10": 5183377.656131389, "x11": 24326192.410594497, "x12": 114165641.8758667, "x13": 535792596.1011553, "x14": 2514536784.6217117, "x15": 11801012718.775911, "x16": 55383521148.07568, "x17": 259921287084.0388, "x18": 1219840741053.5447, "x19": 5724854051884.374, "x20": 26867403926082.125, "y_pred": -19.591839900121983}], "data-8d91da1ab3e1d7849945106d4b4b79f9": [{"x": 4.509667241905046, "y_true": 4.040898986586754, "y": 13.86058359060289, "x1": 4.509667241905046, "x2": 20.337098632711463, "x3": 91.71354749933077, "x4": 413.5975807966344, "x5": 1865.1874614497574, "x6": 8411.374794912, "x7": 37932.50137200043, "x8": 171062.9588408285, "x9": 771437.0217878355, "x10": 3478924.2663493906, "x11": 15688790.80102439, "x12": 70751225.94048092, "x13": 319064485.9484093, "x14": 1438874660.3368142, "x15": 6488845920.92818, "x16": 29262535887.37899, "x17": 131964299506.38383, "x18": 595115078584.8854, "x19": 2683770975058.0044, "x20": 12102914050994.646}, {"x": -3.1665164959254377, "y_true": -31.419914630070423, "y": -33.89255329438597, "x1": -3.1665164959254377, "x2": 10.026826718967913, "x3": -31.750112207397827, "x4": 100.53725405220884, "x5": -318.3528734113658, "x6": 1008.0696251823526, "x7": -3192.0690971812924, "x8": 10107.739452358383, "x9": -32006.323712409165, "x10": 101348.55200927312, "x11": -320921.8617755205, "x12": 1016204.3692152888, "x13": -3217827.8983517163, "x14": 10189305.121179791, "x15": -32264602.74823335, "x16": 102166396.83676212, "x17": -323511580.9128717, "x18": 1024404757.5835253, "x19": -3243794563.3927317, "x20": 10271528994.376339}, {"x": 3.8040156488629133, "y_true": 7.667352638097434, "y": -23.55853041205494, "x1": 3.8040156488629133, "x2": 14.470535056793931, "x3": 55.0461418034635, "x4": 209.39638482990216, "x5": 796.5471247082685, "x6": 3030.077727447012, "x7": 11526.463092479407, "x8": 43846.84597983248, "x9": 166794.08826056466, "x10": 634487.3218810098, "x11": 2413599.701440482, "x12": 9181371.034370448, "x13": 34926079.09276186, "x14": 132859351.42228994, "x15": 505399051.9081681, "x16": 1922545902.3791513, "x17": 7313394698.307563, "x18": 27820267878.67303, "x19": 105828734366.03046, "x20": 402574161627.73627}, {"x": 2.920619301184071, "y_true": 10.242001514267958, "y": 20.72703309118681, "x1": 2.920619301184071, "x2": 8.53001710244893, "x3": 24.91293258884257, "x4": 72.76119176807124, "x5": 212.50774105498442, "x6": 620.6542101762141, "x7": 1812.6946656018058, "x8": 5294.191027510039, "x9": 15462.31649910135, "x10": 45159.54000829231, "x11": 131893.82418081278, "x12": 385211.6486094601, "x13": 1125056.5759697254, "x14": 3285861.950701243, "x15": 9596751.834244391, "x16": 28028458.635767803, "x17": 81860457.2740628, "x18": 239083231.51838177, "x19": 698271100.5620456, "x20": 2039384053.7605538}, {"x": -2.079359146530928, "y_true": -16.369062696817593, "y": -65.54322266802379, "x1": -2.079359146530928, "x2": 4.3237344602618295, "x3": -8.9905967971164, "x4": 18.694679682855654, "x5": -38.87295319001181, "x6": 80.83083076831967, "x7": -168.07632727979907, "x8": 349.49104844457594, "x9": -726.7174082139127, "x10": 1511.1064897128495, "x11": -3142.133100766657, "x12": 6533.623202696735, "x13": -13585.74916651415, "x14": 28249.65179186613, "x15": -58741.171839730654, "x16": 122143.99294288893, "x17": -253981.2289196052, "x18": 528118.1914011466, "x19": -1098147.3917393454, "x20": 2283442.82325229}, {"x": -4.4534357387203025, "y_true": -53.513658132157715, "y": -12.126433531198984, "x1": -4.4534357387203025, "x2": 19.833089878911245, "x3": -88.32539127599526, "x4": 393.35145414497174, "x5": -1751.7654237668173, "x6": 7801.37474405766, "x7": -34742.92109633634, "x8": 154725.3664779638, "x9": -689059.4767595602, "x10": 3068682.099904937, "x11": -13666178.534487912, "x12": 60861447.89722072, "x13": -271042547.1757464, "x14": 1207070566.3062525, "x15": -5375611199.145619, "x16": 23939939031.740204, "x17": -106614980066.73694, "x18": 474802962512.15894, "x19": -2114504482101.9246, "x20": 9416809830276.975}, {"x": 0.19400234565812724, "y_true": 4.408323572608629, "y": 27.192644897073873, "x1": 0.19400234565812724, "x2": 0.03763691012085548, "x3": 0.0073016488467700725, "x4": 0.0014165370034453536, "x5": 0.0002748115013799333, "x6": 5.331407588153873e-05, "x7": 1.03430557776139e-05, "x8": 2.006577082129942e-06, "x9": 3.892806606770494e-07, "x10": 7.552136129069308e-08, "x11": 1.465132123768935e-08, "x12": 2.8423906871024696e-09, "x13": 5.514304605746951e-10, "x14": 1.0697880281883231e-10, "x15": 2.075413868255174e-11, "x16": 4.026351586529113e-12, "x17": 7.811216522309699e-13, "x18": 1.5153943277716007e-13, "x19": 2.939900541847115e-14, "x20": 5.703476011199395e-15}, {"x": -2.13582404377916, "y_true": -17.069298368943766, "y": -20.21051148501505, "x1": -2.13582404377916, "x2": 4.561744345985162, "x3": -9.743083255728749, "x4": 20.809511478127597, "x5": -44.44545495428332, "x6": 94.9276713280619, "x7": -202.74880284244017, "x8": 433.0357679583242, "x9": -924.8882050217619, "x10": 1975.398466093228, "x11": -4219.103539926387, "x12": 9011.262783768545, "x13": -19246.471718385183, "x14": 41107.077054042675, "x15": -87797.48354150694, "x16": 187519.97633125557, "x17": -400509.67413719464, "x18": 855418.1917883765, "x19": -1827022.7415077074, "x20": 3902199.0998434783}, {"x": 3.6509503943897332, "y_true": 8.269963268320897, "y": 36.93442193007205, "x1": 3.6509503943897332, "x2": 13.329438782294549, "x3": 48.66511977921209, "x4": 177.673938250938, "x5": 648.6787349300391, "x6": 2368.2938831250594, "x7": 8646.523486626229, "x8": 31568.028333598122, "x9": 115253.30549465634, "x10": 420784.101150436, "x11": 1536261.8800481136, "x12": 5608815.916847574, "x13": 20477508.68367406, "x14": 74762368.404779, "x15": 272953698.4129384, "x16": 996540412.8708538, "x17": 3638319613.3961515, "x18": 13283324427.44458, "x19": 48496758557.18557, "x20": 177059259780.98032}, {"x": 1.3403388464632844, "y_true": 9.397090989337407, "y": -9.673699991420754, "x1": 1.3403388464632844, "x2": 1.7965082233385279, "x3": 2.407929759731367, "x4": 3.2274417965229536, "x5": 4.325865614578966, "x6": 5.798125727799958, "x7": 7.7714531496484875, "x8": 10.41638054994331, "x9": 13.961479490633609, "x10": 18.713113315396654, "x11": 25.08191271489548, "x12": 33.61826195537579, "x13": 45.059862449368914, "x14": 60.39548405718139, "x15": 80.95041343279419, "x16": 108.50098376123732, "x17": 145.42808341466838, "x18": 194.92290956738293, "x19": 261.26274775881313, "x20": 350.1806099548756}, {"x": 4.483321623891056, "y_true": 4.201348658743072, "y": -17.60744405587399, "x1": 4.483321623891056, "x2": 20.10017278324914, "x3": 90.11553928308733, "x4": 404.0169459164694, "x5": 1811.3379100457305, "x6": 8120.810420281657, "x7": 36408.20496076857, "x8": 163229.69258767136, "x9": 731811.2104393967, "x10": 3280945.024368835, "x11": 14709531.774550568, "x12": 65947561.88215514, "x13": 295664130.2291597, "x14": 1325557388.465333, "x15": 5942900103.415185, "x16": 26643932542.26569, "x17": 119453318912.23438, "x18": 535547647724.77484, "x19": 2401032349668.473, "x20": 10764600252930.617}, {"x": -1.3420625320351034, "y_true": -8.044991034077634, "y": -0.2588493310894693, "x1": -1.3420625320351034, "x2": 1.801131839892473, "x3": -2.417231557575137, "x4": 3.2440759046744447, "x5": -4.353752722741454, "x6": 5.843008402937121, "x7": -7.841682651948179, "x8": 10.524028475289317, "x9": -14.123904302756308, "x10": 18.955162770778625, "x11": -25.439013743288687, "x12": 34.14074719679381, "x13": -45.81901762849946, "x14": 61.49198681386502, "x15": -82.52609152328488, "x16": 110.75517534870039, "x17": -148.6403710644687, "x18": 199.48467275341818, "x19": -267.72090501764643, "x20": 359.298195666712}, {"x": 0.5776508507642912, "y_true": 6.4875778224237, "y": 29.173688898484553, "x1": 0.5776508507642912, "x2": 0.33368050538870947, "x3": 0.1927508278212467, "x4": 0.11134267967646456, "x5": 0.06431719364148572, "x6": 0.03715288162577589, "x7": 0.021461393679474444, "x8": 0.012397192317535796, "x9": 0.007161248689313088, "x10": 0.00413670139791637, "x11": 0.0023895690818642244, "x12": 0.0013803366130989154, "x13": 0.0007973526188976888, "x14": 0.0004605914186653856, "x15": 0.00026606102484679183, "x16": 0.00015369037735796855, "x17": 8.87793772351155e-05, "x18": 5.128348279018841e-05, "x19": 2.9623947463908227e-05, "x20": 1.7112298455523253e-05}, {"x": -3.953694067535677, "y_true": -44.38338693051543, "y": -43.16713512092493, "x1": -3.953694067535677, "x2": 15.631696779666807, "x3": -61.802946823285204, "x4": 244.34994421144563, "x5": -966.0849248314662, "x6": 3819.6042360418187, "x7": -15101.54660837268, "x8": 59706.89523613659, "x9": -236062.79748608742, "x10": 933320.0819866197, "x11": -3690062.0712624104, "x12": 14589376.519988606, "x13": -57681931.39612325, "x14": 228056709.9648524, "x15": -901666461.2497416, "x16": 3564913338.7389903, "x17": -14094576718.65115, "x18": 55725644356.95752, "x19": -220322149503.70593, "x20": 871086375439.5107}, {"x": -4.523512342158181, "y_true": -54.849859697548524, "y": -56.50120592033782, "x1": -4.523512342158181, "x2": 20.46216390965739, "x3": -92.56085099259892, "x4": 418.70015186568554, "x5": -1893.9953046279334, "x6": 8567.5111364741, "x7": -38755.24236741826, "x8": 175309.81717234812, "x9": -793016.121680611, "x10": 3587218.2139526578, "x11": -16226825.864829475, "x12": 73402247.07360773, "x13": -332035970.5796088, "x14": 1501968810.9573312, "x15": -6794174453.902135, "x16": 30733531997.00213, "x17": -139023511306.5525, "x18": 628874569245.3577, "x19": -2844721875650.785, "x20": 12868134514513.697}, {"x": -3.4546922188901394, "y_true": -35.96435708095001, "y": -25.221487890329822, "x1": -3.4546922188901394, "x2": 11.934898327260075, "x3": -41.23140038443032, "x4": 142.44179808203535, "x5": -492.0925714787279, "x6": 1700.028377661201, "x7": -5873.0748081985785, "x8": 20289.665840843325, "x9": -70094.5507042425, "x10": 242155.0989045469, "x11": -836571.3359501103, "x12": 2890096.484853375, "x13": -9984393.838064699, "x14": 34493007.70269677, "x15": -119162725.31662416, "x16": 411670539.93308455, "x17": -1422195011.0531297, "x18": 4913246038.429623, "x19": -16973752858.45562, "x20": 58639091925.470894}, {"x": -0.5082324781477476, "y_true": -0.4651314605422405, "y": -16.77061480962025, "x1": -0.5082324781477476, "x2": 0.2583002518442008, "x3": -0.1312765771009655, "x4": 0.06671902010277754, "x5": -0.033908772926424025, "x6": 0.017233539695345735, "x7": -0.008758644586623142, "x8": 0.004451427643474834, "x9": -0.0022623601025386036, "x10": 0.001149804881375787, "x11": -0.0005843681842479932, "x12": 0.00029699489043105714, "x13": -0.00015094244916099496, "x14": 7.671385499478288e-05, "x15": -3.898847263226547e-05, "x16": 1.981520806509192e-05, "x17": -1.0070732299934901e-05, "x18": 5.1182732335584806e-06, "x19": -2.6012726893287122e-06, "x20": 1.3220512652355875e-06}, {"x": 3.8599949409553016, "y_true": 7.430581794328731, "y": 55.85849193647838, "x1": 3.8599949409553016, "x2": 14.899560944200521, "x3": 57.512229867069216, "x4": 221.99691632994555, "x5": 856.9069739412672, "x6": 3307.656584282608, "x7": 12767.53768174836, "x8": 49282.63086000485, "x9": 190230.70579658635, "x10": 734289.5619891797, "x11": 2834353.9944745176, "x12": 10940592.079548089, "x13": 42230630.07811127, "x14": 163010018.4548643, "x15": 629217846.5608065, "x16": 2428777704.4835024, "x17": 9375069652.011349, "x18": 36187721427.867386, "x19": 139684421636.26788, "x20": 539181160846.2613}, {"x": 0.995466094513489, "y_true": 8.283195770881363, "y": 4.298242634793069, "x1": 0.995466094513489, "x2": 0.9909527453259386, "x3": 0.9864598592370322, "x4": 0.9819873434690145, "x5": 0.977535105664776, "x6": 0.9731030538859454, "x7": 0.9686910966109913, "x8": 0.9642991427333324, "x9": 0.9599271015594558, "x10": 0.9555748828070448, "x11": 0.9512423966031138, "x12": 0.9469295534821531, "x13": 0.9426362643842809, "x14": 0.9383624406534048, "x15": 0.9341079940353905, "x16": 0.9298728366762397, "x17": 0.9256568811202757, "x18": 0.9214600403083378, "x19": 0.9172822275759832, "x20": 0.9131233566516974}, {"x": 4.804252349696368, "y_true": 2.1144633776380957, "y": 31.153408344439825, "x1": 4.804252349696368, "x2": 23.08084063956307, "x3": 110.8861828755883, "x4": 532.7252046289062, "x5": 2559.346316080901, "x6": 12295.745552718412, "x7": 59071.8644629161, "x8": 283796.14364691003, "x9": 1363428.2899504355, "x10": 6550253.565636881, "x11": 31469071.083817992, "x12": 151185358.69719464, "x13": 726332614.7606854, "x14": 3489485171.1251297, "x15": 16764367332.608538, "x16": 80540251148.85759, "x17": 386935690827.03467, "x18": 1858936701837.1687, "x19": 8930801017738.035, "x20": 42905821774138.664}, {"x": 4.969943665054238, "y_true": 0.9241577755147006, "y": 37.98920508996598, "x1": 4.969943665054238, "x2": 24.700340033812754, "x3": 122.75929847573327, "x4": 610.106797785973, "x5": 3032.1964146629234, "x6": 15069.845362254171, "x7": 74896.28249148211, "x8": 372230.30470465415, "x9": 1849963.6448081047, "x10": 9194215.097094689, "x11": 45694731.07695178, "x12": 227100239.24225354, "x13": 1128675395.3543398, "x14": 5609453131.043889, "x15": 27878666053.050236, "x16": 138555399740.51965, "x17": 688612531199.4534, "x18": 3422365487111.687, "x19": 17008963672170.99, "x20": 84533591251643.89}, {"x": -3.3066199525550477, "y_true": -33.60025940649701, "y": -67.55687483568997, "x1": -3.3066199525550477, "x2": 10.933735510635145, "x3": -36.153707995425826, "x4": 119.546572216524, "x5": -395.29508095072117, "x6": 1307.0906018185174, "x7": -4322.051863770294, "x8": 14291.382928720586, "x9": -47256.171941712084, "x10": 156258.2010238372, "x11": -516686.48525577766, "x12": 1708485.8413622938, "x13": -5649313.371706359, "x14": 18680132.313120276, "x15": -61768098.22293178, "x16": 204243626.01532623, "x17": -675356048.9644688, "x18": 2233145786.5846567, "x19": -7384164414.885062, "x20": 24416625387.205914}, {"x": -0.6622803164320068, "y_true": -1.7188833613546346, "y": 24.650757404872802, "x1": -0.6622803164320068, "x2": 0.43861521753327903, "x3": -0.29048622505983357, "x4": 0.1923833090517657, "x5": -0.12741167879503995, "x6": 0.08438224694951227, "x7": -0.055884701210966725, "x8": 0.037011337601707196, "x9": -0.024511880378430474, "x10": 0.016233735893370432, "x11": -0.010751283744334997, "x12": 0.007120363600248473, "x13": -0.004715676658283502, "x14": 0.003123099829439026, "x15": -0.0020683675432896244, "x16": 0.001369839111067545, "x17": -0.0009072174799387527, "x18": 0.0006008322796864848, "x19": -0.0003979193923133292, "x20": 0.0002635341810557035}, {"x": 3.1008065502081745, "y_true": 9.894240809813645, "y": 18.504563257254198, "x1": 3.1008065502081745, "x2": 9.615001261813921, "x3": 29.814258892892468, "x4": 92.44824926468328, "x5": 286.664136875208, "x6": 888.8900333324176, "x7": 2756.2760377719233, "x8": 8546.678792105013, "x9": 26501.597581084512, "x10": 82176.32737040798, "x11": 254812.89418221233, "x12": 790125.4913577065, "x13": 2450026.2990884287, "x14": 7597057.596395691, "x15": 23557005.95721253, "x16": 73045718.3754176, "x17": 226500642.0031565, "x18": 702334674.3497446, "x19": 2177803958.662013, "x20": 6752948780.088462}, {"x": -4.571313722666145, "y_true": -55.76921200878007, "y": -104.93959454050682, "x1": -4.571313722666145, "x2": 20.896909151035807, "x3": -95.52632756343772, "x4": 436.680812066644, "x5": -1996.2049886252455, "x6": 9125.2792577572, "x7": -41714.51429414622, "x8": 190690.13162718367, "x9": -871704.4154843581, "x10": 3984834.3566123163, "x11": -18215927.9769334, "x12": 83270721.5320538, "x13": -380656592.0357887, "x14": 1740100702.7965293, "x15": -7954546221.514776, "x16": 36362726299.99263, "x17": -166225429728.70944, "x18": 759868587974.9263, "x19": -3473597703632.7275, "x20": 15878904849637.895}, {"x": -2.6564974173337106, "y_true": -23.947003152290065, "y": -68.74863150872463, "x1": -2.6564974173337106, "x2": 7.056978528300674, "x3": -18.74684523461019, "x4": 49.800945948896754, "x5": -132.29608429401995, "x6": 351.4442062504269, "x7": -933.6106262411548, "x8": 2480.134217404936, "x9": -6588.470143177176, "x10": 17502.25391953043, "x11": -46494.6923347514, "x12": 123513.03010699256, "x13": -328112.0454862866, "x14": 871628.8014304013, "x15": -2315479.6598735387, "x16": 6151065.736342794, "x17": -16340290.242444512, "x18": 43407938.827537075, "x19": -115313077.38713194, "x20": 306328892.2637183}, {"x": -2.7035855713618084, "y_true": -24.606431132197812, "y": -9.786675036596375, "x1": -2.7035855713618084, "x2": 7.309374941675756, "x3": -19.761520627988133, "x4": 53.42696203799746, "x5": -144.444363687625, "x6": 390.51769753040054, "x7": -1055.798012404626, "x8": 2854.4402726096223, "x9": -7717.223535341442, "x10": 20864.174201122885, "x11": -56408.08032853512, "x12": 152504.07208444542, "x13": -412307.80886142777, "x14": 1114709.4429975585, "x15": -3013712.3663489576, "x16": 8147829.269895694, "x17": -22028353.652009416, "x18": 59555539.094427854, "x19": -161013496.19036925, "x20": 435313765.09480184}, {"x": -3.1424423407777247, "y_true": -31.05079662621283, "y": 7.46646964170246, "x1": -3.1424423407777247, "x2": 9.874943865112586, "x3": -31.031441714533024, "x4": 97.51451633912468, "x5": -306.43374498452664, "x6": 962.9503748824603, "x7": -3026.016030098426, "x8": 9509.080896853417, "x9": -29881.738432152793, "x10": 93901.64006524193, "x11": -295080.4896094862, "x12": 927273.4244862709, "x13": -2913903.270583614, "x14": 9156773.014412638, "x15": -28774631.225381155, "x16": 90422619.50290257, "x17": -284147868.0899547, "x18": 892918291.7275972, "x19": -2805944246.779718, "x20": 8817518006.942245}, {"x": -0.27678406752955276, "y_true": 1.2936503730044215, "y": 22.259169271503563, "x1": -0.27678406752955276, "x2": 0.07660942003820402, "x3": -0.021204266889254135, "x4": 0.005869003238589976, "x5": -0.0016244465887210516, "x6": 0.0004496209343107192, "x7": -0.0001244479110449587, "x8": 3.444519901457962e-05, "x9": -9.533882290120292e-06, "x10": 2.6388267196074616e-06, "x11": -7.303851929586199e-07, "x12": 2.0215898457044405e-07, "x13": -5.59543860370516e-08, "x14": 1.5487282563453955e-08, "x15": -4.286633062892304e-09, "x16": 1.1864717351539972e-09, "x17": -3.2839647286476956e-10, "x18": 9.089491152186933e-11, "x19": -2.5158263328761803e-11, "x20": 6.963406456114277e-12}, {"x": 1.0071289141770752, "y_true": 8.326305832470897, "y": 61.80699143440138, "x1": 1.0071289141770752, "x2": 1.0143086497714944, "x3": 1.0215395690847804, "x4": 1.0288220370012722, "x5": 1.036156421006538, "x6": 1.043543091205919, "x7": 1.0509824203432057, "x8": 1.058474783819447, "x9": 1.0660205597118941, "x10": 1.0736201287930778, "x11": 1.081273874550024, "x12": 1.0889821832036048, "x13": 1.0967454437280273, "x14": 1.1045640478704626, "x15": 1.112438390170814, "x16": 1.1203688679816253, "x17": 1.1283558814881332, "x18": 1.13639983372846, "x19": 1.1445011306139528, "x20": 1.152660180949665}, {"x": -2.1410952769501335, "y_true": -17.1351238791453, "y": -37.21977599874035, "x1": -2.1410952769501335, "x2": 4.584288984978168, "x3": -9.81539949391128, "x4": 21.01570549779217, "x5": -44.996627783097765, "x6": 96.34206722507378, "x7": -206.27754510721772, "x8": 441.65987756993195, "x9": -945.6358778833555, "x10": 2024.6965118506457, "x11": -4335.068138780827, "x12": 9281.793917200635, "x13": -19873.20511774276, "x14": 42550.42561546024, "x15": -91104.5153174799, "x16": 195063.4474550873, "x17": -417649.4260516979, "x18": 894227.2135402245, "x19": -1914625.663431253, "x20": 4099395.965100172}, {"x": -4.545864303323746, "y_true": -55.27895314153066, "y": -73.78937898565052, "x1": -4.545864303323746, "x2": 20.664882264233082, "x3": -93.93975061736515, "x4": 427.03735899461503, "x5": -1941.253886439268, "x6": 8824.676746052755, "x7": -40115.78300825237, "x8": 182360.9059770957, "x9": -828987.9328030573, "x10": 3768466.651615562, "x11": -17130938.029845145, "x12": 77874919.67232426, "x13": -354008817.46262294, "x14": 1609276046.3651896, "x15": -7315550533.365484, "x16": 33255500028.78714, "x17": -151174990470.04526, "x18": 687220992733.0862, "x19": -3124013379360.0435, "x20": 14201340904338.604}, {"x": -2.6356643236724056, "y_true": -23.657235101781964, "y": -28.081998957401538, "x1": -2.6356643236724056, "x2": 6.946726427079519, "x3": -18.309239010165765, "x4": 48.25700805268498, "x5": -127.18927449163378, "x6": 335.22823313137593, "x7": -883.5490943521033, "x8": 2328.738826196903, "x9": -6137.773843357932, "x10": 16177.111545708165, "x11": -42637.435761091976, "x12": 112377.96828838412, "x13": -296190.60178448295, "x14": 780659.002130422, "x15": -2057555.080868854, "x16": 5423024.520636929, "x17": -14293272.255443403, "x18": 37672267.7522088, "x19": -99291452.10633117, "x20": 261698937.96228442}, {"x": 4.778540909440304, "y_true": 2.2922813988895854, "y": -34.43321114112697, "x1": 4.778540909440304, "x2": 22.83445322319457, "x3": 109.11536887173625, "x4": 521.4122540022607, "x5": 2491.589786433282, "x6": 11906.163724015069, "x7": 56894.09042970012, "x8": 271870.7386237181, "x9": 1299145.4465931891, "x10": 6208019.663858647, "x11": 29665275.93035839, "x12": 141756734.62305236, "x13": 677390355.5849284, "x14": 3236937525.8228946, "x15": 15467838388.447182, "x16": 73913698519.80605, "x17": 353199632144.9304, "x18": 1687778891403.8167, "x19": 8065120478662.941, "x20": 38539508146855.63}, {"x": 0.6594072283207888, "y_true": 6.8774019342187405, "y": 9.21504689749324, "x1": 0.6594072283207888, "x2": 0.4348178927617049, "x3": 0.2867220614902818, "x4": 0.1890665998657295, "x5": 0.1246718825854963, "x6": 0.08220954054523694, "x7": 0.054209565272460195, "x8": 0.03574617918478786, "x9": 0.02357128893929924, "x10": 0.015543078307411777, "x11": 0.010249218186263377, "x12": 0.0067584085566589555, "x13": 0.004456543454205984, "x14": 0.0029386769670291225, "x15": 0.0019377848337588156, "x16": 0.001277789326310961, "x17": 0.0008425835180405987, "x18": 0.0005556056622599306, "x19": 0.0003663703897901571, "x20": 0.00024158728327033452}, {"x": 2.017367010130883, "y_true": 10.615208050860554, "y": -14.977113782612191, "x1": 2.017367010130883, "x2": 4.069769653564418, "x3": 8.21021903793265, "x4": 16.563025033073842, "x5": 33.41370028969514, "x6": 67.40769665083171, "x7": 135.9860634522979, "x8": 274.33379824623074, "x9": 553.4319543458474, "x10": 1116.4753670495734, "x11": 2252.340573109578, "x12": 4543.797567770549, "x13": 9166.50731393325, "x14": 18492.20945325239, "x15": 37305.573295421826, "x16": 75259.03286020365, "x17": 151825.09010653087, "x18": 306286.9280910641, "x19": 617893.1443652427, "x20": 1246517.2452284798}, {"x": -0.7071484994896293, "y_true": -2.0965478471451986, "y": -0.6393269836123898, "x1": -0.7071484994896293, "x2": 0.5000590003304343, "x3": -0.35361597173995063, "x4": 0.2500590038114733, "x5": -0.17682884932915482, "x6": 0.12504425546958958, "x7": -0.08842485762511815, "x8": 0.06252950538718641, "x9": -0.04421764590837756, "x10": 0.03126844195507294, "x11": -0.0221114318099084, "x12": 0.015636065825943984, "x13": -0.01105702048673736, "x14": 0.007818955446022414, "x15": -0.005529162611231016, "x16": 0.003909939043966174, "x17": -0.0027649075280365954, "x18": 0.001955200209678659, "x19": -0.0013826168944760721, "x20": 0.0009777154622977657}, {"x": 3.434677022094842, "y_true": 9.009591899067665, "y": -29.374201686112578, "x1": 3.434677022094842, "x2": 11.797006246106292, "x3": 40.518906283010615, "x4": 139.1693563706709, "x5": 478.00179050607176, "x6": 1641.781766371397, "x7": 5638.99010825012, "x8": 19368.109752626795, "x9": 66523.20152875826, "x10": 228485.7117270105, "x11": 784774.6239457489, "x12": 2695447.3683895846, "x13": 9257991.140473718, "x14": 31798209.440942697, "x15": 109216579.31056516, "x16": 375123675.3897971, "x17": 1288428668.3051007, "x18": 4425336341.635786, "x19": 15199601047.657684, "x20": 52205720463.39854}, {"x": -2.292712142253338, "y_true": -19.06176947877694, "y": 2.537527310411601, "x1": -2.292712142253338, "x2": 5.25652896723589, "x3": -12.051707789288123, "x4": 27.63109678339001, "x5": -63.350151099055424, "x6": 145.243660638388, "x7": -333.00190433095537, "x8": 763.4775094530657, "x9": -1750.4341562603813, "x10": 4013.241644273153, "x11": -9201.207847621808, "x12": 21095.72095563922, "x13": -48366.41558458223, "x14": 110890.26828804275, "x15": -254239.46456172585, "x16": 582897.9074406561, "x17": -1336417.1100832545, "x18": 3064019.735402993, "x19": -7024915.251462302, "x20": 16106108.49532828}, {"x": -1.1378912971139021, "y_true": -6.009008676906946, "y": -1.837691004536647, "x1": -1.1378912971139021, "x2": 1.2947966040475587, "x3": -1.4733377872783522, "x4": 1.6764982458530906, "x5": -1.9076727635829547, "x6": 2.170724235422271, "x7": -2.470048215921231, "x8": 2.8106463683484897, "x9": -3.198210041808541, "x10": 3.639215372916228, "x11": -4.1410315011645, "x12": 4.712043706249602, "x13": -5.361793524961758, "x14": 6.101138188975657, "x15": -6.942432047724674, "x16": 7.8997330079105526, "x17": -8.989037439224846, "x18": 10.22854747152499, "x19": -11.638975149964695, "x20": 13.2438885304698}, {"x": 3.6123676193291843, "y_true": 8.4115097815905, "y": 26.335993336850215, "x1": 3.6123676193291843, "x2": 13.049199817177998, "x3": 47.138506877730116, "x4": 170.2816158686383, "x5": 615.1197953309196, "x6": 2222.0388306618092, "x7": 8026.821120774804, "x8": 28995.828702834493, "x9": 104743.59270173506, "x10": 378372.36260795244, "x11": 1366820.070734048, "x12": 4937456.5649689, "x13": 17835908.217137955, "x14": 64429857.30491648, "x15": 232744330.2462802, "x16": 840758082.1641206, "x17": 3037127271.698975, "x18": 10971220212.066967, "x19": 39632080638.60058, "x20": 143165644785.52383}, {"x": 3.082797519004094, "y_true": 9.933087113077695, "y": 51.05829616037274, "x1": 3.082797519004094, "x2": 9.503640543177799, "x3": 29.297799488015237, "x4": 90.31918357393279, "x5": 278.4357550401954, "x6": 858.361054839946, "x7": 2646.1533302703224, "x8": 8157.554921461772, "x9": 25148.090073021987, "x10": 77526.46968480367, "x11": 238998.40840145887, "x12": 736783.7004659447, "x13": 2271354.96383907, "x14": 7002127.447300719, "x15": 21586141.12228913, "x16": 66545702.29666518, "x17": 205146925.94054446, "x18": 632426434.3208271, "x19": 1949642642.6768515, "x20": 6010353501.788783}, {"x": -4.779177946788384, "y_true": -59.84141524002031, "y": -48.83171901174568, "x1": -4.779177946788384, "x2": 22.840541847068437, "x3": -109.1590138882067, "x4": 521.6903518676845, "x5": -2493.25102469831, "x6": 11915.690313045705, "x7": -56947.20436486801, "x8": 272160.8232318284, "x9": -1300705.0043693262, "x10": 6216300.672159173, "x11": -29708807.08298893, "x12": 141983675.63641125, "x13": -678565251.4054918, "x14": 3242984084.9740424, "x15": -15498798020.693651, "x16": 74071513702.22656, "x17": -354000944770.9148, "x18": 1691833508391.409, "x19": -8085573392941.842, "x20": 38642394046686.586}, {"x": 1.5089395566704136, "y_true": 9.820449098399102, "y": 5.832218180217666, "x1": 1.5089395566704136, "x2": 2.2768985856847044, "x3": 3.4357023424665694, "x4": 5.1842671694930065, "x5": 7.822745804395757, "x6": 11.804050586030272, "x7": 17.811598858199652, "x8": 26.87662608468303, "x9": 40.55520424901808, "x10": 61.19535192019142, "x11": 92.34008719674358, "x12": 139.3356102375616, "x13": 210.24901394026773, "x14": 317.2530538854192, "x15": 478.71568248219927, "x16": 722.3530296958643, "x17": 1089.9870603888075, "x18": 1644.7245916795744, "x19": 2481.789996213904, "x20": 3744.871096636076}, {"x": 1.843248841093689, "y_true": 10.424524660838461, "y": -12.927221136646736, "x1": 1.843248841093689, "x2": 3.397566290193227, "x3": 6.26256012693765, "x4": 11.543456696257369, "x5": 21.277463177591578, "x6": 39.21965934350931, "x7": 72.29159163301281, "x8": 133.25139249836909, "x9": 245.6154747967391, "x10": 452.7304392737655, "x11": 834.494857519205, "x12": 1538.1816790209175, "x13": 2835.251597246851, "x14": 5226.074220834288, "x15": 9632.955251022406, "x16": 17755.933602754416, "x17": 32728.60403581356, "x18": 60326.96145962758, "x19": 111197.60179716218, "x20": 204964.85064501668}, {"x": 2.035420945670361, "y_true": 10.63012235035427, "y": 44.51362759159636, "x1": 2.035420945670361, "x2": 4.142938426073626, "x3": 8.432623649052857, "x4": 17.163938802237418, "x5": 34.935840548278286, "x6": 71.10914160656553, "x7": 144.73703625464321, "x8": 294.6007952069512, "x9": 599.636629175373, "x10": 1220.5129548147252, "x11": 2484.2576326919143, "x12": 5056.510020022588, "x13": 10292.126406746032, "x14": 20948.8096637779, "x15": 42639.64597651521, "x16": 86789.628536568, "x17": 176653.42779028058, "x18": 359564.0870488037, "x19": 731864.274089976, "x20": 1489651.8728705712}, {"x": -4.585587537109249, "y_true": -56.044977275898454, "y": -42.45995978397906, "x1": -4.585587537109249, "x2": 21.027613060491667, "x3": -96.42396038534626, "x4": 442.16051102175976, "x5": -2027.5657287432382, "x6": 9297.580136394825, "x7": -42634.86759872662, "x8": 195505.91750702373, "x9": -896509.4987513169, "x10": 4111022.7843740988, "x11": -18851454.84479803, "x12": 86444996.39268361, "x13": -396401098.103744, "x14": 1817731935.160949, "x15": -8335368907.679525, "x16": 38222563780.26317, "x17": -175272912107.13815, "x18": 803729281351.3375, "x19": -3685570975774.4663, "x20": 16900508333642.967}, {"x": -1.2619188887140154, "y_true": -7.231887771011602, "y": -89.19970389676834, "x1": -1.2619188887140154, "x2": 1.5924392816932156, "x3": -2.009529208698847, "x4": 2.5358628658796043, "x5": -3.200053249641928, "x6": 4.038207640613815, "x7": -5.095890498239832, "x8": 6.430600474547119, "x9": -8.114896204604321, "x10": 10.240340800543866, "x11": -12.922479483075104, "x12": 16.3071209487118, "x13": -20.578263945723435, "x14": 25.968099970051004, "x15": -32.76963585622122, "x16": 41.35262246324563, "x17": -52.183655384229155, "x18": 65.8515404115016, "x19": -83.09930269618818, "x20": 104.86457971128337}, {"x": -3.5735220053747376, "y_true": -37.90597636699228, "y": -28.006687964722687, "x1": -3.5735220053747376, "x2": 12.770059522897487, "x3": -45.63408871501939, "x4": 163.07442021834478, "x5": -582.750029163982, "x6": 2082.47005285026, "x7": -7441.752559394297, "x8": 26593.266529549295, "x9": -95031.62313813988, "x10": 339597.596490622, "x11": -1213559.4840316083, "x12": 4336681.521018165, "x13": -15497226.845660402, "x14": 55379681.15525158, "x15": -197900509.25892818, "x16": 707201824.7116468, "x17": -2527201282.848238, "x18": 9031009396.269445, "x19": -32272510808.314884, "x20": 115326527542.2073}, {"x": 4.693115961137654, "y_true": 2.869781352835748, "y": -12.968584923637604, "x1": 4.693115961137654, "x2": 22.025337424685002, "x3": 103.36746261723168, "x4": 485.11548867122974, "x5": 2276.703242878041, "x6": 10684.83232792479, "x7": 50145.15714026342, "x8": 235337.03734872607, "x9": 1104464.0062281543, "x10": 5183377.656131389, "x11": 24326192.410594497, "x12": 114165641.8758667, "x13": 535792596.1011553, "x14": 2514536784.6217117, "x15": 11801012718.775911, "x16": 55383521148.07568, "x17": 259921287084.0388, "x18": 1219840741053.5447, "x19": 5724854051884.374, "x20": 26867403926082.125}]}}, {"mode": "vega-lite"});
+</script></div></div>
+</div>
 </div>
 <div class="section" id="put-the-charts-together">
 <h2>Put the charts together<a class="headerlink" href="#put-the-charts-together" title="Permalink to this headline">¶</a></h2>
