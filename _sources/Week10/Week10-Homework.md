@@ -55,7 +55,7 @@ Perform gradient descent by hand, starting at the initial point $(4,4)$ and usin
 The second part of this homework is to practice with neural networks using the dataset for your final project.
 
 ## Question 4
-Build and train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.  You can adapt the code we used for [Handwritten digits](../Week9/Week8-Friday.ipynb) or [Fashion-MNIST](../Week9/Week9-Monday.md) or [Spotify](overfitting.ipynb).
+Build and train a neural network using the dataset for your final project.  Clearly describe in a markdown cell what you are trying to compute.  You can adapt the code we used for [Handwritten digits](../Week9/Week8-Friday.ipynb) or [Fashion-MNIST](../Week9/Week9-Monday.md) or [Spotify](overfitting.ipynb).  Be sure there are only numeric columns in your input, like how we used `X_train = df[numeric_cols]` with the Spotify dataset.
 
 ```{admonition} Classification or Regression?
 :class: note
