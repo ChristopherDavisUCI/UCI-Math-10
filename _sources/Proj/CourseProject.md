@@ -6,7 +6,8 @@ The following are requirements to receive a passing score on the course project.
 * Due date: Monday, December 6th 2021, 3:30pm California time.
 * For the submission, give a link to the app on Streamlit.
 * This is an individual project (not a group project).
-* Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub, and the app itself should be shared by Streamlit cloud.  Include a link to the GitHub repository somewhere in the Streamlit app.
+* Share the app using GitHub and Streamlit cloud (Community tier).  The code should be  viewable on GitHub, and the app itself should be shared by Streamlit cloud.  
+* Include a link to the GitHub repository somewhere in the Streamlit app.
 * The primary focus of the app must be on something involving data, and primarily using one or more datasets that weren't covered in Math 10.
 * The project should clearly build on the Math 10 material.  If you're an expert in Python material that was not covered in Math 10, you are of course welcome to use that, but the project should use the topics of Math 10 in an essential way (see the rubric below).
 * Anything that is taken from another source (either the idea for the project or a piece of code that is longer than a few lines, even if you edit that code) should be referenced with a link, both in the source code and in the final Streamlit app.  (One way to do this is to have a **References** section at the bottom of your app.  Then the references should be of the form "This portion of the app was taken from \[link\]").
@@ -33,3 +34,9 @@ What should I focus on?
 
 Do I need to get original research results?
 * No!  If you explore the data in an interesting way, but can't find any interesting conclusions, that's fine.  In fact, I prefer that to making claims that the data does not support.
+
+What if a lot of my work was done cleaning the data, but it does not appear in the app?
+* As long as it appears in your source code, then that's fine and it will count for the project.  That's why we ask you to put a link to the GitHub repository somewhere in the app. (If the work was done outside of Python, like in Excel, then that portion will not count.)
+
+Can I use a different plotting library?
+* You need to use Altair for the Altair portion of the rubric.  You can definitely use a different library (like Seaborn or Matplotlib) for the extra part of the rubric.
