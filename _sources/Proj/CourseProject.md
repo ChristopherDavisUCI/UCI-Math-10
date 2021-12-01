@@ -17,7 +17,7 @@ The course project is worth 25% of your course grade, so we will grade the proje
 1. (4 points) Does the project explore the data using a variety of tools from scikit-learn and/or Keras? 
 1. (4 points) Does the project include a variety of interesting charts, made using Altair?  Do we learn something about the data from these charts?
 1. (4 points) Does the project include *interactivity*, made possible through the use of multiple different Streamlit widgets?  Are additional Streamlit tools used to improve the layout or flow or appearance of the app?
-1. (4 points) Does the project include material that was not covered in Math 10?  (This could include different libraries, different machine learning algorithms, or deeper use of the libraries we covered in Math 10.)
+1. (4 points) Does the project include material that was not covered in Math 10?  (This could include different libraries, different machine learning algorithms, or deeper use of the libraries we covered in Math 10.  Here are [some possibilities](ExtraTopics), but you're very encouraged to choose your own.)
 ## Advice
 Here is some general advice about the project.
 * Don't repeat the same technique multiple times unless it's really essential.  For example, it would be better to have one interesting chart and one less interesting chart, than to have the same interesting chart made for two different datasets.
