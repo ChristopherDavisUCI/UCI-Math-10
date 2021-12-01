@@ -46,3 +46,11 @@ If you really want, you can see the [full code](https://github.com/ChristopherDa
 [Blog post](https://blog.streamlit.io/introducing-new-layout-options-for-streamlit/) introducing some of the other options for changing the layout in Streamlit.  I really like `columns`.
 
 [on_change/on_click](https://blog.streamlit.io/session-state-for-streamlit/#callback-functions-and-session-state-api).  In the code example above I used a keyword argument called `on_change`, which specifies a function to call.  This is another way to add interactivity to a Streamlit app.  It is a good concept to learn, because it is used in many different contexts related to websites.
+
+## Other libraries
+Here are a few other libraries that you might find interesting.
+* [sympy](https://www.sympy.org/en/index.html) for symbolic computation, like what you did in Mathematica.
+* [Pillow](https://pillow.readthedocs.io/en/stable/index.html) for image processing.
+* [re](https://docs.python.org/3/library/re.html) for advanced string methods using regular expressions.
+* [Seaborn](https://seaborn.pydata.org/) It's like a cross between Altair and Matplotlib.
+* [Plotly](https://plotly.com/python/plotly-express/) It's like a cross between Altair and Streamlit.
